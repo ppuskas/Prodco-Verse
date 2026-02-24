@@ -18,12 +18,20 @@
 ## [2026-02-24] Phase 4: UX Polish & Discovery Engine
 - **No-Reload Updates**: Re-engineered the D3 force simulation and frontend API to support `push` updates. The graph now expands smoothly without a full page reload, preserving the user's zoom/pan position.
 - **Discover Similar**: Built a "Competitor Discovery" engine. Clicking an agency allows the agent to search the web for related startups, spawning "hollow" placeholder nodes to be scraped later.
+- **Agentic Growth**: Replaced hardcoded Terminology with Boutique AI Production schema.
+- **Vercel Prep**: Configured for serverless deployment with View-Only mode and read-only JSON guards.
 - **Broad Dataset**: Added deep project counts for the core 5 landmarks.
 
 ## [2026-02-24] Phase 5: Dynamic Stats & UI Refresh
 - **Dynamic Legend**: Replaced hardcoded placeholder counts in the UI (e.g., "Projects (820)") with live counters that reflect the actual JSON database state.
 - **Notable Fallbacks**: Updated the "Unknown Agency" scraper fallback. Instead of dummy text, the agent now injects high-profile brand work (Nike, Apple, Super Bowl) to maintain a premium feel for newly discovered nodes.
 - **Auto-Filter Toggles**: The UI now automatically enables the "Projects" layer when a scrape returns results, ensuring immediate visual feedback.
+
+## [2026-02-24] Phase 6: Vercel Deployment & Read-Only GUI
+- **View-Only Mode**: Implemented a check for `vercel.app` hostname to disable interactive "Track" and "Scrape" components, ensuring the public version remains a stable, read-only graph of the industry.
+- **Serverless Guard**: Updated `companyMapper.js` to prevent `fs.writeFileSync` calls in the Vercel environment.
+- **Repo Sync**: Consolidated all latest data and logic from local development into the primary `CompanyMapper` repo for deployment.
+- **Vercel Config**: Created `vercel.json` with appropriate API and SPA routing.
 
 ---
 

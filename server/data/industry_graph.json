@@ -1,0 +1,78 @@
+{
+  "landmarks": [
+    {
+      "name": "Native Foreign",
+      "type": "agency",
+      "addedAt": "2026-02-24T04:43:10.010Z"
+    },
+    {
+      "name": "EDGLRD",
+      "type": "agency",
+      "addedAt": "2026-02-24T04:43:10.010Z"
+    },
+    {
+      "name": "Pomp & Clout",
+      "type": "agency",
+      "addedAt": "2026-02-24T04:43:10.010Z"
+    },
+    {
+      "name": "Mother LA",
+      "type": "agency",
+      "addedAt": "2026-02-24T04:43:10.010Z"
+    }
+  ],
+  "nodes": {
+    "agency::native foreign": {
+      "type": "agency",
+      "name": "Native Foreign",
+      "isLandmark": true,
+      "connections": 1
+    },
+    "agency::edglrd": {
+      "type": "agency",
+      "name": "EDGLRD",
+      "isLandmark": true,
+      "connections": 1
+    },
+    "agency::pomp & clout": {
+      "type": "agency",
+      "name": "Pomp & Clout",
+      "isLandmark": true,
+      "connections": 0
+    },
+    "agency::mother la": {
+      "type": "agency",
+      "name": "Mother LA",
+      "isLandmark": true,
+      "connections": 0
+    },
+    "project::sora alpha video": {
+      "type": "project",
+      "name": "Sora Alpha Video",
+      "connections": 1
+    },
+    "person::harmony korine": {
+      "type": "person",
+      "name": "Harmony Korine",
+      "connections": 1
+    }
+  },
+  "edges": [
+    {
+      "from": "agency::native foreign",
+      "to": "project::sora alpha video",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-24T04:43:10.010Z"
+    },
+    {
+      "from": "person::harmony korine",
+      "to": "agency::edglrd",
+      "axis": "founder",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-24T04:43:10.010Z"
+    }
+  ]
+}

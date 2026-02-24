@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Mapper — Constellation View</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0f;
+            color: #e0e0e0;
+            font-family: 'Inter', -apple-system, sans-serif;
+            overflow: hidden;
+        }
+
+        /* ─── Header ─── */
+        #header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: linear-gradient(180deg, rgba(10, 10, 15, 0.95) 0%, rgba(10, 10, 15, 0) 100%);
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        #header h1 {
+            font-size: 22px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6ee7b7, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #header .stats {
+            display: flex;
+            gap: 16px;
+            font-size: 12px;
+            color: #888;
+        }
+
+        #header .stats span {
+            background: rgba(255, 255, 255, 0.06);
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        #header .stats .num {
+            color: #6ee7b7;
+            font-weight: 700;
+        }
+
+        /* ─── Legend ─── */
+        #legend {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+            background: rgba(15, 15, 25, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 16px 20px;
+            backdrop-filter: blur(12px);
+        }
+
+        #legend h3 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .legend-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+            font-size: 12px;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .legend-line {
+            width: 20px;
+            height: 2px;
+            flex-shrink: 0;
+            border-radius: 1px;
+        }
+
+        /* ─── Tooltip ─── */
+        #tooltip {
+            position: fixed;
+            z-index: 200;
+            pointer-events: none;
+            background: rgba(15, 15, 25, 0.95);
+            border: 1px solid rgba(110, 231, 183, 0.3);
+            border-radius: 10px;
+            padding: 12px 16px;
+            backdrop-filter: blur(16px);
+            display: none;
+            max-width: 280px;
+        }
+
+        #tooltip .tt-name {
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        #tooltip .tt-type {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #6ee7b7;
+        }
+
+        #tooltip .tt-meta {
+            font-size: 11px;
+            color: #888;
+            margin-top: 6px;
+        }
+
+        /* ─── Filter Panel ─── */
+        #filters {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            z-index: 100;
+            background: rgba(15, 15, 25, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 16px 20px;
+            backdrop-filter: blur(12px);
+        }
+
+        #filters h3 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        #filters label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            margin-bottom: 6px;
+            cursor: pointer;
+        }
+
+        #filters input[type="checkbox"] {
+            accent-color: #6ee7b7;
+        }
+
+        #filters select {
+            width: 100%;
+            margin-top: 8px;
+            padding: 6px 8px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            color: #e0e0e0;
+            font-size: 12px;
+        }
+
+        svg {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* ───projecting... Panel ─── */
+        #plant-panel {
+            position: fixed;
+            top: 70px;
+            left: 20px;
+            z-index: 100;
+            background: rgba(15, 15, 25, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 16px 20px;
+            backdrop-filter: blur(12px);
+            width: 240px;
+        }
+
+        #plant-panel h3 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        #plant-panel input {
+            width: 100%;
+            padding: 8px 10px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            color: #e0e0e0;
+            font-size: 13px;
+            margin-bottom: 8px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        #plant-panel input:focus {
+            border-color: rgba(110, 231, 183, 0.5);
+        }
+
+        #plant-panel input::placeholder {
+            color: #555;
+        }
+
+        .btn-plant {
+            width: 100%;
+            padding: 8px;
+            background: linear-gradient(135deg, #6ee7b7, #3b82f6);
+            border: none;
+            border-radius: 6px;
+            color: #000;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .btn-plant:hover {
+            opacity: 0.9;
+        }
+
+        .btn-plant:disabled {
+            opacity: 0.4;
+            cursor: wait;
+        }
+
+        .btn-scrape {
+            width: 100%;
+            padding: 8px;
+            background: linear-gradient(135deg, #fb7185, #f59e0b);
+            border: none;
+            border-radius: 6px;
+            color: #000;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: opacity 0.2s;
+        }
+
+        .btn-scrape:hover {
+            opacity: 0.9;
+        }
+
+        .btn-scrape:disabled {
+            opacity: 0.4;
+            cursor: wait;
+        }
+
+        #plant-status {
+            font-size: 11px;
+            color: #6ee7b7;
+            margin-top: 8px;
+            min-height: 16px;
+        }
+
+        .gap-badge {
+            display: inline-block;
+            background: rgba(251, 113, 133, 0.2);
+            color: #fb7185;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        /* ─── Back link ─── */
+        .back-link {
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            color: #6ee7b7;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        /* ─── Progress Bar ─── */
+        .progress-container {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin-top: 10px;
+            overflow: hidden;
+            display: none;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #f59e0b, #fb7185);
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <a href="/" class="back-link">← alumni GOD</a>
+        <h1>🗺️ Music Mapper</h1>
+        <div class="stats" id="stats-bar"></div>
+    </div>
+
+    <div id="plant-panel">
+        <h3>🚩projecting...</h3>
+        <input type="text" id="plant-agency" placeholder="Agency Name...">
+        <input type="text" id="plant-project" placeholder="Founder / Note (optional)">
+        <button class="btn-plant" id="btn-plant" onclick="plantFlag()">🚩projecting...</button>
+        <div id="plant-status"></div>
+        <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 12px 0;">
+        <h3>🕵️ scrape</h3>
+        <div id="gap-info" style="font-size: 11px; color: #888; margin-bottom: 8px;">Loading gaps...</div>
+        <button class="btn-scrape" id="btn-scrape" onclick="fillGaps()" disabled>🚀 Fill Gaps</button>
+        <div id="scrape-progress-container" class="progress-container">
+            <div id="scrape-progress-bar" class="progress-bar"></div>
+        </div>
+    </div>
+
+    <div id="legend">
+        <h3>Nodes</h3>
+        <div class="legend-row">
+            <div class="legend-dot" style="background: #f59e0b; box-shadow: 0 0 8px #f59e0b;"></div> Landmark
+        </div>
+        <div class="legend-row">
+            <div class="legend-dot" style="background: #6ee7b7;"></div> agency
+        </div>
+        <div class="legend-row">
+            <div class="legend-dot" style="background: #3b82f6;"></div> project
+        </div>
+        <div class="legend-row">
+            <div class="legend-dot" style="background: #a78bfa;"></div> traditional
+        </div>
+        <div class="legend-row">
+            <div class="legend-dot" style="background: #fb7185;"></div> Person
+        </div>
+        <h3 style="margin-top: 12px;">Edges</h3>
+        <div class="legend-row">
+            <div class="legend-line" style="background: #6ee7b7;"></div> founder
+        </div>
+        <div class="legend-row">
+            <div class="legend-line" style="background: #3b82f6;"></div> alumni
+        </div>
+        <div class="legend-row">
+            <div class="legend-line" style="background: #a78bfa;"></div> partner
+        </div>
+        <div class="legend-row">
+            <div class="legend-line" style="background: #f59e0b;"></div> collaborator
+        </div>
+        <div class="legend-row">
+            <div class="legend-line" style="background: #fb7185;"></div> notable
+        </div>
+    </div>
+
+    <div id="filters">
+        <h3>Show Nodes</h3>
+        <label><input type="checkbox" checked data-type="agency"> agencys (107)</label>
+        <label><input type="checkbox" checked data-type="project"> projects (820)</label>
+        <label><input type="checkbox" checked data-type="traditional"> traditionals (120)</label>
+        <label><input type="checkbox" checked data-type="person"> People (19)</label>
+        <h3 style="margin-top: 12px;">Focus Landmark</h3>
+        <select id="landmark-select">
+            <option value="">All Landmarks</option>
+        </select>
+    </div>
+
+    <div id="tooltip">
+        <div class="tt-name"></div>
+        <div class="tt-type"></div>
+        <div class="tt-meta"></div>
+    </div>
+
+    <svg></svg>
+
+    <script>
+        const NODE_COLORS = {
+            agency: '#6ee7b7',
+            project: '#3b82f6',
+            traditional: '#a78bfa',
+            person: '#fb7185'
+        };
+
+        const EDGE_COLORS = {
+            founder: '#6ee7b7',
+            alumni: '#3b82f6',
+            partner: '#a78bfa',
+            collaborator: '#f59e0b',
+            notable: '#fb7185'
+        };
+
+        const NODE_RADIUS = {
+            agency: 8,
+            project: 3,
+            traditional: 5,
+            person: 7
+        };
+
+        async function init() {
+            const res = await fetch('/api/mapper/graph');
+            const graph = await res.json();
+
+            // Stats bar
+            const statsBar = document.getElementById('stats-bar');
+            statsBar.innerHTML = `
+            <span><span class="num">${graph.landmarks.length}</span> landmarks</span>
+            <span><span class="num">${Object.keys(graph.nodes).length}</span> nodes</span>
+            <span><span class="num">${graph.edges.length}</span> edges</span>
+        `;
+
+            // Populate landmark dropdown
+            const landmarkSelect = document.getElementById('landmark-select');
+            graph.landmarks.forEach(l => {
+                const opt = document.createElement('option');
+                opt.value = l.name;
+                opt.textContent = l.name;
+                landmarkSelect.appendChild(opt);
+            });
+
+            // Convert graph to D3 format
+            const nodeMap = {};
+            const nodes = [];
+            const visibleTypes = new Set(['agency', 'traditional', 'person', 'project']); // projects visible by default
+
+            for (const [key, data] of Object.entries(graph.nodes)) {
+                const node = { id: key, ...data };
+                node.radius = data.isLandmark ? 16 : (NODE_RADIUS[data.type] || 4);
+                node.color = data.isLandmark ? '#f59e0b' : (NODE_COLORS[data.type] || '#555');
+                // Gap detection: unmapped agencys render as hollow
+                node.isUnmapped = (data.type === 'agency' && data.mapStatus === 'unmapped');
+                nodeMap[key] = node;
+                nodes.push(node);
+            }
+
+            const links = graph.edges
+                .filter(e => nodeMap[e.from] && nodeMap[e.to])
+                .map(e => ({
+                    source: e.from,
+                    target: e.to,
+                    axis: e.axis,
+                    weight: e.weight,
+                    color: EDGE_COLORS[e.axis] || '#333'
+                }));
+
+            // SVG setup
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            const svg = d3.select('svg')
+                .attr('width', width)
+                .attr('height', height);
+
+            const g = svg.append('g');
+
+            // Zoom
+            const zoom = d3.zoom()
+                .scaleExtent([0.1, 8])
+                .on('zoom', (event) => g.attr('transform', event.transform));
+            svg.call(zoom);
+
+            // Initial zoom out to fit
+            svg.call(zoom.transform, d3.zoomIdentity.translate(width / 2, height / 2).scale(0.4));
+
+            // Force simulation
+            const simulation = d3.forceSimulation(nodes)
+                .force('link', d3.forceLink(links).id(d => d.id).distance(d => {
+                    if (d.axis === 'partner') return 30;
+                    if (d.axis === 'founder') return 80;
+                    return 60;
+                }).strength(d => d.weight * 0.3))
+                .force('charge', d3.forceManyBody().strength(d => d.isLandmark ? -400 : -20))
+                .force('center', d3.forceCenter(0, 0))
+                .force('collision', d3.forceCollide().radius(d => d.radius + 2))
+                .alphaDecay(0.02);
+
+            // Draw edges
+            const link = g.append('g')
+                .selectAll('line')
+                .data(links)
+                .join('line')
+                .attr('stroke', d => d.color)
+                .attr('stroke-opacity', 0.15)
+                .attr('stroke-width', d => Math.max(0.3, d.weight));
+
+            // Draw nodes
+            const node = g.append('g')
+                .selectAll('circle')
+                .data(nodes)
+                .join('circle')
+                .attr('r', d => d.radius)
+                .attr('fill', d => d.isUnmapped ? 'transparent' : d.color)
+                .attr('stroke', d => d.isLandmark ? '#f59e0b' : d.isUnmapped ? '#fb7185' : 'none')
+                .attr('stroke-width', d => d.isLandmark ? 3 : d.isUnmapped ? 2 : 0)
+                .attr('stroke-dasharray', d => d.isUnmapped ? '3,2' : 'none')
+                .attr('opacity', d => visibleTypes.has(d.type) || d.isLandmark ? 1 : 0.05)
+                .style('cursor', 'pointer')
+                .call(d3.drag()
+                    .on('start', (e, d) => { if (!e.active) simulation.alphaTarget(0.1).restart(); d.fx = d.x; d.fy = d.y; })
+                    .on('drag', (e, d) => { d.fx = e.x; d.fy = e.y; })
+                    .on('end', (e, d) => { if (!e.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; })
+                );
+
+            // Glow effect for landmarks
+            node.filter(d => d.isLandmark)
+                .attr('filter', 'url(#glow)');
+
+            // SVG filter for glow
+            const defs = svg.append('defs');
+            const filter = defs.append('filter').attr('id', 'glow');
+            filter.append('feGaussianBlur').attr('stdDeviation', '4').attr('result', 'coloredBlur');
+            const feMerge = filter.append('feMerge');
+            feMerge.append('feMergeNode').attr('in', 'coloredBlur');
+            feMerge.append('feMergeNode').attr('in', 'SourceGraphic');
+
+            // Labels for landmarks + agencys with many connections
+            const labelNodes = nodes.filter(d => d.isLandmark || (d.type === 'agency' && d.connections > 3));
+            const labels = g.append('g')
+                .selectAll('text')
+                .data(labelNodes)
+                .join('text')
+                .text(d => d.name)
+                .attr('font-size', d => d.isLandmark ? '13px' : '9px')
+                .attr('font-weight', d => d.isLandmark ? '800' : '500')
+                .attr('fill', d => d.isLandmark ? '#f59e0b' : '#ccc')
+                .attr('text-anchor', 'middle')
+                .attr('dy', d => -(d.radius + 6))
+                .style('pointer-events', 'none')
+                .style('text-shadow', '0 0 6px rgba(0,0,0,0.9)');
+
+            // Tooltip & Click Actions
+            const tooltip = document.getElementById('tooltip');
+            node.on('mouseover', (event, d) => {
+                // ... Existing Tooltip Logic
+                tooltip.style.display = 'block';
+                tooltip.querySelector('.tt-name').textContent = d.name || d.id;
+                tooltip.querySelector('.tt-type').textContent = d.type + (d.isLandmark ? ' · LANDMARK' : '');
+
+                let meta = [];
+                if (d.agency) meta.push(`agency: ${d.agency}`);
+                if (d.alumni) meta.push(`alumni: ${d.alumni}`);
+                if (d.year) meta.push(`Year: ${d.year}`);
+                if (d.traditional) meta.push(`traditional: ${d.traditional}`);
+                if (d.connections) meta.push(`Connections: ${d.connections}`);
+                if (d.link) meta.push('🔗 Double-click to view project');
+
+                // Add click hint for gaps
+                if (d.isUnmapped) {
+                    meta.push('🎯 Click to deploy Sniper on this agency');
+                }
+
+                tooltip.querySelector('.tt-meta').textContent = meta.join(' · ');
+
+                // Highlight connections
+                const connectedIds = new Set();
+                links.forEach(l => {
+                    const src = typeof l.source === 'object' ? l.source.id : l.source;
+                    const tgt = typeof l.target === 'object' ? l.target.id : l.target;
+                    if (src === d.id) connectedIds.add(tgt);
+                    if (tgt === d.id) connectedIds.add(src);
+                });
+                node.attr('opacity', n => n.id === d.id || connectedIds.has(n.id) ? 1 : 0.08);
+                link.attr('stroke-opacity', l => {
+                    const src = typeof l.source === 'object' ? l.source.id : l.source;
+                    const tgt = typeof l.target === 'object' ? l.target.id : l.target;
+                    return src === d.id || tgt === d.id ? 0.6 : 0.03;
+                });
+            })
+                .on('mousemove', (event) => {
+                    tooltip.style.left = (event.clientX + 16) + 'px';
+                    tooltip.style.top = (event.clientY - 10) + 'px';
+                })
+                .on('mouseout', () => {
+                    tooltip.style.display = 'none';
+                    node.attr('opacity', d => visibleTypes.has(d.type) || d.isLandmark ? 1 : 0.05);
+                    link.attr('stroke-opacity', 0.15);
+                })
+                .on('dblclick', (event, d) => {
+                    if (d.link) {
+                        window.open(d.link, '_blank');
+                    }
+                });
+
+            // Dispatch sniper on click
+            node.on('click', async (event, d) => {
+                if (event.defaultPrevented) return; // Dragged, ignore
+
+                if (d.isUnmapped && d.type === 'agency') {
+                    const btn = document.getElementById('btn-scrape');
+                    const gapInfo = document.getElementById('gap-info');
+
+                    // Briefly style the node to show it's "computing"
+                    d3.select(event.currentTarget).attr('stroke', '#6ee7b7').attr('stroke-dasharray', 'none').attr('stroke-width', 4);
+
+                    btn.disabled = true;
+                    btn.textContent = `🎯 Sniper on ${d.name}...`;
+                    gapInfo.innerHTML = `<span style="color:#f59e0b">Direct Snipe: Acquiring projects for ${d.name}...</span>`;
+
+                    try {
+                        const res = await fetch('/api/mapper/scrape', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ agency: d.name, deezerId: d.deezerId })
+                        });
+                        const data = await res.json();
+
+                        if (data.added > 0) {
+                            gapInfo.innerHTML = `<span style="color:#6ee7b7">✅ Secured ${data.added} projects for ${d.name}.</span>`;
+                        } else {
+                            gapInfo.innerHTML = `<span style="color:#a78bfa">Sniper returned empty-handed for ${d.name}.</span>`;
+                        }
+
+                        // Re-color appropriately and reload stats
+                        d3.select(event.currentTarget)
+                            .attr('stroke', d.isLandmark ? '#f59e0b' : '#6ee7b7')
+                            .attr('fill', d.color);
+
+                        setTimeout(() => {
+                            btn.disabled = false;
+                            btn.textContent = '🚀 Fill Gaps';
+                            loadGaps();
+                            location.reload(); // Quick refresh to update the graph UI fully
+                        }, 2000);
+
+                    } catch (err) {
+                        gapInfo.innerHTML = `<span style="color:#fb7185">❌ Sniper error: ${err.message}</span>`;
+                        btn.disabled = false;
+                        btn.textContent = '🚀 Fill Gaps';
+                    }
+                }
+            });
+
+            // Tick
+            simulation.on('tick', () => {
+                link.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+                    .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+                node.attr('cx', d => d.x).attr('cy', d => d.y);
+                labels.attr('x', d => d.x).attr('y', d => d.y);
+            });
+
+            // ─── Filter handlers ────────────────────────────────
+            document.querySelectorAll('#filters input[type="checkbox"]').forEach(cb => {
+                cb.addEventListener('change', () => {
+                    const type = cb.dataset.type;
+                    if (cb.checked) visibleTypes.add(type);
+                    else visibleTypes.delete(type);
+                    node.attr('opacity', d => visibleTypes.has(d.type) || d.isLandmark ? 1 : 0.05);
+                    node.attr('r', d => visibleTypes.has(d.type) || d.isLandmark ? d.radius : 1);
+                });
+            });
+
+            landmarkSelect.addEventListener('change', () => {
+                const selected = landmarkSelect.value;
+                if (!selected) {
+                    node.attr('opacity', d => visibleTypes.has(d.type) || d.isLandmark ? 1 : 0.05);
+                    link.attr('stroke-opacity', 0.15);
+                    return;
+                }
+
+                // Find the landmark node key
+                const lmKey = Object.keys(graph.nodes).find(k =>
+                    graph.nodes[k].name?.toLowerCase() === selected.toLowerCase() && graph.nodes[k].isLandmark
+                );
+                if (!lmKey) return;
+
+                // Find all connected
+                const connected = new Set([lmKey]);
+                graph.edges.forEach(e => {
+                    if (e.from === lmKey) connected.add(e.to);
+                    if (e.to === lmKey) connected.add(e.from);
+                });
+
+                node.attr('opacity', d => connected.has(d.id) ? 1 : 0.04);
+                link.attr('stroke-opacity', l => {
+                    const src = typeof l.source === 'object' ? l.source.id : l.source;
+                    const tgt = typeof l.target === 'object' ? l.target.id : l.target;
+                    return connected.has(src) && connected.has(tgt) ? 0.5 : 0.02;
+                });
+            });
+        }
+
+        // ───projecting... ────────────────────────────────
+        async function plantFlag() {
+            const agency = document.getElementById('plant-agency').value.trim();
+            const project = document.getElementById('plant-project').value.trim();
+            if (!agency) return;
+
+            const btn = document.getElementById('btn-plant');
+            const status = document.getElementById('plant-status');
+
+            btn.disabled = true;
+            btn.textContent = '⏳ Mapping...';
+            status.textContent = 'Crawling Deezer + Discogs...';
+            status.style.color = '#f59e0b';
+
+            try {
+                const res = await fetch('/api/mapper/agency', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ agency, project: project || undefined })
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    status.innerHTML = `✅ Network mapped. <span style="color:#f59e0b">Initiating Sniper sweep on ${agency}...</span>`;
+
+                    // Automatically backfill the new landmark's projects
+                    try {
+                        const scrapeRes = await fetch('/api/mapper/scrape', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ agency: agency }) // Let backend resolve deezerId
+                        });
+                        const scrapeData = await scrapeRes.json();
+
+                        if (scrapeData.added > 0) {
+                            status.innerHTML = `✅ Mapped network. <span style="color:#6ee7b7">Secured ${scrapeData.added} projects for ${agency}.</span>`;
+                        } else {
+                            status.innerHTML = `✅ Mapped network. <span style="color:#a78bfa">Sniper sweep complete.</span>`;
+                        }
+                    } catch (scrapeErr) {
+                        status.innerHTML = `✅ Mapped network. <span style="color:#fb7185">Sniper error: ${scrapeErr.message}</span>`;
+                    }
+
+                    document.getElementById('plant-agency').value = '';
+                    document.getElementById('plant-project').value = '';
+                    // Reload the visualization after a beat
+                    setTimeout(() => location.reload(), 2000);
+                } else {
+                    status.textContent = `❌ ${data.error}`;
+                    status.style.color = '#fb7185';
+                }
+            } catch (err) {
+                status.textContent = `❌ ${err.message}`;
+                status.style.color = '#fb7185';
+            }
+
+            btn.disabled = false;
+            btn.textContent = '🚩projecting...';
+        }
+
+        // Enter key to plant
+        document.getElementById('plant-agency').addEventListener('keydown', e => {
+            if (e.key === 'Enter') plantFlag();
+        });
+
+        // ─── Gap Detection ─────────────────────────────
+        async function loadGaps() {
+            try {
+                const res = await fetch('/api/mapper/gaps');
+                const data = await res.json();
+                const gapInfo = document.getElementById('gap-info');
+                const scrapeBtn = document.getElementById('btn-scrape');
+
+                if (data.unmapped > 0) {
+                    gapInfo.innerHTML = `<span style="color:#fb7185">${data.unmapped}</span> unmapped / ${data.totalagencys} agencys`;
+                    scrapeBtn.disabled = false;
+                    scrapeBtn.textContent = `🚀 Fill ${data.unmapped} Gaps`;
+                } else {
+                    gapInfo.textContent = 'All agencys mapped ✅';
+                    scrapeBtn.disabled = true;
+                }
+            } catch (err) {
+                document.getElementById('gap-info').textContent = 'Could not load gaps';
+            }
+        }
+        loadGaps();
+
+        // ─── Fill Gaps (Live Progress Dispatch) ───────
+        async function fillGaps() {
+            const btn = document.getElementById('btn-scrape');
+            const gapInfo = document.getElementById('gap-info');
+            const progressContainer = document.getElementById('scrape-progress-container');
+            const progressBar = document.getElementById('scrape-progress-bar');
+
+            btn.disabled = true;
+            btn.textContent = '⏳ Preparing snipers...';
+
+            try {
+                // Fetch the list of unmapped agencys
+                const gapsRes = await fetch('/api/mapper/gaps');
+                const gapData = await gapsRes.json();
+                const targetGaps = gapData.gaps.slice(0, 15);
+
+                if (targetGaps.length === 0) {
+                    gapInfo.innerHTML = '<span style="color:#6ee7b7">All gaps filled!</span>';
+                    btn.textContent = '🚀 Fill Gaps';
+                    return;
+                }
+
+                progressContainer.style.display = 'block';
+                progressBar.style.width = '0%';
+
+                let totalAdded = 0;
+
+                // Process them one by one to drive the progress bar
+                for (let i = 0; i < targetGaps.length; i++) {
+                    const target = targetGaps[i];
+                    btn.textContent = `🎯 Sniper ${i + 1}/${targetGaps.length}: ${target.name}`;
+                    gapInfo.innerHTML = `<span style="color:#f59e0b">Acquiring: ${target.name}</span>`;
+
+                    const res = await fetch('/api/mapper/scrape', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ agency: target.name, deezerId: target.deezerId })
+                    });
+                    const data = await res.json();
+
+                    if (data.added) totalAdded += data.added;
+                    progressBar.style.width = `${((i + 1) / targetGaps.length) * 100}%`;
+                }
+
+                gapInfo.innerHTML = `<span style="color:#6ee7b7">✅ ${totalAdded} projects backfilled</span>`;
+                btn.textContent = '🚀 Fill Gaps';
+
+                // Hide progress bar and reload gaps after a short delay
+                setTimeout(() => {
+                    progressContainer.style.display = 'none';
+                    loadGaps();
+                }, 1500);
+
+            } catch (err) {
+                gapInfo.innerHTML = `<span style="color:#fb7185">❌ Error: ${err.message}</span>`;
+                btn.disabled = false;
+                btn.textContent = '🚀 Fill Gaps';
+                progressContainer.style.display = 'none';
+            }
+        }
+
+        init();
+    </script>
+</body>
+
+</html>

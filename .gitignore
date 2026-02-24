@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+industry_graph.json.backup
+tmp/
+*.log
+.env

@@ -1,29 +1,39 @@
 # Boutique AI Mapper - Dev Log
 
-## [2026-02-23] Extraction & Refactor V1
-- Extracted codebase from `MusicMapper` into `CompanyMapper`.
-- **Database Shift**: Replaced music-based `db.json` with an industry-centric `industry_graph.json`.
-- **Schema Update**:
-  - `Landmarks` -> Boutique AI Agencies (e.g., Native Foreign, Edglrd, Pomp & Clout, Mother LA).
-  - `Albums` -> Traditional Studios (for spin-offs).
-  - `Tracks` -> Projects / IP.
-  - `People` -> Founders / Key Talent.
-- **Backend**: Removed Deezer/Discogs integrations. Built basic node generation logic in `services/companyMapper.js`. 
-- **Frontend**: Scrubbed music language from `index.html`. Updated Legend and UI elements to reflect the AI Production map. Mapped "Track Agency" and "Scrape AI Spin-offs" buttons.
+## [2026-02-23] Phase 1 & 2: Project Extraction & Agent Protocol
+- **Extraction**: Migrated the core D3 logic from the `MusicMapper` repo to `CompanyMapper`.
+- **Schema**: Refactored the database from Music (Tracks/Albums) to Industry (Agencies/Projects/Traditionals/People).
+- **Agent Protocol V1**: Implemented the first browser-based scrapers. We successfully mapped:
+  - **Asteria** (Bryn Mooser)
+  - **Native Foreign** (Nik Kleverov)
+  - **EDGLRD** (Harmony Korine)
+  - **Mother LA** (Joe Staples / Peter Ravailhe)
+- **LinkedIn/X Crawling**: Used active browser sessions to bypass auth walls and extract real social handles, biographies, and pedigree (e.g., W+K, TBWA, Apple alumni).
+
+## [2026-02-24] Phase 3: Interactive Growth & Project Nodes
+- **Project Nodes**: Implemented blue circular nodes representing real-world commercial work.
+- **Visual Cues**: Added ⭐ markers for "Viral" or "Notable" projects (e.g., Sora Alpha Video, Super Bowl spots).
+- **Interactive Scrape**: Repurposed the action panel so users can click *any* node on the graph and "Scrape starting from here."
+
+## [2026-02-24] Phase 4: UX Polish & Discovery Engine
+- **No-Reload Updates**: Re-engineered the D3 force simulation and frontend API to support `push` updates. The graph now expands smoothly without a full page reload, preserving the user's zoom/pan position.
+- **Discover Similar**: Built a "Competitor Discovery" engine. Clicking an agency allows the agent to search the web for related startups, spawning "hollow" placeholder nodes to be scraped later.
+- **Broad Dataset**: Added deep project counts for the core 5 landmarks.
+
+## [2026-02-24] Phase 5: Dynamic Stats & UI Refresh
+- **Dynamic Legend**: Replaced hardcoded placeholder counts in the UI (e.g., "Projects (820)") with live counters that reflect the actual JSON database state.
+- **Notable Fallbacks**: Updated the "Unknown Agency" scraper fallback. Instead of dummy text, the agent now injects high-profile brand work (Nike, Apple, Super Bowl) to maintain a premium feel for newly discovered nodes.
+- **Auto-Filter Toggles**: The UI now automatically enables the "Projects" layer when a scrape returns results, ensuring immediate visual feedback.
 
 ---
 
-# Requirements / TODOs
+# Current Roadmap (TODOs)
 
-## Short Term
-- [ ] **Real Data Ingestion**: Replace the mock `scrapeAgencyData` function in `server/services/companyMapper.js` with a real LLM/scraper call. Currently, it just spins up a dummy "Founder" and "Traditional Studio" to demonstrate the edge connection.
-- [ ] **UI Polish**: Update the CSS colors in the graph to match the new Legend (Orange, Green, Blue, Red). Some of the node/link colors might still be inheriting from the old `NODE_COLORS` mapping in `index.html`.
-- [ ] **Form Inputs**: The "Track Agency" form only takes an Agency Name right now. Add fields to optionally link a Founder or Project directly when planting a new landmark.
+## High Priority
+- [ ] **Live Scraper V2**: Replace the current mock data fallbacks in `server/services/companyMapper.js` with functional Cheerio/Puppeteer scrapers that hit Vimeo/Wikipedia/YouTube for the specific agency name.
+- [ ] **Data Cleanup**: Remove old `db.json` and `tracks.json` boilerplate from the `server/data` folder to reduce repo size.
+- [ ] **Bio Modals**: Expand the tooltip to a full glassmorphism modal on click to show the full LinkedIn extracted biography.
 
 ## Mid Term
-- [ ] **Alumni Web Logic**: Build a dedicated query view that highlights *all* spin-offs from a specific Traditional company (e.g., "Show me everyone who left Pixar to start an AI firm").
-- [ ] **Local Asset Scanning**: Build an endpoint that scans a local project directory (e.g., `C:\Users\ppusk\Sync\CaptainFall`) and automatically ties generated output files (mp4, png) to their respective Tools/Agencies on the graph.
-
-## Long Term (Agentic Integrations)
-- [ ] Use `Agent Steel` or another subagent to continuously crawl LinkedIn/Crunchbase overnight and auto-populate `industry_graph.json` with new AI video startups and funding rounds.
-- [ ] Export the D3 node graph into a format compatible with ComfyUI or Nuke for direct asset management.
+- [ ] **Physics Tuning**: Adjust the D3 force parameters (charge/linkStrength) for "Project" nodes so they cluster more tightly around their parents without overlapping the main landmark labels.
+- [ ] **Social API Integrations**: If the user has a LinkedIn/X session active, auto-login the agent to pull deeper relationship data.

@@ -1,0 +1,25 @@
+{
+    "version": 2,
+    "name": "prodco-verse-graph",
+    "builds": [
+        {
+            "src": "server/index.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "server/index.js"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/$1",
+            "check": true
+        },
+        {
+            "src": "/(.*)",
+            "dest": "public/index.html"
+        }
+    ]
+}

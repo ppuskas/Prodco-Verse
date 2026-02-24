@@ -2,6 +2,8 @@ import { Router } from 'express';
 import {
     addAgency,
     scrapeAgencyData,
+    scrapeNodeData,
+    discoverSimilarData,
     getGraph,
     getLandmarks,
     getGraphStats,
@@ -41,6 +43,40 @@ mapperRouter.post('/scrape', async (req, res) => {
     } catch (err) {
         console.error('Scrape error:', err);
         res.status(500).json({ error: 'Scraping failed', details: err.message });
+    }
+});
+
+// ─── POST /api/mapper/scrape-node — Scrape specific Node ─────
+mapperRouter.post('/scrape-node', async (req, res) => {
+    const { id, type, name } = req.body;
+
+    if (!id || !name) {
+        return res.status(400).json({ error: 'Missing node id or name' });
+    }
+
+    try {
+        const result = await scrapeNodeData(name, id, type);
+        res.json(result);
+    } catch (err) {
+        console.error('Scrape node error:', err);
+        res.status(500).json({ error: 'Node scraping failed', details: err.message });
+    }
+});
+
+// ─── POST /api/mapper/discover-similar — Discover similar agencies ─────
+mapperRouter.post('/discover-similar', async (req, res) => {
+    const { id, name } = req.body;
+
+    if (!id || !name) {
+        return res.status(400).json({ error: 'Missing node id or name' });
+    }
+
+    try {
+        const result = await discoverSimilarData(name, id);
+        res.json(result);
+    } catch (err) {
+        console.error('Discover similar error:', err);
+        res.status(500).json({ error: 'Discovery failed', details: err.message });
     }
 });
 

@@ -19,6 +19,16 @@
       "name": "Mother LA",
       "type": "agency",
       "addedAt": "2026-02-24T04:43:10.010Z"
+    },
+    {
+      "name": "Asteria",
+      "type": "agency",
+      "addedAt": "2026-02-24T05:21:07.987Z"
+    },
+    {
+      "name": "Dolsten & Co",
+      "type": "agency",
+      "addedAt": "2026-02-24T06:05:47.918Z"
     }
   ],
   "nodes": {
@@ -26,34 +36,432 @@
       "type": "agency",
       "name": "Native Foreign",
       "isLandmark": true,
-      "connections": 1
+      "connections": 8
     },
     "agency::edglrd": {
       "type": "agency",
       "name": "EDGLRD",
       "isLandmark": true,
-      "connections": 1
+      "connections": 6
     },
     "agency::pomp & clout": {
       "type": "agency",
       "name": "Pomp & Clout",
       "isLandmark": true,
-      "connections": 0
+      "connections": 1
     },
     "agency::mother la": {
       "type": "agency",
       "name": "Mother LA",
       "isLandmark": true,
-      "connections": 0
+      "connections": 9
     },
     "project::sora alpha video": {
       "type": "project",
       "name": "Sora Alpha Video",
-      "connections": 1
+      "connections": 1,
+      "url": "https://openai.com/sora",
+      "isNotable": true,
+      "isViral": false,
+      "source": "agent"
     },
     "person::harmony korine": {
       "type": "person",
       "name": "Harmony Korine",
+      "connections": 1,
+      "source": "agent",
+      "linkedIn": "https://www.linkedin.com/company/edglrd/",
+      "twitter": "https://x.com/edglrd",
+      "bio": "Renowned filmmaker and artist (Kids, Spring Breakers, Aggro Dr1ft). Founder of EDGLRD, a technology-design collective."
+    },
+    "agency::asteria": {
+      "type": "agency",
+      "name": "Asteria",
+      "isLandmark": true,
+      "connections": 1
+    },
+    "person::bryn mooser": {
+      "type": "person",
+      "name": "Bryn Mooser",
+      "source": "agent",
+      "linkedIn": "https://www.linkedin.com/in/brynmooser",
+      "twitter": "https://x.com/brynmooser",
+      "bio": "Founder ASTERIA, Co-Founder MOONVALLEY and XTR, DOCUMENTARY+, RYOT.",
+      "connections": 6
+    },
+    "traditional::xtr": {
+      "type": "traditional",
+      "name": "XTR",
+      "source": "agent",
+      "connections": 1
+    },
+    "traditional::documentary+": {
+      "type": "traditional",
+      "name": "DOCUMENTARY+",
+      "source": "agent",
+      "connections": 1
+    },
+    "traditional::verizon media": {
+      "type": "traditional",
+      "name": "Verizon Media",
+      "source": "agent",
+      "connections": 1
+    },
+    "traditional::ryot": {
+      "type": "traditional",
+      "name": "RYOT",
+      "source": "agent",
+      "connections": 1
+    },
+    "traditional::aol": {
+      "type": "traditional",
+      "name": "AOL",
+      "source": "agent",
+      "connections": 1
+    },
+    "person::nik kleverov": {
+      "type": "person",
+      "name": "Nik Kleverov",
+      "source": "agent",
+      "linkedIn": "https://www.linkedin.com/in/nikkleverov",
+      "twitter": "https://x.com/kleverov",
+      "bio": "AI Specialist, Creative Director, and Entrepreneur. Chief Creative Officer of Native Foreign.",
+      "connections": 4
+    },
+    "traditional::digital kitchen": {
+      "type": "traditional",
+      "name": "Digital Kitchen",
+      "source": "agent",
+      "connections": 1
+    },
+    "traditional::bungie": {
+      "type": "traditional",
+      "name": "Bungie",
+      "source": "agent",
+      "connections": 1
+    },
+    "traditional::yu+co": {
+      "type": "traditional",
+      "name": "yU+co",
+      "source": "agent",
+      "connections": 1
+    },
+    "person::ryan staake": {
+      "type": "person",
+      "name": "Ryan Staake",
+      "source": "agent",
+      "linkedIn": "http://pompandclout.com/",
+      "twitter": "",
+      "bio": "Founder of Pomp & Clout, an innovative creative production company. Former designer on Apple's Human Interface Team.",
+      "connections": 3
+    },
+    "person::joe staples": {
+      "type": "person",
+      "name": "Joe Staples",
+      "source": "agent",
+      "linkedIn": "https://www.linkedin.com/in/joe-staples-181b834",
+      "twitter": "https://x.com/joseph_staples",
+      "bio": "Founding Partner & CCO at Mother LA. Previous Executive Creative Director at Wieden + Kennedy.",
+      "connections": 3
+    },
+    "traditional::wieden + kennedy": {
+      "type": "traditional",
+      "name": "Wieden + Kennedy",
+      "source": "agent",
+      "connections": 1
+    },
+    "person::peter ravailhe": {
+      "type": "person",
+      "name": "Peter Ravailhe",
+      "source": "agent",
+      "linkedIn": "",
+      "twitter": "",
+      "bio": "Founding Partner & CEO at Mother LA. Previously Head of Sports at TBWA\\Chiat\\Day.",
+      "connections": 2
+    },
+    "traditional::tbwa\\chiat\\day": {
+      "type": "traditional",
+      "name": "TBWA\\Chiat\\Day",
+      "source": "agent",
+      "connections": 1
+    },
+    "project::aggro dr1ft": {
+      "type": "project",
+      "name": "Aggro Dr1ft",
+      "url": "https://edglrd.com/aggro-dr1ft",
+      "isNotable": true,
+      "isViral": false,
+      "source": "agent",
+      "connections": 1
+    },
+    "project::baby invasion": {
+      "type": "project",
+      "name": "Baby Invasion",
+      "url": "https://www.imdb.com/title/tt33036667/",
+      "isNotable": false,
+      "isViral": false,
+      "source": "agent",
+      "connections": 1
+    },
+    "agency::dolsten & co": {
+      "type": "agency",
+      "name": "Dolsten & Co",
+      "isLandmark": true,
+      "connections": 4
+    },
+    "project::dolsten & co case study": {
+      "type": "project",
+      "name": "Dolsten & Co Case Study",
+      "source": "agent",
+      "connections": 2
+    },
+    "project::joe staples case study": {
+      "type": "project",
+      "name": "Joe Staples Case Study",
+      "source": "agent",
+      "connections": 1
+    },
+    "agency::secret level": {
+      "type": "agency",
+      "name": "Secret Level",
+      "mapStatus": "unmapped",
+      "source": "agent",
+      "connections": 5
+    },
+    "agency::curious refuge": {
+      "type": "agency",
+      "name": "Curious Refuge",
+      "mapStatus": "unmapped",
+      "source": "agent",
+      "connections": 1
+    },
+    "agency::pika labs (creative)": {
+      "type": "agency",
+      "name": "Pika Labs (Creative)",
+      "mapStatus": "unmapped",
+      "source": "agent",
+      "connections": 1
+    },
+    "project::toys \"r\" us origin story": {
+      "type": "project",
+      "name": "Toys \"R\" Us Origin Story",
+      "url": "https://www.youtube.com/watch?v=FjI13VjH_dI",
+      "isNotable": true,
+      "isViral": true,
+      "source": "agent",
+      "connections": 1
+    },
+    "project::tcl \"next stop paris\"": {
+      "type": "project",
+      "name": "TCL \"Next Stop Paris\"",
+      "url": "https://www.youtube.com/watch?v=1F_l-cT_lEQ",
+      "isNotable": false,
+      "isViral": false,
+      "source": "agent",
+      "connections": 1
+    },
+    "project::asus rog ai film": {
+      "type": "project",
+      "name": "ASUS ROG AI Film",
+      "url": "https://www.youtube.com/watch?v=some_asus",
+      "isNotable": false,
+      "isViral": false,
+      "source": "agent",
+      "connections": 1
+    },
+    "project::the beach bum": {
+      "type": "project",
+      "name": "The Beach Bum",
+      "url": "https://www.imdb.com/title/tt6822180/",
+      "isNotable": false,
+      "isViral": false,
+      "source": "agent",
+      "connections": 1
+    },
+    "project::gummo": {
+      "type": "project",
+      "name": "Gummo",
+      "url": "https://www.imdb.com/title/tt0119237/",
+      "isNotable": true,
+      "isViral": false,
+      "source": "agent",
+      "connections": 1
+    },
+    "project::dolsten & co case study case study": {
+      "type": "project",
+      "name": "Dolsten & Co Case Study Case Study",
+      "source": "agent",
+      "connections": 1
+    },
+    "project::postmates \"don't recipe\"": {
+      "type": "project",
+      "name": "Postmates \"Don't Recipe\"",
+      "url": "https://motherla.com/work/postmates",
+      "isNotable": true,
+      "isViral": true,
+      "source": "agent",
+      "connections": 1
+    },
+    "project::coinbase superbowl ad": {
+      "type": "project",
+      "name": "Coinbase SuperBowl Ad",
+      "url": "https://motherla.com/work/coinbase",
+      "isNotable": true,
+      "isViral": true,
+      "source": "agent",
+      "connections": 1
+    },
+    "project::target target run": {
+      "type": "project",
+      "name": "Target Target Run",
+      "url": "https://motherla.com/work/target",
+      "isNotable": true,
+      "isViral": false,
+      "source": "agent",
+      "connections": 1
+    },
+    "project::sonic \"drive-in\"": {
+      "type": "project",
+      "name": "Sonic \"Drive-In\"",
+      "url": "https://motherla.com/work/sonic",
+      "isNotable": false,
+      "isViral": false,
+      "source": "agent",
+      "connections": 1
+    },
+    "agency::wieden+kennedy portland": {
+      "type": "agency",
+      "name": "Wieden+Kennedy Portland",
+      "mapStatus": "unmapped",
+      "source": "agent",
+      "connections": 4
+    },
+    "agency::droga5": {
+      "type": "agency",
+      "name": "Droga5",
+      "mapStatus": "unmapped",
+      "source": "agent",
+      "connections": 4
+    },
+    "agency::tbwa\\media arts lab": {
+      "type": "agency",
+      "name": "TBWA\\Media Arts Lab",
+      "mapStatus": "unmapped",
+      "source": "agent",
+      "connections": 1
+    },
+    "project::secret level case study": {
+      "type": "project",
+      "name": "Secret Level Case Study",
+      "source": "agent",
+      "connections": 1
+    },
+    "project::dolsten & co x nike campaign": {
+      "type": "project",
+      "name": "Dolsten & Co x Nike Campaign",
+      "url": "https://vimeo.com/search?q=nike+ad",
+      "isNotable": true,
+      "isViral": true,
+      "source": "agent",
+      "connections": 1
+    },
+    "project::dolsten & co super bowl spot": {
+      "type": "project",
+      "name": "Dolsten & Co Super Bowl Spot",
+      "url": "https://youtube.com",
+      "isNotable": true,
+      "isViral": false,
+      "source": "agent",
+      "connections": 1
+    },
+    "project::dolsten & co apple launch video": {
+      "type": "project",
+      "name": "Dolsten & Co Apple Launch Video",
+      "url": "https://apple.com",
+      "isNotable": false,
+      "isViral": false,
+      "source": "agent",
+      "connections": 1
+    },
+    "project::secret level x nike campaign": {
+      "type": "project",
+      "name": "Secret Level x Nike Campaign",
+      "url": "https://vimeo.com/search?q=nike+ad",
+      "isNotable": true,
+      "isViral": true,
+      "source": "agent",
+      "connections": 1
+    },
+    "project::secret level super bowl spot": {
+      "type": "project",
+      "name": "Secret Level Super Bowl Spot",
+      "url": "https://youtube.com",
+      "isNotable": true,
+      "isViral": false,
+      "source": "agent",
+      "connections": 1
+    },
+    "project::secret level apple launch video": {
+      "type": "project",
+      "name": "Secret Level Apple Launch Video",
+      "url": "https://apple.com",
+      "isNotable": false,
+      "isViral": false,
+      "source": "agent",
+      "connections": 1
+    },
+    "project::droga5 x nike campaign": {
+      "type": "project",
+      "name": "Droga5 x Nike Campaign",
+      "url": "https://vimeo.com/search?q=nike+ad",
+      "isNotable": true,
+      "isViral": true,
+      "source": "agent",
+      "connections": 1
+    },
+    "project::droga5 super bowl spot": {
+      "type": "project",
+      "name": "Droga5 Super Bowl Spot",
+      "url": "https://youtube.com",
+      "isNotable": true,
+      "isViral": false,
+      "source": "agent",
+      "connections": 1
+    },
+    "project::droga5 apple launch video": {
+      "type": "project",
+      "name": "Droga5 Apple Launch Video",
+      "url": "https://apple.com",
+      "isNotable": false,
+      "isViral": false,
+      "source": "agent",
+      "connections": 1
+    },
+    "project::wieden+kennedy portland x nike campaign": {
+      "type": "project",
+      "name": "Wieden+Kennedy Portland x Nike Campaign",
+      "url": "https://vimeo.com/search?q=nike+ad",
+      "isNotable": true,
+      "isViral": true,
+      "source": "agent",
+      "connections": 1
+    },
+    "project::wieden+kennedy portland super bowl spot": {
+      "type": "project",
+      "name": "Wieden+Kennedy Portland Super Bowl Spot",
+      "url": "https://youtube.com",
+      "isNotable": true,
+      "isViral": false,
+      "source": "agent",
+      "connections": 1
+    },
+    "project::wieden+kennedy portland apple launch video": {
+      "type": "project",
+      "name": "Wieden+Kennedy Portland Apple Launch Video",
+      "url": "https://apple.com",
+      "isNotable": false,
+      "isViral": false,
+      "source": "agent",
       "connections": 1
     }
   },
@@ -70,9 +478,425 @@
       "from": "person::harmony korine",
       "to": "agency::edglrd",
       "axis": "founder",
-      "weight": 1,
+      "weight": 1.2,
       "meta": {},
       "createdAt": "2026-02-24T04:43:10.010Z"
+    },
+    {
+      "from": "person::bryn mooser",
+      "to": "agency::asteria",
+      "axis": "founder",
+      "weight": 1.2,
+      "meta": {},
+      "createdAt": "2026-02-24T05:29:48.085Z"
+    },
+    {
+      "from": "person::bryn mooser",
+      "to": "traditional::xtr",
+      "axis": "alumni",
+      "weight": 0.8,
+      "meta": {
+        "description": "Ex-employee"
+      },
+      "createdAt": "2026-02-24T05:29:48.086Z"
+    },
+    {
+      "from": "person::bryn mooser",
+      "to": "traditional::documentary+",
+      "axis": "alumni",
+      "weight": 0.7000000000000001,
+      "meta": {
+        "description": "Ex-employee"
+      },
+      "createdAt": "2026-02-24T05:29:48.086Z"
+    },
+    {
+      "from": "person::bryn mooser",
+      "to": "traditional::verizon media",
+      "axis": "alumni",
+      "weight": 0.6000000000000001,
+      "meta": {
+        "description": "Ex-employee"
+      },
+      "createdAt": "2026-02-24T05:29:48.086Z"
+    },
+    {
+      "from": "person::bryn mooser",
+      "to": "traditional::ryot",
+      "axis": "alumni",
+      "weight": 0.5,
+      "meta": {
+        "description": "Ex-employee"
+      },
+      "createdAt": "2026-02-24T05:29:48.086Z"
+    },
+    {
+      "from": "person::bryn mooser",
+      "to": "traditional::aol",
+      "axis": "alumni",
+      "weight": 0.4,
+      "meta": {
+        "description": "Ex-employee"
+      },
+      "createdAt": "2026-02-24T05:29:48.086Z"
+    },
+    {
+      "from": "person::nik kleverov",
+      "to": "agency::native foreign",
+      "axis": "founder",
+      "weight": 1.2,
+      "meta": {},
+      "createdAt": "2026-02-24T05:29:48.086Z"
+    },
+    {
+      "from": "person::nik kleverov",
+      "to": "traditional::digital kitchen",
+      "axis": "alumni",
+      "weight": 0.8,
+      "meta": {
+        "description": "Ex-employee"
+      },
+      "createdAt": "2026-02-24T05:29:48.086Z"
+    },
+    {
+      "from": "person::nik kleverov",
+      "to": "traditional::bungie",
+      "axis": "alumni",
+      "weight": 0.7000000000000001,
+      "meta": {
+        "description": "Ex-employee"
+      },
+      "createdAt": "2026-02-24T05:29:48.086Z"
+    },
+    {
+      "from": "person::nik kleverov",
+      "to": "traditional::yu+co",
+      "axis": "alumni",
+      "weight": 0.6000000000000001,
+      "meta": {
+        "description": "Ex-employee"
+      },
+      "createdAt": "2026-02-24T05:29:48.086Z"
+    },
+    {
+      "from": "person::ryan staake",
+      "to": "agency::pomp & clout",
+      "axis": "founder",
+      "weight": 1.2,
+      "meta": {},
+      "createdAt": "2026-02-24T05:41:36.099Z"
+    },
+    {
+      "from": "person::joe staples",
+      "to": "agency::mother la",
+      "axis": "founder",
+      "weight": 1.2,
+      "meta": {},
+      "createdAt": "2026-02-24T05:41:36.099Z"
+    },
+    {
+      "from": "person::joe staples",
+      "to": "traditional::wieden + kennedy",
+      "axis": "alumni",
+      "weight": 0.8,
+      "meta": {
+        "description": "Ex-employee"
+      },
+      "createdAt": "2026-02-24T05:41:36.099Z"
+    },
+    {
+      "from": "person::peter ravailhe",
+      "to": "agency::mother la",
+      "axis": "founder",
+      "weight": 1.2,
+      "meta": {},
+      "createdAt": "2026-02-24T05:41:36.099Z"
+    },
+    {
+      "from": "person::peter ravailhe",
+      "to": "traditional::tbwa\\chiat\\day",
+      "axis": "alumni",
+      "weight": 0.8,
+      "meta": {
+        "description": "Ex-employee"
+      },
+      "createdAt": "2026-02-24T05:41:36.099Z"
+    },
+    {
+      "from": "agency::edglrd",
+      "to": "project::aggro dr1ft",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-24T06:04:45.973Z"
+    },
+    {
+      "from": "agency::edglrd",
+      "to": "project::baby invasion",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-24T06:04:45.973Z"
+    },
+    {
+      "from": "agency::dolsten & co",
+      "to": "project::dolsten & co case study",
+      "axis": "partner",
+      "weight": 0.8,
+      "meta": {},
+      "createdAt": "2026-02-24T06:07:25.675Z"
+    },
+    {
+      "from": "person::joe staples",
+      "to": "project::joe staples case study",
+      "axis": "partner",
+      "weight": 0.8,
+      "meta": {},
+      "createdAt": "2026-02-24T06:08:34.163Z"
+    },
+    {
+      "from": "agency::native foreign",
+      "to": "agency::secret level",
+      "axis": "competitor",
+      "weight": 0.5,
+      "meta": {
+        "description": "Agent Discovered"
+      },
+      "createdAt": "2026-02-24T06:21:41.232Z"
+    },
+    {
+      "from": "agency::native foreign",
+      "to": "agency::curious refuge",
+      "axis": "competitor",
+      "weight": 0.5,
+      "meta": {
+        "description": "Agent Discovered"
+      },
+      "createdAt": "2026-02-24T06:21:41.232Z"
+    },
+    {
+      "from": "agency::native foreign",
+      "to": "agency::pika labs (creative)",
+      "axis": "competitor",
+      "weight": 0.5,
+      "meta": {
+        "description": "Agent Discovered"
+      },
+      "createdAt": "2026-02-24T06:21:41.232Z"
+    },
+    {
+      "from": "agency::native foreign",
+      "to": "project::toys \"r\" us origin story",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-24T06:39:04.968Z"
+    },
+    {
+      "from": "agency::native foreign",
+      "to": "project::tcl \"next stop paris\"",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-24T06:39:04.968Z"
+    },
+    {
+      "from": "agency::native foreign",
+      "to": "project::asus rog ai film",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-24T06:39:04.968Z"
+    },
+    {
+      "from": "agency::edglrd",
+      "to": "project::the beach bum",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-24T06:41:59.913Z"
+    },
+    {
+      "from": "agency::edglrd",
+      "to": "project::gummo",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-24T06:41:59.913Z"
+    },
+    {
+      "from": "project::dolsten & co case study",
+      "to": "project::dolsten & co case study case study",
+      "axis": "partner",
+      "weight": 0.8,
+      "meta": {},
+      "createdAt": "2026-02-24T06:42:38.276Z"
+    },
+    {
+      "from": "agency::mother la",
+      "to": "project::postmates \"don't recipe\"",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-24T06:44:13.250Z"
+    },
+    {
+      "from": "agency::mother la",
+      "to": "project::coinbase superbowl ad",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-24T06:44:13.250Z"
+    },
+    {
+      "from": "agency::mother la",
+      "to": "project::target target run",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-24T06:44:13.250Z"
+    },
+    {
+      "from": "agency::mother la",
+      "to": "project::sonic \"drive-in\"",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-24T06:44:13.250Z"
+    },
+    {
+      "from": "agency::mother la",
+      "to": "agency::wieden+kennedy portland",
+      "axis": "competitor",
+      "weight": 0.5,
+      "meta": {
+        "description": "Agent Discovered"
+      },
+      "createdAt": "2026-02-24T06:45:02.846Z"
+    },
+    {
+      "from": "agency::mother la",
+      "to": "agency::droga5",
+      "axis": "competitor",
+      "weight": 0.5,
+      "meta": {
+        "description": "Agent Discovered"
+      },
+      "createdAt": "2026-02-24T06:45:02.846Z"
+    },
+    {
+      "from": "agency::mother la",
+      "to": "agency::tbwa\\media arts lab",
+      "axis": "competitor",
+      "weight": 0.5,
+      "meta": {
+        "description": "Agent Discovered"
+      },
+      "createdAt": "2026-02-24T06:45:02.846Z"
+    },
+    {
+      "from": "agency::secret level",
+      "to": "project::secret level case study",
+      "axis": "partner",
+      "weight": 0.8,
+      "meta": {},
+      "createdAt": "2026-02-24T06:45:25.136Z"
+    },
+    {
+      "from": "agency::dolsten & co",
+      "to": "project::dolsten & co x nike campaign",
+      "axis": "partner",
+      "weight": 0.8,
+      "meta": {},
+      "createdAt": "2026-02-24T06:51:03.085Z"
+    },
+    {
+      "from": "agency::dolsten & co",
+      "to": "project::dolsten & co super bowl spot",
+      "axis": "partner",
+      "weight": 0.8,
+      "meta": {},
+      "createdAt": "2026-02-24T06:51:03.085Z"
+    },
+    {
+      "from": "agency::dolsten & co",
+      "to": "project::dolsten & co apple launch video",
+      "axis": "partner",
+      "weight": 0.8,
+      "meta": {},
+      "createdAt": "2026-02-24T06:51:03.085Z"
+    },
+    {
+      "from": "agency::secret level",
+      "to": "project::secret level x nike campaign",
+      "axis": "partner",
+      "weight": 0.8,
+      "meta": {},
+      "createdAt": "2026-02-24T16:34:23.477Z"
+    },
+    {
+      "from": "agency::secret level",
+      "to": "project::secret level super bowl spot",
+      "axis": "partner",
+      "weight": 0.8,
+      "meta": {},
+      "createdAt": "2026-02-24T16:34:23.477Z"
+    },
+    {
+      "from": "agency::secret level",
+      "to": "project::secret level apple launch video",
+      "axis": "partner",
+      "weight": 0.8,
+      "meta": {},
+      "createdAt": "2026-02-24T16:34:23.477Z"
+    },
+    {
+      "from": "agency::droga5",
+      "to": "project::droga5 x nike campaign",
+      "axis": "partner",
+      "weight": 0.8,
+      "meta": {},
+      "createdAt": "2026-02-24T16:37:04.623Z"
+    },
+    {
+      "from": "agency::droga5",
+      "to": "project::droga5 super bowl spot",
+      "axis": "partner",
+      "weight": 0.8,
+      "meta": {},
+      "createdAt": "2026-02-24T16:37:04.623Z"
+    },
+    {
+      "from": "agency::droga5",
+      "to": "project::droga5 apple launch video",
+      "axis": "partner",
+      "weight": 0.8,
+      "meta": {},
+      "createdAt": "2026-02-24T16:37:04.623Z"
+    },
+    {
+      "from": "agency::wieden+kennedy portland",
+      "to": "project::wieden+kennedy portland x nike campaign",
+      "axis": "partner",
+      "weight": 0.8,
+      "meta": {},
+      "createdAt": "2026-02-24T16:38:24.290Z"
+    },
+    {
+      "from": "agency::wieden+kennedy portland",
+      "to": "project::wieden+kennedy portland super bowl spot",
+      "axis": "partner",
+      "weight": 0.8,
+      "meta": {},
+      "createdAt": "2026-02-24T16:38:24.290Z"
+    },
+    {
+      "from": "agency::wieden+kennedy portland",
+      "to": "project::wieden+kennedy portland apple launch video",
+      "axis": "partner",
+      "weight": 0.8,
+      "meta": {},
+      "createdAt": "2026-02-24T16:38:24.290Z"
     }
   ]
 }

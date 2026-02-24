@@ -13,7 +13,7 @@ app.use(express.static(path.join(process.cwd(), 'public')));
 
 // ─── Health ──────────────────────────────────────────
 app.get('/api/health', (_req, res) => {
-    res.json({ status: 'ok' });
+    res.json({ status: 'ok', environment: process.env.VERCEL ? 'vercel' : 'local' });
 });
 
 // ─── Routes ──────────────────────────────────────────
@@ -25,6 +25,11 @@ app.get('*', (req, res) => {
 });
 
 // ─── Start ───────────────────────────────────────────
-app.listen(PORT, () => {
-    console.log(`\n  🗺️ Music Mapper running → http://127.0.0.1:${PORT}`);
-});
+// On Vercel, we export the app and let Vercel handle the listening.
+if (!process.env.VERCEL) {
+    app.listen(PORT, () => {
+        console.log(`\n  🗺️ Prodco-Verse running → http://127.0.0.1:${PORT}`);
+    });
+}
+
+export default app;

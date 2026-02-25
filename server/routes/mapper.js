@@ -1,9 +1,10 @@
 import { Router } from 'express';
 import {
-    addAgency,
-    scrapeAgencyData,
-    scrapeNodeData,
-    discoverSimilarData,
+    injectData,
+    pinForResearch,
+    getQueue,
+    completeQueueItem,
+    clearCompletedQueue,
     getGraph,
     getLandmarks,
     getGraphStats,
@@ -12,71 +13,12 @@ import {
 
 export const mapperRouter = Router();
 
-// ─── POST /api/mapper/agency — Add a new agency landmark ──
-mapperRouter.post('/agency', async (req, res) => {
-    const { agency } = req.body;
-
-    if (!agency) {
-        return res.status(400).json({ error: 'Missing agency name' });
-    }
-
+// ─── GET /api/mapper/graph — Full graph data ────────────────
+mapperRouter.get('/graph', (_req, res) => {
     try {
-        const result = await addAgency(agency);
-        res.json(result);
+        res.json(getGraph());
     } catch (err) {
-        console.error('Add agency error:', err);
-        res.status(500).json({ error: 'Failed to add agency', details: err.message });
-    }
-});
-
-// ─── POST /api/mapper/scrape — Scrape Agency Data ─────
-mapperRouter.post('/scrape', async (req, res) => {
-    const { agency } = req.body;
-
-    if (!agency) {
-        return res.status(400).json({ error: 'Missing agency name' });
-    }
-
-    try {
-        const result = await scrapeAgencyData(agency);
-        res.json(result);
-    } catch (err) {
-        console.error('Scrape error:', err);
-        res.status(500).json({ error: 'Scraping failed', details: err.message });
-    }
-});
-
-// ─── POST /api/mapper/scrape-node — Scrape specific Node ─────
-mapperRouter.post('/scrape-node', async (req, res) => {
-    const { id, type, name } = req.body;
-
-    if (!id || !name) {
-        return res.status(400).json({ error: 'Missing node id or name' });
-    }
-
-    try {
-        const result = await scrapeNodeData(name, id, type);
-        res.json(result);
-    } catch (err) {
-        console.error('Scrape node error:', err);
-        res.status(500).json({ error: 'Node scraping failed', details: err.message });
-    }
-});
-
-// ─── POST /api/mapper/discover-similar — Discover similar agencies ─────
-mapperRouter.post('/discover-similar', async (req, res) => {
-    const { id, name } = req.body;
-
-    if (!id || !name) {
-        return res.status(400).json({ error: 'Missing node id or name' });
-    }
-
-    try {
-        const result = await discoverSimilarData(name, id);
-        res.json(result);
-    } catch (err) {
-        console.error('Discover similar error:', err);
-        res.status(500).json({ error: 'Discovery failed', details: err.message });
+        res.status(500).json({ error: err.message });
     }
 });
 
@@ -98,15 +40,71 @@ mapperRouter.get('/landmarks', (_req, res) => {
     }
 });
 
-// ─── GET /api/mapper/graph — Full raw graph (dev/debug) ─────
-mapperRouter.get('/graph', (_req, res) => {
+// ═══════════════════════════════════════════════════════════════
+// AGENT ENDPOINTS — Used during agentic research sessions
+// ═══════════════════════════════════════════════════════════════
+
+// ─── POST /api/mapper/inject — Batch inject nodes + edges ───
+mapperRouter.post('/inject', (req, res) => {
+    if (process.env.VERCEL) {
+        return res.status(403).json({ error: 'Write operations disabled on Vercel' });
+    }
+
+    const { nodes, edges } = req.body;
     try {
-        res.json(getGraph());
+        const result = injectData({ nodes, edges });
+        res.json(result);
+    } catch (err) {
+        console.error('Inject error:', err);
+        res.status(500).json({ error: 'Injection failed', details: err.message });
+    }
+});
+
+// ═══════════════════════════════════════════════════════════════
+// RESEARCH QUEUE — Pin targets from the local UI
+// ═══════════════════════════════════════════════════════════════
+
+// ─── POST /api/mapper/pin — Pin a node for research ─────────
+mapperRouter.post('/pin', (req, res) => {
+    if (process.env.VERCEL) {
+        return res.status(403).json({ error: 'Pinning disabled on Vercel' });
+    }
+
+    const { targetNode, targetName, action, notes } = req.body;
+    if (!targetNode || !targetName) {
+        return res.status(400).json({ error: 'Missing targetNode or targetName' });
+    }
+
+    try {
+        const result = pinForResearch({ targetNode, targetName, action, notes });
+        res.json(result);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// ─── GET /api/mapper/queue — Get pending research requests ──
+mapperRouter.get('/queue', (_req, res) => {
+    try {
+        res.json(getQueue());
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// ─── DELETE /api/mapper/queue/:id — Complete a queue item ────
+mapperRouter.delete('/queue/:id', (req, res) => {
+    if (process.env.VERCEL) {
+        return res.status(403).json({ error: 'Write operations disabled on Vercel' });
+    }
+
+    try {
+        const result = completeQueueItem(req.params.id);
+        res.json(result);
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
 });
 
 // ─── INIT ───────────────────────────────────────────────────
-// Initialize graph with seed data if it doesn't exist
 initializeGraph();

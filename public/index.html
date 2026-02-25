@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prodco-Verse — Boutique AI Mapper</title>
+    <title>Prodco-Verse — Boutique AI Production Map</title>
+    <meta name="description"
+        content="An interactive constellation map of boutique AI production agencies, their founders, alumni pedigree, and notable projects.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
         * {
@@ -20,6 +24,148 @@
             overflow: hidden;
         }
 
+        /* ─── View Tabs ─── */
+        .view-tabs {
+            display: flex;
+            gap: 4px;
+            margin-left: auto;
+        }
+
+        .view-tab {
+            padding: 4px 14px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: transparent;
+            color: #888;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .view-tab.active {
+            background: rgba(110, 231, 183, 0.15);
+            color: #6ee7b7;
+            border-color: rgba(110, 231, 183, 0.4);
+        }
+
+        .view-tab:hover:not(.active) {
+            color: #ccc;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ─── List View ─── */
+        #list-view {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow-y: auto;
+            padding: 20px 30px;
+            background: #0a0a0f;
+            z-index: 50;
+        }
+
+        .list-section {
+            margin-bottom: 32px;
+        }
+
+        .list-section h2 {
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .list-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .list-table th {
+            text-align: left;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            padding: 6px 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .list-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            vertical-align: top;
+        }
+
+        .list-table tr:hover td {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .list-table .name-cell {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .list-table .bio-cell {
+            color: #888;
+            max-width: 500px;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .list-table .link-cell a {
+            color: #6ee7b7;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .list-table .link-cell a:hover {
+            text-decoration: underline;
+        }
+
+        .type-pill {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .type-pill.agency {
+            background: rgba(110, 231, 183, 0.15);
+            color: #6ee7b7;
+        }
+
+        .type-pill.project {
+            background: rgba(59, 130, 246, 0.15);
+            color: #3b82f6;
+        }
+
+        .type-pill.traditional {
+            background: rgba(167, 139, 250, 0.15);
+            color: #a78bfa;
+        }
+
+        .type-pill.person {
+            background: rgba(251, 113, 133, 0.15);
+            color: #fb7185;
+        }
+
+        .type-pill.landmark {
+            background: rgba(245, 158, 11, 0.2);
+            color: #f59e0b;
+        }
+
         /* ─── Header ─── */
         #header {
             position: fixed;
@@ -31,32 +177,52 @@
             padding: 20px 30px;
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 16px;
         }
 
         #header h1 {
             font-size: 22px;
             font-weight: 800;
             background: linear-gradient(135deg, #6ee7b7, #3b82f6);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        #header .stats {
+        .mode-badge {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            vertical-align: middle;
+        }
+
+        .mode-badge.agent {
+            border: 1px solid #6ee7b7;
+            color: #6ee7b7;
+        }
+
+        .mode-badge.readonly {
+            border: 1px solid #fb7185;
+            color: #fb7185;
+        }
+
+        .stats-row {
             display: flex;
-            gap: 16px;
-            font-size: 12px;
+            gap: 10px;
+            font-size: 11px;
             color: #888;
         }
 
-        #header .stats span {
+        .stats-row span {
             background: rgba(255, 255, 255, 0.06);
-            padding: 4px 10px;
-            border-radius: 6px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 3px 8px;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        #header .stats .num {
+        .stats-row .num {
             color: #6ee7b7;
             font-weight: 700;
         }
@@ -115,7 +281,7 @@
             padding: 12px 16px;
             backdrop-filter: blur(16px);
             display: none;
-            max-width: 280px;
+            max-width: 300px;
         }
 
         #tooltip .tt-name {
@@ -187,8 +353,8 @@
             height: 100vh;
         }
 
-        /* ─── Track Agency Panel ─── */
-        #plant-panel {
+        /* ─── Research Panel (local only) ─── */
+        #research-panel {
             position: fixed;
             top: 70px;
             left: 20px;
@@ -198,10 +364,11 @@
             border-radius: 12px;
             padding: 16px 20px;
             backdrop-filter: blur(12px);
-            width: 240px;
+            width: 260px;
+            display: none;
         }
 
-        #plant-panel h3 {
+        #research-panel h3 {
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -209,28 +376,47 @@
             margin-bottom: 10px;
         }
 
-        #plant-panel input {
+        #research-panel .selected-target {
+            font-size: 13px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+            min-height: 20px;
+        }
+
+        #research-panel .selected-type {
+            font-size: 10px;
+            color: #6ee7b7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        #research-panel textarea {
             width: 100%;
             padding: 8px 10px;
             background: rgba(255, 255, 255, 0.06);
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 6px;
             color: #e0e0e0;
-            font-size: 13px;
-            margin-bottom: 8px;
+            font-size: 12px;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 48px;
             outline: none;
+            margin-bottom: 8px;
             transition: border-color 0.2s;
         }
 
-        #plant-panel input:focus {
+        #research-panel textarea:focus {
             border-color: rgba(110, 231, 183, 0.5);
         }
 
-        #plant-panel input::placeholder {
+        #research-panel textarea::placeholder {
             color: #555;
         }
 
-        .btn-plant {
+        .btn-pin {
             width: 100%;
             padding: 8px;
             background: linear-gradient(135deg, #6ee7b7, #3b82f6);
@@ -243,86 +429,31 @@
             transition: opacity 0.2s;
         }
 
-        .btn-plant:hover {
+        .btn-pin:hover {
             opacity: 0.9;
         }
 
-        .btn-plant:disabled {
+        .btn-pin:disabled {
             opacity: 0.4;
-            cursor: wait;
+            cursor: default;
         }
 
-        .btn-scrape {
-            width: 100%;
-            padding: 8px;
-            background: linear-gradient(135deg, #fb7185, #f59e0b);
-            border: none;
-            border-radius: 6px;
-            color: #000;
-            font-weight: 700;
-            font-size: 13px;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: opacity 0.2s;
-        }
-
-        .btn-scrape:hover {
-            opacity: 0.9;
-        }
-
-        .btn-scrape:disabled {
-            opacity: 0.4;
-            cursor: wait;
-        }
-
-        #plant-status {
+        #pin-status {
             font-size: 11px;
             color: #6ee7b7;
             margin-top: 8px;
             min-height: 16px;
         }
 
-        .gap-badge {
+        .queue-badge {
             display: inline-block;
             background: rgba(251, 113, 133, 0.2);
             color: #fb7185;
             padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 11px;
-            font-weight: 600;
-            margin-left: 8px;
-        }
-
-        /* ─── Back link ─── */
-        .back-link {
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 600;
-            color: #6ee7b7;
-            opacity: 0.7;
-            transition: opacity 0.2s;
-        }
-
-        .back-link:hover {
-            opacity: 1;
-        }
-
-        /* ─── Progress Bar ─── */
-        .progress-container {
-            width: 100%;
-            height: 6px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 3px;
-            margin-top: 10px;
-            overflow: hidden;
-            display: none;
-        }
-
-        .progress-bar {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, #f59e0b, #fb7185);
-            transition: width 0.3s ease;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 700;
+            margin-left: 6px;
         }
     </style>
 </head>
@@ -330,23 +461,23 @@
 <body>
     <div id="header">
         <h1>🗺️ Prodco-Verse</h1>
+        <span id="mode-badge" class="mode-badge"></span>
+        <div class="stats-row" id="stats-bar"></div>
+        <div class="view-tabs">
+            <button class="view-tab active" data-view="graph" onclick="switchView('graph')">🗺️ Graph</button>
+            <button class="view-tab" data-view="list" onclick="switchView('list')">📋 List</button>
+        </div>
     </div>
 
-    <div id="plant-panel">
-        <h3>🚩 Track Agency</h3>
-        <input type="text" id="plant-agency" placeholder="Agency Name...">
-        <input type="text" id="plant-project" placeholder="Founder / Note (optional)">
-        <button class="btn-plant" id="btn-plant" onclick="plantFlag()">🚩 Track Agency</button>
-        <div id="plant-status"></div>
-        <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 12px 0;">
-        <h3>🎯 Select Target</h3>
-        <div id="gap-info" style="font-size: 11px; color: #888; margin-bottom: 8px;">Click a node to target...</div>
-        <button class="btn-scrape" id="btn-scrape" onclick="scrapeTarget()" disabled>🚀 Scrape Target</button>
-        <button class="btn-scrape" id="btn-discover" onclick="discoverSimilar()" disabled
-            style="margin-top: 8px; background: #6366f1;">🌐 Discover Similar</button>
-        <div id="scrape-progress-container" class="progress-container">
-            <div id="scrape-progress-bar" class="progress-bar"></div>
-        </div>
+    <!-- Research Panel (local agent mode only) -->
+    <div id="research-panel">
+        <h3>📌 Research Queue <span id="queue-badge" class="queue-badge" style="display:none"></span></h3>
+        <div class="selected-target" id="selected-name">Click a node to select...</div>
+        <div class="selected-type" id="selected-type"></div>
+        <textarea id="pin-notes"
+            placeholder="Notes for the agent (e.g. &quot;find their Vimeo&quot;, &quot;who founded this?&quot;)"></textarea>
+        <button class="btn-pin" id="btn-pin" disabled onclick="pinTarget()">📌 Pin for Research</button>
+        <div id="pin-status"></div>
     </div>
 
     <div id="legend">
@@ -355,42 +486,40 @@
             <div class="legend-dot" style="background: #f59e0b; box-shadow: 0 0 8px #f59e0b;"></div> Landmark
         </div>
         <div class="legend-row">
-            <div class="legend-dot" style="background: #6ee7b7;"></div> agency
+            <div class="legend-dot" style="background: #6ee7b7;"></div> Agency
         </div>
         <div class="legend-row">
-            <div class="legend-dot" style="background: #3b82f6;"></div> project
+            <div class="legend-dot" style="background: #3b82f6;"></div> Project
         </div>
         <div class="legend-row">
-            <div class="legend-dot" style="background: #a78bfa;"></div> traditional
+            <div class="legend-dot" style="background: #a78bfa;"></div> Traditional
         </div>
         <div class="legend-row">
-            <div class="legend-dot" style="background: #fb7185;"></div> person
+            <div class="legend-dot" style="background: #fb7185;"></div> Person
         </div>
         <h3 style="margin-top: 12px;">Edges</h3>
         <div class="legend-row">
-            <div class="legend-line" style="background: #6ee7b7;"></div> founder
+            <div class="legend-line" style="background: #6ee7b7;"></div> Founder
         </div>
         <div class="legend-row">
-            <div class="legend-line" style="background: #3b82f6;"></div> alumni
+            <div class="legend-line" style="background: #3b82f6;"></div> Alumni
         </div>
         <div class="legend-row">
-            <div class="legend-line" style="background: #a78bfa;"></div> partner
+            <div class="legend-line" style="background: #a78bfa;"></div> Partner
         </div>
         <div class="legend-row">
-            <div class="legend-line" style="background: #f59e0b;"></div> collaborator
+            <div class="legend-line" style="background: #f59e0b;"></div> Collaborator
         </div>
         <div class="legend-row">
-            <div class="legend-line" style="background: #fb7185;"></div> notable
+            <div class="legend-line" style="background: #fb7185;"></div> Notable
         </div>
     </div>
 
     <div id="filters">
-        <div class="stats" id="stats-bar"
-            style="margin-bottom: 12px; font-size: 11px; display: flex; flex-direction: column; gap: 4px;"></div>
         <h3>Show Nodes</h3>
         <label><input type="checkbox" checked data-type="agency"> Agencies <span id="count-agency"
                 style="color:#888; font-size:10px;">(0)</span></label>
-        <label><input type="checkbox" data-type="project"> Projects <span id="count-project"
+        <label><input type="checkbox" checked data-type="project"> Projects <span id="count-project"
                 style="color:#888; font-size:10px;">(0)</span></label>
         <label><input type="checkbox" checked data-type="traditional"> Traditionals <span id="count-traditional"
                 style="color:#888; font-size:10px;">(0)</span></label>
@@ -408,11 +537,16 @@
         <div class="tt-meta"></div>
     </div>
 
-    <svg></svg>
+    <div id="graph-view">
+        <svg></svg>
+    </div>
+
+    <div id="list-view"></div>
 
     <script>
         let currentTargetNode = null;
-        let isViewOnly = false;
+        let graphData = null;
+        const isViewOnly = window.location.hostname.includes('vercel.app');
 
         const NODE_COLORS = {
             agency: '#6ee7b7',
@@ -426,7 +560,8 @@
             alumni: '#3b82f6',
             partner: '#a78bfa',
             collaborator: '#f59e0b',
-            notable: '#fb7185'
+            notable: '#fb7185',
+            competitor: '#f97316'
         };
 
         const NODE_RADIUS = {
@@ -436,31 +571,93 @@
             person: 7
         };
 
-        async function init() {
-            // View Only Mode Check
-            if (window.location.hostname.includes('vercel.app')) {
-                isViewOnly = true;
-                const header = document.querySelector('#header h1');
-                header.innerHTML += ' <span style="font-size: 12px; color: #fb7185; vertical-align: middle; margin-left:8px; border:1px solid #fb7185; padding:2px 6px; border-radius:4px; letter-spacing:1px;">VIEW ONLY</span>';
+        // ─── View Switching ───
+        function switchView(view) {
+            document.querySelectorAll('.view-tab').forEach(t => t.classList.toggle('active', t.dataset.view === view));
+            document.getElementById('graph-view').style.display = view === 'graph' ? 'block' : 'none';
+            document.getElementById('list-view').style.display = view === 'list' ? 'block' : 'none';
+            document.getElementById('legend').style.display = view === 'graph' ? 'block' : 'none';
+            document.getElementById('filters').style.display = view === 'graph' ? 'block' : 'none';
+            document.getElementById('research-panel').style.display = (view === 'graph' && !isViewOnly) ? 'block' : 'none';
+            if (view === 'list') buildListView();
+        }
 
-                document.getElementById('plant-panel').style.opacity = '0.6';
-                document.getElementById('btn-plant').disabled = true;
-                document.getElementById('btn-plant').textContent = 'DISABLED (Vercel)';
-                document.querySelectorAll('#plant-panel input').forEach(i => i.disabled = true);
+        function buildListView() {
+            if (!graphData) return;
+            const container = document.getElementById('list-view');
+            const nodeEntries = Object.entries(graphData.nodes);
+
+            const sections = [
+                { title: '🏢 Agencies', type: 'agency', color: '#6ee7b7' },
+                { title: '🎬 Projects', type: 'project', color: '#3b82f6' },
+                { title: '👤 People', type: 'person', color: '#fb7185' },
+                { title: '🏛️ Traditional Companies', type: 'traditional', color: '#a78bfa' },
+            ];
+
+            let html = '';
+            for (const sec of sections) {
+                const items = nodeEntries
+                    .filter(([k, n]) => n.type === sec.type)
+                    .sort((a, b) => (b[1].connections || 0) - (a[1].connections || 0));
+
+                html += `<div class="list-section">`;
+                html += `<h2 style="color:${sec.color}">${sec.title} (${items.length})</h2>`;
+                html += `<table class="list-table"><thead><tr>`;
+                html += `<th>Name</th><th>Links</th><th>Details</th><th>URL</th>`;
+                html += `</tr></thead><tbody>`;
+
+                for (const [key, node] of items) {
+                    const pills = [];
+                    if (node.isLandmark) pills.push('<span class="type-pill landmark">★ Landmark</span>');
+                    if (node.isNotable) pills.push('<span class="type-pill project">Notable</span>');
+                    if (node.isViral) pills.push('<span class="type-pill agency">Viral</span>');
+
+                    const bio = node.bio || '';
+                    const url = node.url ? `<a href="${node.url}" target="_blank">View ↗</a>` : '';
+                    const social = [];
+                    if (node.linkedIn) social.push(`<a href="${node.linkedIn}" target="_blank">LinkedIn</a>`);
+                    if (node.twitter) social.push(`<a href="${node.twitter}" target="_blank">𝕏</a>`);
+
+                    html += `<tr>`;
+                    html += `<td class="name-cell">${node.name || key} ${pills.join(' ')}</td>`;
+                    html += `<td style="color:#6ee7b7;text-align:center;">${node.connections || 0}</td>`;
+                    html += `<td class="bio-cell">${bio}</td>`;
+                    html += `<td class="link-cell">${url} ${social.join(' ')}</td>`;
+                    html += `</tr>`;
+                }
+
+                html += `</tbody></table></div>`;
+            }
+
+            container.innerHTML = html;
+        }
+
+        async function init() {
+            // ─── Mode Badge ───
+            const badge = document.getElementById('mode-badge');
+            if (isViewOnly) {
+                badge.textContent = 'VIEW ONLY';
+                badge.className = 'mode-badge readonly';
+            } else {
+                badge.textContent = 'AGENT MODE';
+                badge.className = 'mode-badge agent';
+                document.getElementById('research-panel').style.display = 'block';
+                loadQueueCount();
             }
 
             const res = await fetch('/api/mapper/graph');
             const graph = await res.json();
+            graphData = graph;
 
-            // Stats bar
+            // ─── Stats ───
             const statsBar = document.getElementById('stats-bar');
             statsBar.innerHTML = `
-            <span><span class="num">${graph.landmarks.length}</span> landmarks</span>
-            <span><span class="num">${Object.keys(graph.nodes).length}</span> nodes</span>
-            <span><span class="num">${graph.edges.length}</span> edges</span>
-        `;
+                <span><span class="num">${graph.landmarks.length}</span> landmarks</span>
+                <span><span class="num">${Object.keys(graph.nodes).length}</span> nodes</span>
+                <span><span class="num">${graph.edges.length}</span> edges</span>
+            `;
 
-            // Populate landmark dropdown
+            // ─── Landmark Dropdown ───
             const landmarkSelect = document.getElementById('landmark-select');
             graph.landmarks.forEach(l => {
                 const opt = document.createElement('option');
@@ -470,28 +667,24 @@
             });
 
             // ─── Dynamic Counts ───
-            function updateFilterCounts() {
-                const counts = { agency: 0, project: 0, traditional: 0, person: 0 };
-                Object.values(graph.nodes).forEach(n => {
-                    if (counts[n.type] !== undefined) counts[n.type]++;
-                });
-                for (const [type, count] of Object.entries(counts)) {
-                    const el = document.getElementById(`count-${type}`);
-                    if (el) el.textContent = `(${count})`;
-                }
+            const counts = { agency: 0, project: 0, traditional: 0, person: 0 };
+            Object.values(graph.nodes).forEach(n => {
+                if (counts[n.type] !== undefined) counts[n.type]++;
+            });
+            for (const [type, count] of Object.entries(counts)) {
+                const el = document.getElementById(`count-${type}`);
+                if (el) el.textContent = `(${count})`;
             }
-            updateFilterCounts();
 
-            // Convert graph to D3 format
+            // ─── Convert to D3 Format ───
             const nodeMap = {};
             const nodes = [];
-            const visibleTypes = new Set(['agency', 'traditional', 'person']); // projects hidden by default (820 is heavy)
+            const visibleTypes = new Set(['agency', 'traditional', 'person']);
 
             for (const [key, data] of Object.entries(graph.nodes)) {
                 const node = { id: key, ...data };
                 node.radius = data.isLandmark ? 16 : (NODE_RADIUS[data.type] || 4);
 
-                // Highlight viral/notable project nodes
                 if (data.type === 'project' && (data.isViral || data.isNotable)) {
                     node.radius += 3;
                     node.color = '#f59e0b';
@@ -499,7 +692,6 @@
                     node.color = data.isLandmark ? '#f59e0b' : (NODE_COLORS[data.type] || '#555');
                 }
 
-                // Gap detection: unmapped agencys render as hollow
                 node.isUnmapped = (data.type === 'agency' && data.mapStatus === 'unmapped');
                 nodeMap[key] = node;
                 nodes.push(node);
@@ -515,25 +707,19 @@
                     color: EDGE_COLORS[e.axis] || '#333'
                 }));
 
-            // SVG setup
+            // ─── SVG ───
             const width = window.innerWidth;
             const height = window.innerHeight;
-            const svg = d3.select('svg')
-                .attr('width', width)
-                .attr('height', height);
-
+            const svg = d3.select('svg').attr('width', width).attr('height', height);
             const g = svg.append('g');
 
-            // Zoom
             const zoom = d3.zoom()
                 .scaleExtent([0.1, 8])
                 .on('zoom', (event) => g.attr('transform', event.transform));
             svg.call(zoom);
-
-            // Initial zoom out to fit
             svg.call(zoom.transform, d3.zoomIdentity.translate(width / 2, height / 2).scale(0.4));
 
-            // Force simulation
+            // ─── Forces ───
             const simulation = d3.forceSimulation(nodes)
                 .force('link', d3.forceLink(links).id(d => d.id).distance(d => {
                     if (d.axis === 'partner') return 30;
@@ -545,20 +731,13 @@
                 .force('collision', d3.forceCollide().radius(d => d.radius + 2))
                 .alphaDecay(0.02);
 
-            // Draw edges
-            const link = g.append('g')
-                .selectAll('line')
-                .data(links)
-                .join('line')
+            // ─── Draw ───
+            let link = g.append('g').selectAll('line').data(links).join('line')
                 .attr('stroke', d => d.color)
                 .attr('stroke-opacity', 0.15)
                 .attr('stroke-width', d => Math.max(0.3, d.weight));
 
-            // Draw nodes
-            const node = g.append('g')
-                .selectAll('circle')
-                .data(nodes)
-                .join('circle')
+            let node = g.append('g').selectAll('circle').data(nodes).join('circle')
                 .attr('r', d => d.radius)
                 .attr('fill', d => d.isUnmapped ? 'transparent' : d.color)
                 .attr('stroke', d => d.isLandmark ? '#f59e0b' : d.isUnmapped ? '#fb7185' : 'none')
@@ -572,11 +751,8 @@
                     .on('end', (e, d) => { if (!e.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; })
                 );
 
-            // Glow effect for landmarks
-            node.filter(d => d.isLandmark)
-                .attr('filter', 'url(#glow)');
-
-            // SVG filter for glow
+            // Glow
+            node.filter(d => d.isLandmark).attr('filter', 'url(#glow)');
             const defs = svg.append('defs');
             const filter = defs.append('filter').attr('id', 'glow');
             filter.append('feGaussianBlur').attr('stdDeviation', '4').attr('result', 'coloredBlur');
@@ -584,12 +760,9 @@
             feMerge.append('feMergeNode').attr('in', 'coloredBlur');
             feMerge.append('feMergeNode').attr('in', 'SourceGraphic');
 
-            // Add stars for viral nodes
+            // Stars for notable/viral
             const viralNodes = nodes.filter(d => d.isViral || d.isNotable);
-            const stars = g.append('g')
-                .selectAll('text')
-                .data(viralNodes)
-                .join('text')
+            let stars = g.append('g').selectAll('text').data(viralNodes).join('text')
                 .text('⭐')
                 .attr('font-size', '16px')
                 .attr('text-anchor', 'middle')
@@ -597,12 +770,9 @@
                 .style('pointer-events', 'none')
                 .style('text-shadow', '0 0 6px rgba(0,0,0,0.9)');
 
-            // Labels for landmarks + agencys with many connections
+            // Labels
             const labelNodes = nodes.filter(d => d.isLandmark || (d.type === 'agency' && d.connections > 3));
-            const labels = g.append('g')
-                .selectAll('text')
-                .data(labelNodes)
-                .join('text')
+            let labels = g.append('g').selectAll('text').data(labelNodes).join('text')
                 .text(d => d.name)
                 .attr('font-size', d => d.isLandmark ? '13px' : '9px')
                 .attr('font-weight', d => d.isLandmark ? '800' : '500')
@@ -612,44 +782,31 @@
                 .style('pointer-events', 'none')
                 .style('text-shadow', '0 0 6px rgba(0,0,0,0.9)');
 
-            // Tooltip & Click Actions
+            // ─── Tooltip ───
             const tooltip = document.getElementById('tooltip');
             let hideTimeout;
 
             node.on('mouseover', (event, d) => {
                 clearTimeout(hideTimeout);
                 tooltip.style.display = 'block';
-                tooltip.style.pointerEvents = 'auto'; // allow clicking links
+                tooltip.style.pointerEvents = 'auto';
 
                 tooltip.querySelector('.tt-name').textContent = d.name || d.id;
 
                 let typeHtml = d.type + (d.isLandmark ? ' · LANDMARK' : '');
-                if (d.source === 'agent') {
-                    typeHtml += ' 🤖 Agent Secured';
-                }
+                if (d.source === 'agent') typeHtml += ' 🤖';
                 tooltip.querySelector('.tt-type').textContent = typeHtml;
 
                 let metaHtml = '';
                 if (d.bio) metaHtml += `<div style="color: #e2e8f0; margin-bottom: 6px; line-height: 1.3;">${d.bio}</div>`;
-                if (d.url) {
-                    metaHtml += `<div style="margin-bottom: 6px;"><a href="${d.url}" target="_blank" style="color: #6ee7b7; text-decoration: underline;">Visit Project ↗</a></div>`;
-                }
-
-                const metaArr = [];
-                if (d.connections) metaArr.push(`Links: ${d.connections}`);
+                if (d.url) metaHtml += `<div style="margin-bottom: 6px;"><a href="${d.url}" target="_blank" style="color: #6ee7b7; text-decoration: underline;">View Project ↗</a></div>`;
 
                 let linksHtml = '';
                 if (d.linkedIn) linksHtml += `<a href="${d.linkedIn}" target="_blank" style="color: #3b82f6; text-decoration: none; margin-right: 8px;">in</a>`;
                 if (d.twitter) linksHtml += `<a href="${d.twitter}" target="_blank" style="color: #1da1f2; text-decoration: none;">𝕏</a>`;
+                if (linksHtml) metaHtml += `<div style="margin-top: 6px; font-weight: bold;">${linksHtml}</div>`;
 
-                if (linksHtml) {
-                    metaHtml += `<div style="margin-top: 6px; font-weight: bold;">${linksHtml}</div>`;
-                }
-
-                if (metaArr.length > 0) {
-                    metaHtml += `<div style="margin-top: 6px; color: #888;">${metaArr.join(' · ')}</div>`;
-                }
-
+                if (d.connections) metaHtml += `<div style="margin-top: 4px; color: #888;">Links: ${d.connections}</div>`;
                 tooltip.querySelector('.tt-meta').innerHTML = metaHtml;
 
                 // Highlight connections
@@ -668,59 +825,37 @@
                 });
             })
                 .on('mousemove', (event) => {
-                    // Position tooltip slightly off cursor so we can hover it
                     tooltip.style.left = (event.clientX + 16) + 'px';
                     tooltip.style.top = (event.clientY - 10) + 'px';
                 })
-                .on('mouseout', (event) => {
-                    // Slight delay to allow moving mouse into tooltip to click links
-                    hideTimeout = setTimeout(() => {
-                        tooltip.style.display = 'none';
-                    }, 500);
+                .on('mouseout', () => {
+                    hideTimeout = setTimeout(() => { tooltip.style.display = 'none'; }, 500);
                     node.attr('opacity', d => visibleTypes.has(d.type) || d.isLandmark ? 1 : 0.05);
                     link.attr('stroke-opacity', 0.15);
                 });
 
-            // Prevent tooltip from disappearing when hovering over it
             tooltip.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
-            tooltip.addEventListener('mouseleave', () => {
-                tooltip.style.display = 'none';
-            });
+            tooltip.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
 
-            // Node Selection & Target Actions
-            node.on('click', async (event, d) => {
-                if (event.defaultPrevented) return; // Dragged, ignore
-
+            // ─── Node Selection (for pinning) ───
+            node.on('click', (event, d) => {
+                if (event.defaultPrevented) return;
                 currentTargetNode = d;
-                const btn = document.getElementById('btn-scrape');
-                const btnDiscover = document.getElementById('btn-discover');
-                const gapInfo = document.getElementById('gap-info');
 
-                // Briefly style the node to show it's selected
+                // Highlight selected
                 node.attr('stroke', n => n.id === d.id ? '#fff' : (n.isLandmark ? '#f59e0b' : (n.isUnmapped ? '#fb7185' : 'none')))
                     .attr('stroke-width', n => n.id === d.id ? 4 : (n.isLandmark ? 3 : (n.isUnmapped ? 2 : 0)))
                     .attr('stroke-dasharray', n => n.id === d.id ? '4,4' : (n.isUnmapped ? '3,2' : 'none'));
 
-                if (isViewOnly) {
-                    btn.disabled = true;
-                    btn.textContent = 'DISABLED (View Only)';
-                    gapInfo.innerHTML = `🎯 Selected: <strong style="color:#fff">${d.name}</strong><br/><span style="color:#fb7185">Interactive scraping disabled on Vercel.</span>`;
-                } else {
-                    btn.disabled = false;
-                    btn.textContent = `🚀 Scrape from ${d.name}`;
-
-                    if (d.type === 'agency') {
-                        btnDiscover.disabled = false;
-                        btnDiscover.textContent = `🌐 Discover ${d.name} Competitors`;
-                    } else {
-                        btnDiscover.disabled = true;
-                        btnDiscover.textContent = `🌐 Discover Similar`;
-                    }
-                    gapInfo.innerHTML = `🎯 Target Selected: <strong style="color:#fff">${d.name}</strong><br/><span style="color:#6ee7b7">Type: ${d.type}</span>`;
+                // Update research panel
+                if (!isViewOnly) {
+                    document.getElementById('selected-name').textContent = d.name;
+                    document.getElementById('selected-type').textContent = d.type + (d.isLandmark ? ' · LANDMARK' : '');
+                    document.getElementById('btn-pin').disabled = false;
                 }
             });
 
-            // Tick
+            // ─── Tick ───
             simulation.on('tick', () => {
                 link.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
                     .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
@@ -729,138 +864,7 @@
                 stars.attr('x', d => d.x).attr('y', d => d.y);
             });
 
-            // ─── Seamless Graph Update (Phase 4) ────────────────
-            window.refreshGraphData = async function () {
-                const res = await fetch('/api/mapper/graph');
-                const newGraph = await res.json();
-
-                // Update Stats
-                document.getElementById('stats-bar').innerHTML = `
-                <span><span class="num">${newGraph.landmarks.length}</span> landmarks</span>
-                <span><span class="num">${Object.keys(newGraph.nodes).length}</span> nodes</span>
-                <span><span class="num">${newGraph.edges.length}</span> edges</span>
-                `;
-
-                // Update Nodes
-                let newNodesCount = 0;
-                const counts = { agency: 0, project: 0, traditional: 0, person: 0 };
-
-                for (const [key, data] of Object.entries(newGraph.nodes)) {
-                    if (counts[data.type] !== undefined) counts[data.type]++;
-
-                    if (!nodeMap[key]) {
-                        const n = { id: key, ...data };
-                        n.radius = data.isLandmark ? 16 : (NODE_RADIUS[data.type] || 4);
-                        if (data.type === 'project' && (data.isViral || data.isNotable)) {
-                            n.radius += 3;
-                            n.color = '#f59e0b';
-                        } else {
-                            n.color = data.isLandmark ? '#f59e0b' : (NODE_COLORS[data.type] || '#555');
-                        }
-                        n.isUnmapped = (data.type === 'agency' && data.mapStatus === 'unmapped');
-
-                        // Spawn new nodes slightly offset from target
-                        if (currentTargetNode) {
-                            n.x = currentTargetNode.x + (Math.random() - 0.5) * 20;
-                            n.y = currentTargetNode.y + (Math.random() - 0.5) * 20;
-                        }
-                        nodeMap[key] = n;
-                        nodes.push(n);
-                        newNodesCount++;
-                    } else {
-                        nodeMap[key].isUnmapped = (data.type === 'agency' && data.mapStatus === 'unmapped');
-                    }
-                }
-
-                for (const [type, count] of Object.entries(counts)) {
-                    const el = document.getElementById(`count-${type}`);
-                    if (el) el.textContent = `(${count})`;
-                }
-
-                if (newNodesCount === 0) return; // Nothing new
-
-                // Update Edges
-                const existingLinks = new Set(links.map(l => {
-                    const src = l.source.id || l.source;
-                    const tgt = l.target.id || l.target;
-                    return `${src}->${tgt}->${l.axis}`;
-                }));
-
-                newGraph.edges.forEach(e => {
-                    if (!existingLinks.has(`${e.from}->${e.to}->${e.axis}`) && !existingLinks.has(`${e.to}->${e.from}->${e.axis}`) && nodeMap[e.from] && nodeMap[e.to]) {
-                        links.push({
-                            source: nodeMap[e.from],
-                            target: nodeMap[e.to],
-                            axis: e.axis,
-                            weight: e.weight,
-                            color: EDGE_COLORS[e.axis] || '#333'
-                        });
-                    }
-                });
-
-                // Rebind DOM - Links
-                link = g.selectAll('line').data(links, d => {
-                    const src = d.source.id || d.source;
-                    const tgt = d.target.id || d.target;
-                    return `${src}->${tgt}->${d.axis}`;
-                })
-                    .join('line')
-                    .attr('stroke', d => d.color)
-                    .attr('stroke-opacity', 0.15)
-                    .attr('stroke-width', d => Math.max(0.3, d.weight));
-
-                // Rebind DOM - Nodes
-                node = g.selectAll('circle').data(nodes, d => d.id)
-                    .join('circle')
-                    .attr('r', d => d.radius)
-                    .attr('fill', d => d.isUnmapped ? 'transparent' : d.color)
-                    .attr('stroke', d => d.isLandmark ? '#f59e0b' : d.isUnmapped ? '#fb7185' : 'none')
-                    .attr('stroke-width', d => d.isLandmark ? 3 : d.isUnmapped ? 2 : 0)
-                    .attr('stroke-dasharray', d => d.isUnmapped ? '3,2' : 'none')
-                    .attr('opacity', d => visibleTypes.has(d.type) || d.isLandmark ? 1 : 0.05)
-                    .style('cursor', 'pointer')
-                    .call(d3.drag()
-                        .on('start', (e, d) => { if (!e.active) simulation.alphaTarget(0.1).restart(); d.fx = d.x; d.fy = d.y; })
-                        .on('drag', (e, d) => { d.fx = e.x; d.fy = e.y; })
-                        .on('end', (e, d) => { if (!e.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; })
-                    );
-
-                // Filters and Glows
-                node.filter(d => d.isLandmark).attr('filter', 'url(#glow)');
-
-                // Rebind DOM - Stars
-                const viralNodes = nodes.filter(d => d.isViral || d.isNotable);
-                stars = g.selectAll('text.star').data(viralNodes, d => d.id)
-                    .join('text')
-                    .attr('class', 'star')
-                    .text('⭐')
-                    .attr('font-size', '16px')
-                    .attr('text-anchor', 'middle')
-                    .attr('dy', '5px')
-                    .style('pointer-events', 'none')
-                    .style('text-shadow', '0 0 6px rgba(0,0,0,0.9)');
-
-                // Rebind DOM - Labels
-                const labelNodes = nodes.filter(d => d.isLandmark || (d.type === 'agency' && d.connections > 3));
-                labels = g.selectAll('text.label').data(labelNodes, d => d.id)
-                    .join('text')
-                    .attr('class', 'label')
-                    .text(d => d.name)
-                    .attr('font-size', d => d.isLandmark ? '13px' : '9px')
-                    .attr('font-weight', d => d.isLandmark ? '800' : '500')
-                    .attr('fill', d => d.isLandmark ? '#f59e0b' : '#ccc')
-                    .attr('text-anchor', 'middle')
-                    .attr('dy', d => -(d.radius + 6))
-                    .style('pointer-events', 'none')
-                    .style('text-shadow', '0 0 6px rgba(0,0,0,0.9)');
-
-                // Restart simulation gently
-                simulation.nodes(nodes);
-                simulation.force('link').links(links);
-                simulation.alpha(0.3).restart();
-            };
-
-            // ─── Filter handlers ────────────────────────────────
+            // ─── Filter Handlers ───
             document.querySelectorAll('#filters input[type="checkbox"]').forEach(cb => {
                 cb.addEventListener('change', () => {
                     const type = cb.dataset.type;
@@ -879,13 +883,11 @@
                     return;
                 }
 
-                // Find the landmark node key
                 const lmKey = Object.keys(graph.nodes).find(k =>
                     graph.nodes[k].name?.toLowerCase() === selected.toLowerCase() && graph.nodes[k].isLandmark
                 );
                 if (!lmKey) return;
 
-                // Find all connected
                 const connected = new Set([lmKey]);
                 graph.edges.forEach(e => {
                     if (e.from === lmKey) connected.add(e.to);
@@ -901,109 +903,52 @@
             });
         }
 
-        // ─── Track Agency ────────────────────────────────
-        async function plantFlag() {
-            if (isViewOnly) return;
-            const agency = document.getElementById('plant-agency').value.trim();
-            const project = document.getElementById('plant-project').value.trim();
-            if (!agency) return;
-            const btn = document.getElementById('btn-plant');
-            const status = document.getElementById('plant-status');
+        // ─── Pin for Research ───
+        async function pinTarget() {
+            if (isViewOnly || !currentTargetNode) return;
+            const btn = document.getElementById('btn-pin');
+            const status = document.getElementById('pin-status');
+            const notes = document.getElementById('pin-notes').value.trim();
+
             btn.disabled = true;
-            btn.textContent = '⏳ Mapping...';
+            btn.textContent = '⏳ Pinning...';
+
             try {
-                const res = await fetch('/api/mapper/agency', {
+                const res = await fetch('/api/mapper/pin', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ agency, project: project || undefined })
+                    body: JSON.stringify({
+                        targetNode: currentTargetNode.id,
+                        targetName: currentTargetNode.name,
+                        action: 'research',
+                        notes
+                    })
                 });
                 const data = await res.json();
-                if (data.success) {
-                    status.innerHTML = `✅ Successfully mapped ${agency}.`;
-                    setTimeout(() => location.reload(), 2000);
-                } else {
-                    status.textContent = `❌ ${data.error}`;
-                }
+                status.innerHTML = `<span style="color:#6ee7b7">✅ Pinned "${currentTargetNode.name}" — ${data.queued} in queue</span>`;
+                document.getElementById('pin-notes').value = '';
+                loadQueueCount();
             } catch (err) {
-                status.textContent = `❌ ${err.message}`;
+                status.innerHTML = `<span style="color:#fb7185">❌ ${err.message}</span>`;
             }
+
             btn.disabled = false;
+            btn.textContent = '📌 Pin for Research';
         }
 
-        // Enter key to plant
-        document.getElementById('plant-agency').addEventListener('keydown', e => {
-            if (e.key === 'Enter') plantFlag();
-        });
-
-        // ─── Scrape Target ───────
-        async function scrapeTarget() {
-            if (isViewOnly || !currentTargetNode) return;
-            const target = currentTargetNode;
-            const btn = document.getElementById('btn-scrape');
-            const gapInfo = document.getElementById('gap-info');
-            const progressContainer = document.getElementById('scrape-progress-container');
-            const progressBar = document.getElementById('scrape-progress-bar');
-
-            btn.disabled = true;
-            btn.textContent = '⏳ Launching Agent...';
-            progressContainer.style.display = 'block';
-            progressBar.style.width = '50%';
-
+        // ─── Queue Counter ───
+        async function loadQueueCount() {
             try {
-                const res = await fetch('/api/mapper/scrape-node', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ id: target.id, type: target.type, name: target.name })
-                });
-                const data = await res.json();
-                progressBar.style.width = '100%';
-                if (data.added > 0) {
-                    gapInfo.innerHTML = `<span style="color:#6ee7b7">✅ Secured ${data.added} nodes.</span>`;
-                    const projectCb = document.querySelector('input[data-type="project"]');
-                    if (projectCb && !projectCb.checked) {
-                        projectCb.checked = true;
-                        projectCb.dispatchEvent(new Event('change'));
-                    }
+                const res = await fetch('/api/mapper/queue');
+                const queue = await res.json();
+                const badge = document.getElementById('queue-badge');
+                if (queue.length > 0) {
+                    badge.textContent = queue.length;
+                    badge.style.display = 'inline-block';
+                } else {
+                    badge.style.display = 'none';
                 }
-                setTimeout(async () => {
-                    progressContainer.style.display = 'none';
-                    if (window.refreshGraphData) await window.refreshGraphData();
-                    else location.reload();
-                }, 2000);
-            } catch (err) {
-                gapInfo.innerHTML = `<span style="color:#fb7185">❌ Error: ${err.message}</span>`;
-                btn.disabled = false;
-            }
-        }
-
-        // ─── Discover Similar ───────
-        async function discoverSimilar() {
-            if (isViewOnly || !currentTargetNode) return;
-            const target = currentTargetNode;
-            const btn = document.getElementById('btn-discover');
-            const progressContainer = document.getElementById('scrape-progress-container');
-            const progressBar = document.getElementById('scrape-progress-bar');
-
-            btn.disabled = true;
-            progressContainer.style.display = 'block';
-            progressBar.style.width = '70%';
-
-            try {
-                const res = await fetch('/api/mapper/discover-similar', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ id: target.id, name: target.name })
-                });
-                const data = await res.json();
-                progressBar.style.width = '100%';
-                setTimeout(async () => {
-                    progressContainer.style.display = 'none';
-                    if (window.refreshGraphData) await window.refreshGraphData();
-                    else location.reload();
-                }, 2000);
-            } catch (err) {
-                btn.disabled = false;
-            }
+            } catch (e) { /* ignore */ }
         }
 
         init();

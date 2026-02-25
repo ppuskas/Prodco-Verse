@@ -33,15 +33,34 @@
 - **Repo Sync**: Consolidated all latest data and logic from local development into the primary `CompanyMapper` repo for deployment.
 - **Vercel Config**: Created `vercel.json` with appropriate API and SPA routing.
 
+## [2026-02-25] Phase 7: Agentic Research Workflow
+- **Playwright Removed**: Stripped the autonomous scraper system (Playwright, Cheerio). All research now happens live with the agent using the browser subagent.
+- **Research Queue**: Implemented a 📌 Pin for Research system. Users click nodes on the local graph, add notes, and pin them to `research_queue.json`. The agent reads the queue at the start of each session and processes the requests.
+- **Inject API**: Added `POST /api/mapper/inject` for batch node/edge injection during agentic sessions.
+- **Data Cleanup**: Removed 13MB of legacy MusicMapper files (`db.json`, `tracks.json`, `mapper-graph.json`).
+- **Frontend Rewrite**: Stripped the old Track/Scrape/Discover panel. Local dev shows the research pin UI with queue counter. Vercel deploy is a clean read-only graph.
+- **Workflow**: User steers → Agent dives → User reviews → cycle continues.
+
+## [2026-02-25] Phase 8: Data Audit & List View
+- **Data Audit**: Purged 17 dummy/template nodes (fake Nike/Apple/SuperBowl/CaseStudy projects injected by old fallback scraper).
+- **3 Research Rounds**:
+  - Round 1: Dolsten & Co (Simon Dolsten, Accelerator/VIOME), Secret Level (Jason Zada, Eric Shamlin, Coca-Cola AI), Curious Refuge (Caleb Ward)
+  - Round 2: Fixed project links (Coinbase, Toys R Us, Elf Yourself), expanded RYOT (VR pioneer, Body Team 12), fixed Gummo/Beach Bum attribution to Korine, fully built out Droga5 (David Droga, NYT Truth, IHOb, UNICEF Tap)
+  - Round 3: yU+co (Garson Yu, title sequences), Digital Kitchen (Dexter/Six Feet Under titles), EDGLRD music videos (Gucci Mane, Yeat, Weeknd AI), XTR (Ascension Oscar-nom), TBWA\\Chiat\\Day (1984/Think Different), TBWA\\Media Arts Lab (Shot on iPhone)
+- **List View**: Added 📋 List tab — Graph/List toggle in header. Sorted tables grouped by Agencies, Projects, People, Traditionals with connection counts, bios, and links.
+- **Projects Default**: Projects filter now enabled by default so project nodes are visible on load.
+- **Graph State**: 78 nodes, 73 edges, 6 landmarks.
+
 ---
 
 # Current Roadmap (TODOs)
 
 ## High Priority
-- [ ] **Live Scraper V2**: Replace the current mock data fallbacks in `server/services/companyMapper.js` with functional Cheerio/Puppeteer scrapers that hit Vimeo/Wikipedia/YouTube for the specific agency name.
-- [ ] **Data Cleanup**: Remove old `db.json` and `tracks.json` boilerplate from the `server/data` folder to reduce repo size.
-- [ ] **Bio Modals**: Expand the tooltip to a full glassmorphism modal on click to show the full LinkedIn extracted biography.
+- [ ] **Bio Modals**: Expand the tooltip to a full glassmorphism modal on click to show the full biography.
+- [ ] **Physics Tuning**: Adjust D3 force parameters for Project nodes so they cluster tightly around parents.
+- [ ] **More Landmarks**: Map additional agencies (e.g., Wieden+Kennedy Portland, Curious Refuge as landmarks).
 
 ## Mid Term
-- [ ] **Physics Tuning**: Adjust the D3 force parameters (charge/linkStrength) for "Project" nodes so they cluster more tightly around their parents without overlapping the main landmark labels.
-- [ ] **Social API Integrations**: If the user has a LinkedIn/X session active, auto-login the agent to pull deeper relationship data.
+- [ ] **Search/Filter in List View**: Add a search bar to the list view for quick lookup.
+- [ ] **Edge Labels on Hover**: Show axis type label when hovering over edges in graph view.
+- [ ] **Export**: Add CSV/JSON export from the list view.

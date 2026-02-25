@@ -4,3 +4,4 @@ industry_graph.json.backup
 tmp/
 *.log
 .env
+server/data/research_queue.json

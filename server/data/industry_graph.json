@@ -36,7 +36,7 @@
       "type": "agency",
       "name": "Native Foreign",
       "isLandmark": true,
-      "connections": 8
+      "connections": 7
     },
     "agency::edglrd": {
       "type": "agency",
@@ -68,7 +68,7 @@
     "person::harmony korine": {
       "type": "person",
       "name": "Harmony Korine",
-      "connections": 1,
+      "connections": 3,
       "source": "agent",
       "linkedIn": "https://www.linkedin.com/company/edglrd/",
       "twitter": "https://x.com/edglrd",
@@ -93,7 +93,8 @@
       "type": "traditional",
       "name": "XTR",
       "source": "agent",
-      "connections": 1
+      "connections": 2,
+      "bio": "Documentary production company founded by Bryn Mooser in 2019. 80+ docs produced/financed. Launched Documentary+ streaming platform (2021). Notable: Ascension (Oscar-nom), 76 Days (Emmy/Peabody), They Call Me Magic (Apple TV+)."
     },
     "traditional::documentary+": {
       "type": "traditional",
@@ -111,7 +112,8 @@
       "type": "traditional",
       "name": "RYOT",
       "source": "agent",
-      "connections": 1
+      "connections": 3,
+      "bio": "Immersive media company co-founded by Bryn Mooser in 2012. Pioneer in VR journalism — first to film VR in a war zone (Syria) and natural disaster (Nepal). Acquired by AOL/Verizon for ~$10-15M in 2016. Produced 200+ immersive and linear films."
     },
     "traditional::aol": {
       "type": "traditional",
@@ -132,7 +134,8 @@
       "type": "traditional",
       "name": "Digital Kitchen",
       "source": "agent",
-      "connections": 1
+      "connections": 3,
+      "bio": "Creative production company founded in Seattle (1995) by Paul Matthaeus. 3x Emmy-winning main title designs: Dexter (2007), Six Feet Under (2002), Godfather of Harlem (2020). Also created True Blood, Nip/Tuck, Narcos, Yellowjackets titles."
     },
     "traditional::bungie": {
       "type": "traditional",
@@ -144,7 +147,8 @@
       "type": "traditional",
       "name": "yU+co",
       "source": "agent",
-      "connections": 1
+      "connections": 2,
+      "bio": "Design studio founded by Garson Yu in 1998. Specializes in film/TV title sequences. 100+ feature film titles including 300, Watchmen, Life of Pi, Crazy Rich Asians. Emmy winner for title design."
     },
     "person::ryan staake": {
       "type": "person",
@@ -153,7 +157,7 @@
       "linkedIn": "http://pompandclout.com/",
       "twitter": "",
       "bio": "Founder of Pomp & Clout, an innovative creative production company. Former designer on Apple's Human Interface Team.",
-      "connections": 3
+      "connections": 2
     },
     "person::joe staples": {
       "type": "person",
@@ -162,7 +166,7 @@
       "linkedIn": "https://www.linkedin.com/in/joe-staples-181b834",
       "twitter": "https://x.com/joseph_staples",
       "bio": "Founding Partner & CCO at Mother LA. Previous Executive Creative Director at Wieden + Kennedy.",
-      "connections": 3
+      "connections": 2
     },
     "traditional::wieden + kennedy": {
       "type": "traditional",
@@ -209,43 +213,28 @@
       "isLandmark": true,
       "connections": 4
     },
-    "project::dolsten & co case study": {
-      "type": "project",
-      "name": "Dolsten & Co Case Study",
-      "source": "agent",
-      "connections": 2
-    },
-    "project::joe staples case study": {
-      "type": "project",
-      "name": "Joe Staples Case Study",
-      "source": "agent",
-      "connections": 1
-    },
     "agency::secret level": {
       "type": "agency",
       "name": "Secret Level",
-      "mapStatus": "unmapped",
       "source": "agent",
       "connections": 5
     },
     "agency::curious refuge": {
       "type": "agency",
       "name": "Curious Refuge",
-      "mapStatus": "unmapped",
       "source": "agent",
-      "connections": 1
+      "connections": 2
     },
     "agency::pika labs (creative)": {
       "type": "agency",
       "name": "Pika Labs (Creative)",
-      "mapStatus": "unmapped",
       "source": "agent",
       "connections": 1
     },
     "project::toys \"r\" us origin story": {
       "type": "project",
-      "name": "Toys \"R\" Us Origin Story",
-      "url": "https://www.youtube.com/watch?v=FjI13VjH_dI",
+      "name": "Toys \"R\" Us Origin Story (Sora)",
+      "url": "https://www.tomsguide.com/ai/ai-image-video/i-watched-the-toys-r-us-ad-made-with-openais-sora-and-it-changes-everything",
       "isNotable": true,
       "isViral": true,
       "source": "agent",
@@ -255,15 +244,6 @@
       "type": "project",
       "name": "TCL \"Next Stop Paris\"",
       "url": "https://www.youtube.com/watch?v=1F_l-cT_lEQ",
-      "isNotable": false,
-      "isViral": false,
-      "source": "agent",
-      "connections": 1
-    },
-    "project::asus rog ai film": {
-      "type": "project",
-      "name": "ASUS ROG AI Film",
-      "url": "https://www.youtube.com/watch?v=some_asus",
       "isNotable": false,
       "isViral": false,
       "source": "agent",
@@ -287,12 +267,6 @@
       "source": "agent",
       "connections": 1
     },
-    "project::dolsten & co case study case study": {
-      "type": "project",
-      "name": "Dolsten & Co Case Study Case Study",
-      "source": "agent",
-      "connections": 1
-    },
     "project::postmates \"don't recipe\"": {
       "type": "project",
       "name": "Postmates \"Don't Recipe\"",
@@ -304,12 +278,12 @@
     },
     "project::coinbase superbowl ad": {
       "type": "project",
-      "name": "Coinbase SuperBowl Ad",
-      "url": "https://motherla.com/work/coinbase",
+      "name": "Coinbase Super Bowl QR Code",
+      "url": "https://www.youtube.com/watch?v=fU-uf-VTHkI",
       "isNotable": true,
       "isViral": true,
       "source": "agent",
-      "connections": 1
+      "connections": 2
     },
     "project::target target run": {
       "type": "project",
@@ -334,14 +308,14 @@
       "name": "Wieden+Kennedy Portland",
       "mapStatus": "unmapped",
       "source": "agent",
-      "connections": 4
+      "connections": 1
     },
     "agency::droga5": {
       "type": "agency",
       "name": "Droga5",
-      "mapStatus": "unmapped",
       "source": "agent",
-      "connections": 4
+      "connections": 7,
+      "bio": "Award-winning creative agency founded by David Droga in 2006. Part of Accenture Song since 2019. Known for IHOP \"IHOb\", NYT \"The Truth Is Worth It\", Coinbase QR Super Bowl ad, and UNICEF Tap Project."
     },
     "agency::tbwa\\media arts lab": {
       "type": "agency",
@@ -350,118 +324,327 @@
       "source": "agent",
       "connections": 1
     },
-    "project::secret level case study": {
-      "type": "project",
-      "name": "Secret Level Case Study",
+    "person::simon dolsten": {
+      "type": "person",
+      "name": "Simon Dolsten",
+      "source": "agent",
+      "linkedIn": "https://www.linkedin.com/in/simondolsten/",
+      "twitter": "",
+      "bio": "Founder of Dolsten & Co. Multi-EMMY-winning creative director. World's most-awarded creative director by The One Show & ADC. Previously at FCB New York, Johannes Leonardo, Publicis. 37 Cannes Lions, 73 One Show Pencils.",
+      "connections": 4
+    },
+    "traditional::fcb new york": {
+      "type": "traditional",
+      "name": "FCB New York",
       "source": "agent",
       "connections": 1
     },
-    "project::dolsten & co x nike campaign": {
+    "traditional::johannes leonardo": {
+      "type": "traditional",
+      "name": "Johannes Leonardo",
+      "source": "agent",
+      "connections": 1
+    },
+    "project::accelerator \"cart worthy\"": {
       "type": "project",
-      "name": "Dolsten & Co x Nike Campaign",
-      "url": "https://vimeo.com/search?q=nike+ad",
+      "name": "Accelerator \"Cart Worthy\"",
+      "source": "agent",
+      "url": "https://dolsten.com",
       "isNotable": true,
       "isViral": true,
-      "source": "agent",
       "connections": 1
     },
-    "project::dolsten & co super bowl spot": {
+    "project::accelerator \"crashman\" ai superhero": {
       "type": "project",
-      "name": "Dolsten & Co Super Bowl Spot",
-      "url": "https://youtube.com",
+      "name": "Accelerator \"Crashman\" AI Superhero",
+      "source": "agent",
+      "url": "https://dolsten.com",
       "isNotable": true,
       "isViral": false,
-      "source": "agent",
       "connections": 1
     },
-    "project::dolsten & co apple launch video": {
+    "project::viome \"arthur the alien\"": {
       "type": "project",
-      "name": "Dolsten & Co Apple Launch Video",
-      "url": "https://apple.com",
+      "name": "VIOME \"Arthur The Alien\"",
+      "source": "agent",
+      "url": "https://dolsten.com",
       "isNotable": false,
       "isViral": false,
+      "connections": 1
+    },
+    "project::mcenroe vs mcenroe": {
+      "type": "project",
+      "name": "McEnroe vs McEnroe",
+      "source": "agent",
+      "url": "https://simondolsten.com",
+      "isNotable": true,
+      "isViral": false,
+      "connections": 1
+    },
+    "person::jason zada": {
+      "type": "person",
+      "name": "Jason Zada",
+      "source": "agent",
+      "linkedIn": "https://www.linkedin.com/in/jasonzada/",
+      "twitter": "https://x.com/jasonzada",
+      "bio": "Founder & CCO of Secret Level. Creator of \"Take This Lollipop\" (viral interactive horror). Director of \"The Forest\" (2016). Co-founded Evolution Bureau (EVB), acquired by Omnicom. Creator of \"Elf Yourself\" for OfficeMax.",
+      "connections": 4
+    },
+    "person::eric shamlin": {
+      "type": "person",
+      "name": "Eric Shamlin",
+      "source": "agent",
+      "linkedIn": "https://www.linkedin.com/in/ericshamlin/",
+      "twitter": "",
+      "bio": "CEO of Secret Level. Multiple Emmy, Peabody & Cannes Lion winner. Previously at Apple (Program Director), Omnicom, Entertainment One, Media.Monks (SVP Head of Growth). Chairs Emmy AI Task Force. Innovation Chair, Producers Guild.",
+      "connections": 3
+    },
+    "traditional::evolution bureau (evb)": {
+      "type": "traditional",
+      "name": "Evolution Bureau (EVB)",
       "source": "agent",
       "connections": 1
     },
-    "project::secret level x nike campaign": {
+    "traditional::apple": {
+      "type": "traditional",
+      "name": "Apple",
+      "source": "agent",
+      "connections": 2
+    },
+    "traditional::media.monks": {
+      "type": "traditional",
+      "name": "Media.Monks",
+      "source": "agent",
+      "connections": 1
+    },
+    "project::coca-cola \"holidays are coming\" ai": {
       "type": "project",
-      "name": "Secret Level x Nike Campaign",
-      "url": "https://vimeo.com/search?q=nike+ad",
+      "name": "Coca-Cola \"Holidays Are Coming\" AI",
+      "source": "agent",
+      "url": "https://www.youtube.com/watch?v=KMnKpCvRKpE",
       "isNotable": true,
       "isViral": true,
-      "source": "agent",
       "connections": 1
     },
-    "project::secret level super bowl spot": {
+    "project::take this lollipop": {
       "type": "project",
-      "name": "Secret Level Super Bowl Spot",
-      "url": "https://youtube.com",
-      "isNotable": true,
-      "isViral": false,
+      "name": "Take This Lollipop",
       "source": "agent",
-      "connections": 1
-    },
-    "project::secret level apple launch video": {
-      "type": "project",
-      "name": "Secret Level Apple Launch Video",
-      "url": "https://apple.com",
-      "isNotable": false,
-      "isViral": false,
-      "source": "agent",
-      "connections": 1
-    },
-    "project::droga5 x nike campaign": {
-      "type": "project",
-      "name": "Droga5 x Nike Campaign",
-      "url": "https://vimeo.com/search?q=nike+ad",
+      "url": "https://en.wikipedia.org/wiki/Take_This_Lollipop",
       "isNotable": true,
       "isViral": true,
-      "source": "agent",
       "connections": 1
     },
-    "project::droga5 super bowl spot": {
+    "project::elf yourself (officemax)": {
       "type": "project",
-      "name": "Droga5 Super Bowl Spot",
-      "url": "https://youtube.com",
-      "isNotable": true,
-      "isViral": false,
+      "name": "Elf Yourself (OfficeMax)",
       "source": "agent",
-      "connections": 1
-    },
-    "project::droga5 apple launch video": {
-      "type": "project",
-      "name": "Droga5 Apple Launch Video",
-      "url": "https://apple.com",
-      "isNotable": false,
-      "isViral": false,
-      "source": "agent",
-      "connections": 1
-    },
-    "project::wieden+kennedy portland x nike campaign": {
-      "type": "project",
-      "name": "Wieden+Kennedy Portland x Nike Campaign",
-      "url": "https://vimeo.com/search?q=nike+ad",
+      "url": "https://www.elfyourself.com/",
       "isNotable": true,
       "isViral": true,
-      "source": "agent",
       "connections": 1
     },
-    "project::wieden+kennedy portland super bowl spot": {
+    "project::black eyed peas ai partnership": {
       "type": "project",
-      "name": "Wieden+Kennedy Portland Super Bowl Spot",
-      "url": "https://youtube.com",
+      "name": "Black Eyed Peas AI Partnership",
+      "source": "agent",
+      "url": "https://secretlevel.com",
       "isNotable": true,
       "isViral": false,
+      "connections": 1
+    },
+    "person::caleb ward": {
+      "type": "person",
+      "name": "Caleb Ward",
+      "source": "agent",
+      "linkedIn": "https://www.linkedin.com/in/calebward/",
+      "twitter": "https://x.com/caaboringday",
+      "bio": "Co-Founder & CEO of Curious Refuge, the world's first online home for AI storytellers. Creator of viral \"Star Wars by Wes Anderson\" and \"Lord of the Rings by Wes Anderson\" AI films. Students in 109+ countries.",
+      "connections": 2
+    },
+    "project::star wars by wes anderson (ai)": {
+      "type": "project",
+      "name": "Star Wars by Wes Anderson (AI)",
+      "source": "agent",
+      "url": "https://www.youtube.com/watch?v=d-8DT5Q8Uag",
+      "isNotable": true,
+      "isViral": true,
+      "connections": 1
+    },
+    "project::body team 12": {
+      "type": "project",
+      "name": "Body Team 12",
+      "source": "agent",
+      "url": "https://www.imdb.com/title/tt5278498/",
+      "isNotable": true,
+      "isViral": false,
+      "connections": 1
+    },
+    "project::the fabric of reality": {
+      "type": "project",
+      "name": "The Fabric of Reality",
+      "source": "agent",
+      "url": "https://www.verizon.com/about/news/ryot-5g-studio",
+      "isNotable": false,
+      "isViral": false,
+      "connections": 1
+    },
+    "person::david droga": {
+      "type": "person",
+      "name": "David Droga",
+      "source": "agent",
+      "linkedIn": "https://www.linkedin.com/in/david-droga-80ab2b1/",
+      "twitter": "",
+      "bio": "Founder of Droga5. Youngest-ever ECD at Saatchi & Saatchi (age 27). Named Global Chairman of Accenture Song. Named Cannes Lions Creative Person of the Decade (2020). Born in Australia.",
+      "connections": 2
+    },
+    "traditional::accenture song": {
+      "type": "traditional",
+      "name": "Accenture Song",
       "source": "agent",
       "connections": 1
     },
-    "project::wieden+kennedy portland apple launch video": {
+    "traditional::saatchi & saatchi": {
+      "type": "traditional",
+      "name": "Saatchi & Saatchi",
+      "source": "agent",
+      "connections": 1
+    },
+    "project::nyt \"the truth is worth it\"": {
       "type": "project",
-      "name": "Wieden+Kennedy Portland Apple Launch Video",
-      "url": "https://apple.com",
+      "name": "NYT \"The Truth Is Worth It\"",
+      "source": "agent",
+      "url": "https://www.youtube.com/watch?v=gY0Fdz350GE",
+      "isNotable": true,
+      "isViral": true,
+      "connections": 1
+    },
+    "project::ihop \"ihob\" rebrand": {
+      "type": "project",
+      "name": "IHOP \"IHOb\" Rebrand",
+      "source": "agent",
+      "url": "https://www.youtube.com/watch?v=K1BnJPmFGYQ",
+      "isNotable": true,
+      "isViral": true,
+      "connections": 1
+    },
+    "project::unicef tap project": {
+      "type": "project",
+      "name": "UNICEF Tap Project",
+      "source": "agent",
+      "url": "https://www.commarts.com/project/16116/unicef-tap-project",
+      "isNotable": true,
+      "isViral": false,
+      "connections": 1
+    },
+    "person::garson yu": {
+      "type": "person",
+      "name": "Garson Yu",
+      "source": "agent",
+      "linkedIn": "",
+      "twitter": "",
+      "bio": "Founder & Creative Director of yU+co. Previously at R/GA and co-creative director at Imaginary Forces with Kyle Cooper. Title sequences for Spielberg, Ang Lee, Ridley Scott. Emmy Award winner.",
+      "connections": 2
+    },
+    "traditional::imaginary forces": {
+      "type": "traditional",
+      "name": "Imaginary Forces",
+      "source": "agent",
+      "connections": 1
+    },
+    "project::dexter main titles": {
+      "type": "project",
+      "name": "Dexter Main Titles",
+      "source": "agent",
+      "url": "https://www.youtube.com/watch?v=ej8-Rqo-VT4",
+      "isNotable": true,
+      "isViral": true,
+      "connections": 1
+    },
+    "project::six feet under main titles": {
+      "type": "project",
+      "name": "Six Feet Under Main Titles",
+      "source": "agent",
+      "url": "https://www.youtube.com/watch?v=oPCsmw4FYwk",
+      "isNotable": true,
+      "isViral": false,
+      "connections": 1
+    },
+    "project::gucci mane \"voices/psycho\" ai mv": {
+      "type": "project",
+      "name": "Gucci Mane \"Voices/Psycho\" AI MV",
+      "source": "agent",
+      "url": "https://www.youtube.com/watch?v=QO7q1lK4fWU",
+      "isNotable": true,
+      "isViral": true,
+      "connections": 1
+    },
+    "project::yeat \"loose leaf\" mv": {
+      "type": "project",
+      "name": "Yeat \"Loose Leaf\" MV",
+      "source": "agent",
+      "url": "https://www.youtube.com/watch?v=yBhe0SmbqCA",
       "isNotable": false,
       "isViral": false,
+      "connections": 1
+    },
+    "project::the weeknd ai shorts": {
+      "type": "project",
+      "name": "The Weeknd AI Shorts",
       "source": "agent",
+      "url": "https://edglrd.com",
+      "isNotable": true,
+      "isViral": false,
+      "connections": 1
+    },
+    "project::ascension (oscar-nom)": {
+      "type": "project",
+      "name": "Ascension (Oscar-nom)",
+      "source": "agent",
+      "url": "https://www.imdb.com/title/tt14301902/",
+      "isNotable": true,
+      "isViral": false,
+      "connections": 1
+    },
+    "traditional::tbwa\\\\chiat\\\\day": {
+      "type": "traditional",
+      "name": "TBWA\\Chiat\\Day",
+      "source": "agent",
+      "bio": "Iconic ad agency. Created Apple \"1984\" Super Bowl commercial (directed by Ridley Scott) and \"Think Different\" campaign. Nissan agency of record for 37 years. Part of Omnicom Group.",
+      "connections": 3
+    },
+    "project::apple \"1984\" super bowl": {
+      "type": "project",
+      "name": "Apple \"1984\" Super Bowl",
+      "source": "agent",
+      "url": "https://www.youtube.com/watch?v=VtvjbmoDx-I",
+      "isNotable": true,
+      "isViral": true,
+      "connections": 1
+    },
+    "project::apple \"think different\"": {
+      "type": "project",
+      "name": "Apple \"Think Different\"",
+      "source": "agent",
+      "url": "https://www.youtube.com/watch?v=tjgtLSHhTPg",
+      "isNotable": true,
+      "isViral": true,
+      "connections": 1
+    },
+    "agency::tbwa\\\\media arts lab": {
+      "type": "agency",
+      "name": "TBWA\\Media Arts Lab",
+      "source": "agent",
+      "bio": "Apple's dedicated external ad agency. Created and runs all \"Shot on iPhone\" campaigns since 2014. Part of TBWA Worldwide / Omnicom. Notable: Michel Gondry's \"Detour\" (2017), Dua Lipa tour campaign (2025).",
+      "connections": 2
+    },
+    "project::\"shot on iphone\" campaigns": {
+      "type": "project",
+      "name": "\"Shot on iPhone\" Campaigns",
+      "source": "agent",
+      "url": "https://www.youtube.com/results?search_query=shot+on+iphone+apple",
+      "isNotable": true,
+      "isViral": true,
       "connections": 1
     }
   },
@@ -493,7 +676,7 @@
     {
       "from": "person::bryn mooser",
       "to": "traditional::xtr",
-      "axis": "alumni",
+      "axis": "founder",
       "weight": 0.8,
       "meta": {
         "description": "Ex-employee"
@@ -515,16 +698,6 @@
       "to": "traditional::verizon media",
       "axis": "alumni",
       "weight": 0.6000000000000001,
-      "meta": {
-        "description": "Ex-employee"
-      },
-      "createdAt": "2026-02-24T05:29:48.086Z"
-    },
-    {
-      "from": "person::bryn mooser",
-      "to": "traditional::ryot",
-      "axis": "alumni",
-      "weight": 0.5,
       "meta": {
         "description": "Ex-employee"
       },
@@ -639,22 +812,6 @@
       "createdAt": "2026-02-24T06:04:45.973Z"
     },
     {
-      "from": "agency::dolsten & co",
-      "to": "project::dolsten & co case study",
-      "axis": "partner",
-      "weight": 0.8,
-      "meta": {},
-      "createdAt": "2026-02-24T06:07:25.675Z"
-    },
-    {
-      "from": "person::joe staples",
-      "to": "project::joe staples case study",
-      "axis": "partner",
-      "weight": 0.8,
-      "meta": {},
-      "createdAt": "2026-02-24T06:08:34.163Z"
-    },
-    {
       "from": "agency::native foreign",
       "to": "agency::secret level",
       "axis": "competitor",
@@ -699,38 +856,6 @@
       "weight": 1,
       "meta": {},
       "createdAt": "2026-02-24T06:39:04.968Z"
-    },
-    {
-      "from": "agency::native foreign",
-      "to": "project::asus rog ai film",
-      "axis": "partner",
-      "weight": 1,
-      "meta": {},
-      "createdAt": "2026-02-24T06:39:04.968Z"
-    },
-    {
-      "from": "agency::edglrd",
-      "to": "project::the beach bum",
-      "axis": "partner",
-      "weight": 1,
-      "meta": {},
-      "createdAt": "2026-02-24T06:41:59.913Z"
-    },
-    {
-      "from": "agency::edglrd",
-      "to": "project::gummo",
-      "axis": "partner",
-      "weight": 1,
-      "meta": {},
-      "createdAt": "2026-02-24T06:41:59.913Z"
-    },
-    {
-      "from": "project::dolsten & co case study",
-      "to": "project::dolsten & co case study case study",
-      "axis": "partner",
-      "weight": 0.8,
-      "meta": {},
-      "createdAt": "2026-02-24T06:42:38.276Z"
     },
     {
       "from": "agency::mother la",
@@ -795,108 +920,392 @@
       "createdAt": "2026-02-24T06:45:02.846Z"
     },
     {
-      "from": "agency::secret level",
-      "to": "project::secret level case study",
-      "axis": "partner",
-      "weight": 0.8,
+      "from": "person::simon dolsten",
+      "to": "agency::dolsten & co",
+      "axis": "founder",
+      "weight": 1.2,
       "meta": {},
-      "createdAt": "2026-02-24T06:45:25.136Z"
+      "createdAt": "2026-02-25T16:35:26.863Z"
+    },
+    {
+      "from": "person::simon dolsten",
+      "to": "traditional::fcb new york",
+      "axis": "alumni",
+      "weight": 0.8,
+      "meta": {
+        "description": "Creative Director → Associate CD → Senior Copywriter (2019-2023)"
+      },
+      "createdAt": "2026-02-25T16:35:26.864Z"
+    },
+    {
+      "from": "person::simon dolsten",
+      "to": "traditional::johannes leonardo",
+      "axis": "alumni",
+      "weight": 0.7,
+      "meta": {
+        "description": "Creative Director (2023-2024)"
+      },
+      "createdAt": "2026-02-25T16:35:26.864Z"
     },
     {
       "from": "agency::dolsten & co",
-      "to": "project::dolsten & co x nike campaign",
+      "to": "project::accelerator \"cart worthy\"",
       "axis": "partner",
-      "weight": 0.8,
+      "weight": 1,
       "meta": {},
-      "createdAt": "2026-02-24T06:51:03.085Z"
+      "createdAt": "2026-02-25T16:35:26.864Z"
     },
     {
       "from": "agency::dolsten & co",
-      "to": "project::dolsten & co super bowl spot",
+      "to": "project::accelerator \"crashman\" ai superhero",
       "axis": "partner",
-      "weight": 0.8,
+      "weight": 1,
       "meta": {},
-      "createdAt": "2026-02-24T06:51:03.085Z"
+      "createdAt": "2026-02-25T16:35:26.864Z"
     },
     {
       "from": "agency::dolsten & co",
-      "to": "project::dolsten & co apple launch video",
+      "to": "project::viome \"arthur the alien\"",
       "axis": "partner",
-      "weight": 0.8,
+      "weight": 1,
       "meta": {},
-      "createdAt": "2026-02-24T06:51:03.085Z"
+      "createdAt": "2026-02-25T16:35:26.864Z"
+    },
+    {
+      "from": "person::simon dolsten",
+      "to": "project::mcenroe vs mcenroe",
+      "axis": "collaborator",
+      "weight": 1,
+      "meta": {
+        "description": "EMMY Winner — Outstanding Digital Innovation (at FCB)"
+      },
+      "createdAt": "2026-02-25T16:35:26.864Z"
+    },
+    {
+      "from": "person::jason zada",
+      "to": "agency::secret level",
+      "axis": "founder",
+      "weight": 1.2,
+      "meta": {},
+      "createdAt": "2026-02-25T16:35:26.864Z"
+    },
+    {
+      "from": "person::eric shamlin",
+      "to": "agency::secret level",
+      "axis": "founder",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-25T16:35:26.864Z"
+    },
+    {
+      "from": "person::jason zada",
+      "to": "traditional::evolution bureau (evb)",
+      "axis": "alumni",
+      "weight": 0.8,
+      "meta": {
+        "description": "Co-Founder & ECD (2000-2008). Acquired by Omnicom."
+      },
+      "createdAt": "2026-02-25T16:35:26.864Z"
+    },
+    {
+      "from": "person::eric shamlin",
+      "to": "traditional::apple",
+      "axis": "alumni",
+      "weight": 0.7,
+      "meta": {
+        "description": "Program Director"
+      },
+      "createdAt": "2026-02-25T16:35:26.864Z"
+    },
+    {
+      "from": "person::eric shamlin",
+      "to": "traditional::media.monks",
+      "axis": "alumni",
+      "weight": 0.7,
+      "meta": {
+        "description": "SVP Head of Growth, North America"
+      },
+      "createdAt": "2026-02-25T16:35:26.864Z"
     },
     {
       "from": "agency::secret level",
-      "to": "project::secret level x nike campaign",
+      "to": "project::coca-cola \"holidays are coming\" ai",
       "axis": "partner",
-      "weight": 0.8,
+      "weight": 1,
       "meta": {},
-      "createdAt": "2026-02-24T16:34:23.477Z"
+      "createdAt": "2026-02-25T16:35:26.864Z"
+    },
+    {
+      "from": "person::jason zada",
+      "to": "project::take this lollipop",
+      "axis": "collaborator",
+      "weight": 1,
+      "meta": {
+        "description": "Viral interactive horror film (2011)"
+      },
+      "createdAt": "2026-02-25T16:35:26.864Z"
+    },
+    {
+      "from": "person::jason zada",
+      "to": "project::elf yourself (officemax)",
+      "axis": "collaborator",
+      "weight": 1,
+      "meta": {
+        "description": "Viral campaign at EVB (2006)"
+      },
+      "createdAt": "2026-02-25T16:35:26.864Z"
     },
     {
       "from": "agency::secret level",
-      "to": "project::secret level super bowl spot",
+      "to": "project::black eyed peas ai partnership",
       "axis": "partner",
-      "weight": 0.8,
+      "weight": 1,
       "meta": {},
-      "createdAt": "2026-02-24T16:34:23.477Z"
+      "createdAt": "2026-02-25T16:35:26.864Z"
     },
     {
-      "from": "agency::secret level",
-      "to": "project::secret level apple launch video",
+      "from": "person::caleb ward",
+      "to": "agency::curious refuge",
+      "axis": "founder",
+      "weight": 1.2,
+      "meta": {},
+      "createdAt": "2026-02-25T16:35:26.864Z"
+    },
+    {
+      "from": "person::caleb ward",
+      "to": "project::star wars by wes anderson (ai)",
+      "axis": "collaborator",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-25T16:35:26.864Z"
+    },
+    {
+      "from": "person::ryan staake",
+      "to": "traditional::apple",
+      "axis": "alumni",
+      "weight": 0.8,
+      "meta": {
+        "description": "Designer on Apple Human Interface Team"
+      },
+      "createdAt": "2026-02-25T16:35:26.864Z"
+    },
+    {
+      "from": "traditional::ryot",
+      "to": "project::body team 12",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {
+        "description": "Oscar-nominated VR documentary"
+      },
+      "createdAt": "2026-02-25T16:44:35.144Z"
+    },
+    {
+      "from": "traditional::ryot",
+      "to": "project::the fabric of reality",
       "axis": "partner",
       "weight": 0.8,
+      "meta": {
+        "description": "VR/AR immersive fashion show"
+      },
+      "createdAt": "2026-02-25T16:44:35.145Z"
+    },
+    {
+      "from": "person::bryn mooser",
+      "to": "traditional::ryot",
+      "axis": "founder",
+      "weight": 1,
+      "meta": {
+        "description": "Co-founded RYOT in 2012"
+      },
+      "createdAt": "2026-02-25T16:44:35.145Z"
+    },
+    {
+      "from": "person::harmony korine",
+      "to": "project::gummo",
+      "axis": "collaborator",
+      "weight": 1,
+      "meta": {
+        "description": "Written & directed by Korine (1997). Pre-EDGLRD personal filmography."
+      },
+      "createdAt": "2026-02-25T16:44:35.145Z"
+    },
+    {
+      "from": "person::harmony korine",
+      "to": "project::the beach bum",
+      "axis": "collaborator",
+      "weight": 1,
+      "meta": {
+        "description": "Written & directed by Korine (2019). Stars Matthew McConaughey."
+      },
+      "createdAt": "2026-02-25T16:44:35.145Z"
+    },
+    {
+      "from": "person::david droga",
+      "to": "agency::droga5",
+      "axis": "founder",
+      "weight": 1.2,
       "meta": {},
-      "createdAt": "2026-02-24T16:34:23.477Z"
+      "createdAt": "2026-02-25T16:44:35.146Z"
     },
     {
       "from": "agency::droga5",
-      "to": "project::droga5 x nike campaign",
+      "to": "traditional::accenture song",
       "axis": "partner",
       "weight": 0.8,
-      "meta": {},
-      "createdAt": "2026-02-24T16:37:04.623Z"
+      "meta": {
+        "description": "Droga5 acquired by Accenture Interactive (now Accenture Song) in 2019"
+      },
+      "createdAt": "2026-02-25T16:44:35.146Z"
+    },
+    {
+      "from": "person::david droga",
+      "to": "traditional::saatchi & saatchi",
+      "axis": "alumni",
+      "weight": 0.8,
+      "meta": {
+        "description": "Youngest-ever Executive Creative Director (at age 27)"
+      },
+      "createdAt": "2026-02-25T16:44:35.146Z"
     },
     {
       "from": "agency::droga5",
-      "to": "project::droga5 super bowl spot",
+      "to": "project::nyt \"the truth is worth it\"",
       "axis": "partner",
-      "weight": 0.8,
+      "weight": 1,
       "meta": {},
-      "createdAt": "2026-02-24T16:37:04.623Z"
+      "createdAt": "2026-02-25T16:44:35.146Z"
     },
     {
       "from": "agency::droga5",
-      "to": "project::droga5 apple launch video",
+      "to": "project::ihop \"ihob\" rebrand",
       "axis": "partner",
-      "weight": 0.8,
+      "weight": 1,
       "meta": {},
-      "createdAt": "2026-02-24T16:37:04.623Z"
+      "createdAt": "2026-02-25T16:44:35.146Z"
     },
     {
-      "from": "agency::wieden+kennedy portland",
-      "to": "project::wieden+kennedy portland x nike campaign",
+      "from": "agency::droga5",
+      "to": "project::unicef tap project",
       "axis": "partner",
-      "weight": 0.8,
+      "weight": 1,
       "meta": {},
-      "createdAt": "2026-02-24T16:38:24.290Z"
+      "createdAt": "2026-02-25T16:44:35.146Z"
     },
     {
-      "from": "agency::wieden+kennedy portland",
-      "to": "project::wieden+kennedy portland super bowl spot",
-      "axis": "partner",
+      "from": "agency::droga5",
+      "to": "project::coinbase superbowl ad",
+      "axis": "collaborator",
       "weight": 0.8,
-      "meta": {},
-      "createdAt": "2026-02-24T16:38:24.290Z"
+      "meta": {
+        "description": "Also credited on the Coinbase QR Super Bowl spot"
+      },
+      "createdAt": "2026-02-25T16:44:35.146Z"
     },
     {
-      "from": "agency::wieden+kennedy portland",
-      "to": "project::wieden+kennedy portland apple launch video",
+      "from": "person::garson yu",
+      "to": "traditional::yu+co",
+      "axis": "founder",
+      "weight": 1.2,
+      "meta": {},
+      "createdAt": "2026-02-25T16:56:08.184Z"
+    },
+    {
+      "from": "person::garson yu",
+      "to": "traditional::imaginary forces",
+      "axis": "alumni",
+      "weight": 0.7,
+      "meta": {
+        "description": "Co-Creative Director before founding yU+co"
+      },
+      "createdAt": "2026-02-25T16:56:08.184Z"
+    },
+    {
+      "from": "traditional::digital kitchen",
+      "to": "project::dexter main titles",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {
+        "description": "Emmy-winning title sequence (2007)"
+      },
+      "createdAt": "2026-02-25T16:56:08.184Z"
+    },
+    {
+      "from": "traditional::digital kitchen",
+      "to": "project::six feet under main titles",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {
+        "description": "Emmy-winning title sequence (2002)"
+      },
+      "createdAt": "2026-02-25T16:56:08.184Z"
+    },
+    {
+      "from": "agency::edglrd",
+      "to": "project::gucci mane \"voices/psycho\" ai mv",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-25T16:56:08.184Z"
+    },
+    {
+      "from": "agency::edglrd",
+      "to": "project::yeat \"loose leaf\" mv",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-25T16:56:08.184Z"
+    },
+    {
+      "from": "agency::edglrd",
+      "to": "project::the weeknd ai shorts",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-25T16:56:08.184Z"
+    },
+    {
+      "from": "traditional::xtr",
+      "to": "project::ascension (oscar-nom)",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-25T16:56:08.185Z"
+    },
+    {
+      "from": "traditional::tbwa\\\\chiat\\\\day",
+      "to": "project::apple \"1984\" super bowl",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {
+        "description": "Directed by Ridley Scott. Introduced the Macintosh."
+      },
+      "createdAt": "2026-02-25T16:56:08.185Z"
+    },
+    {
+      "from": "traditional::tbwa\\\\chiat\\\\day",
+      "to": "project::apple \"think different\"",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-25T16:56:08.185Z"
+    },
+    {
+      "from": "agency::tbwa\\\\media arts lab",
+      "to": "project::\"shot on iphone\" campaigns",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-25T16:56:08.185Z"
+    },
+    {
+      "from": "agency::tbwa\\\\media arts lab",
+      "to": "traditional::tbwa\\\\chiat\\\\day",
       "axis": "partner",
       "weight": 0.8,
-      "meta": {},
-      "createdAt": "2026-02-24T16:38:24.290Z"
+      "meta": {
+        "description": "Apple-dedicated subsidiary of TBWA\\Chiat\\Day"
+      },
+      "createdAt": "2026-02-25T16:56:08.185Z"
     }
   ]
 }

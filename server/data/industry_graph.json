@@ -36,25 +36,29 @@
       "type": "agency",
       "name": "Native Foreign",
       "isLandmark": true,
-      "connections": 7
+      "connections": 18,
+      "addedAt": "2026-02-24T04:43:10.010Z"
     },
     "agency::edglrd": {
       "type": "agency",
       "name": "EDGLRD",
       "isLandmark": true,
-      "connections": 6
+      "connections": 6,
+      "addedAt": "2026-02-24T04:43:10.010Z"
     },
     "agency::pomp & clout": {
       "type": "agency",
       "name": "Pomp & Clout",
       "isLandmark": true,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-24T05:41:36.099Z"
     },
     "agency::mother la": {
       "type": "agency",
       "name": "Mother LA",
       "isLandmark": true,
-      "connections": 9
+      "connections": 9,
+      "addedAt": "2026-02-24T05:41:36.099Z"
     },
     "project::sora alpha video": {
       "type": "project",
@@ -63,7 +67,8 @@
       "url": "https://openai.com/sora",
       "isNotable": true,
       "isViral": false,
-      "source": "agent"
+      "source": "agent",
+      "addedAt": "2026-02-24T04:43:10.010Z"
     },
     "person::harmony korine": {
       "type": "person",
@@ -72,13 +77,15 @@
       "source": "agent",
       "linkedIn": "https://www.linkedin.com/company/edglrd/",
       "twitter": "https://x.com/edglrd",
-      "bio": "Renowned filmmaker and artist (Kids, Spring Breakers, Aggro Dr1ft). Founder of EDGLRD, a technology-design collective."
+      "bio": "Renowned filmmaker and artist (Kids, Spring Breakers, Aggro Dr1ft). Founder of EDGLRD, a technology-design collective.",
+      "addedAt": "2026-02-24T04:43:10.010Z"
     },
     "agency::asteria": {
       "type": "agency",
       "name": "Asteria",
       "isLandmark": true,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-24T05:29:48.085Z"
     },
     "person::bryn mooser": {
       "type": "person",
@@ -87,39 +94,45 @@
       "linkedIn": "https://www.linkedin.com/in/brynmooser",
       "twitter": "https://x.com/brynmooser",
       "bio": "Founder ASTERIA, Co-Founder MOONVALLEY and XTR, DOCUMENTARY+, RYOT.",
-      "connections": 6
+      "connections": 6,
+      "addedAt": "2026-02-24T05:29:48.085Z"
     },
     "traditional::xtr": {
       "type": "traditional",
       "name": "XTR",
       "source": "agent",
       "connections": 2,
-      "bio": "Documentary production company founded by Bryn Mooser in 2019. 80+ docs produced/financed. Launched Documentary+ streaming platform (2021). Notable: Ascension (Oscar-nom), 76 Days (Emmy/Peabody), They Call Me Magic (Apple TV+)."
+      "bio": "Documentary production company founded by Bryn Mooser in 2019. 80+ docs produced/financed. Launched Documentary+ streaming platform (2021). Notable: Ascension (Oscar-nom), 76 Days (Emmy/Peabody), They Call Me Magic (Apple TV+).",
+      "addedAt": "2026-02-24T05:29:48.086Z"
     },
     "traditional::documentary+": {
       "type": "traditional",
       "name": "DOCUMENTARY+",
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-24T05:29:48.086Z"
     },
     "traditional::verizon media": {
       "type": "traditional",
       "name": "Verizon Media",
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-24T05:29:48.086Z"
     },
     "traditional::ryot": {
       "type": "traditional",
       "name": "RYOT",
       "source": "agent",
       "connections": 3,
-      "bio": "Immersive media company co-founded by Bryn Mooser in 2012. Pioneer in VR journalism — first to film VR in a war zone (Syria) and natural disaster (Nepal). Acquired by AOL/Verizon for ~$10-15M in 2016. Produced 200+ immersive and linear films."
+      "bio": "Immersive media company co-founded by Bryn Mooser in 2012. Pioneer in VR journalism — first to film VR in a war zone (Syria) and natural disaster (Nepal). Acquired by AOL/Verizon for ~$10-15M in 2016. Produced 200+ immersive and linear films.",
+      "addedAt": "2026-02-25T16:44:35.144Z"
     },
     "traditional::aol": {
       "type": "traditional",
       "name": "AOL",
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-24T05:29:48.086Z"
     },
     "person::nik kleverov": {
       "type": "person",
@@ -128,36 +141,42 @@
       "linkedIn": "https://www.linkedin.com/in/nikkleverov",
       "twitter": "https://x.com/kleverov",
       "bio": "AI Specialist, Creative Director, and Entrepreneur. Chief Creative Officer of Native Foreign.",
-      "connections": 4
+      "connections": 4,
+      "addedAt": "2026-02-24T05:29:48.086Z"
     },
     "traditional::digital kitchen": {
       "type": "traditional",
       "name": "Digital Kitchen",
       "source": "agent",
       "connections": 3,
-      "bio": "Creative production company founded in Seattle (1995) by Paul Matthaeus. 3x Emmy-winning main title designs: Dexter (2007), Six Feet Under (2002), Godfather of Harlem (2020). Also created True Blood, Nip/Tuck, Narcos, Yellowjackets titles."
+      "bio": "Creative production company founded in Seattle (1995) by Paul Matthaeus. 3x Emmy-winning main title designs: Dexter (2007), Six Feet Under (2002), Godfather of Harlem (2020). Also created True Blood, Nip/Tuck, Narcos, Yellowjackets titles.",
+      "addedAt": "2026-02-24T05:29:48.086Z"
     },
     "traditional::bungie": {
       "type": "traditional",
       "name": "Bungie",
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-24T05:29:48.086Z"
     },
     "traditional::yu+co": {
       "type": "traditional",
       "name": "yU+co",
       "source": "agent",
       "connections": 2,
-      "bio": "Design studio founded by Garson Yu in 1998. Specializes in film/TV title sequences. 100+ feature film titles including 300, Watchmen, Life of Pi, Crazy Rich Asians. Emmy winner for title design."
+      "bio": "Design studio founded by Garson Yu in 1998. Specializes in film/TV title sequences. 100+ feature film titles including 300, Watchmen, Life of Pi, Crazy Rich Asians. Emmy winner for title design.",
+      "addedAt": "2026-02-24T05:29:48.086Z"
     },
     "person::ryan staake": {
       "type": "person",
       "name": "Ryan Staake",
       "source": "agent",
-      "linkedIn": "http://pompandclout.com/",
+      "linkedIn": "",
       "twitter": "",
+      "url": "https://www.pompandclout.com/",
       "bio": "Founder of Pomp & Clout, an innovative creative production company. Former designer on Apple's Human Interface Team.",
-      "connections": 2
+      "connections": 2,
+      "addedAt": "2026-02-24T05:41:36.099Z"
     },
     "person::joe staples": {
       "type": "person",
@@ -166,13 +185,15 @@
       "linkedIn": "https://www.linkedin.com/in/joe-staples-181b834",
       "twitter": "https://x.com/joseph_staples",
       "bio": "Founding Partner & CCO at Mother LA. Previous Executive Creative Director at Wieden + Kennedy.",
-      "connections": 2
+      "connections": 2,
+      "addedAt": "2026-02-24T05:41:36.099Z"
     },
     "traditional::wieden + kennedy": {
       "type": "traditional",
       "name": "Wieden + Kennedy",
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-24T05:41:36.099Z"
     },
     "person::peter ravailhe": {
       "type": "person",
@@ -181,13 +202,16 @@
       "linkedIn": "",
       "twitter": "",
       "bio": "Founding Partner & CEO at Mother LA. Previously Head of Sports at TBWA\\Chiat\\Day.",
-      "connections": 2
+      "connections": 2,
+      "addedAt": "2026-02-24T05:41:36.099Z"
     },
     "traditional::tbwa\\chiat\\day": {
       "type": "traditional",
       "name": "TBWA\\Chiat\\Day",
       "source": "agent",
-      "connections": 1
+      "bio": "Iconic ad agency. Created Apple \"1984\" Super Bowl commercial (directed by Ridley Scott) and \"Think Different\" campaign. Nissan agency of record for 37 years. Part of Omnicom Group.",
+      "connections": 4,
+      "addedAt": "2026-02-24T05:41:36.099Z"
     },
     "project::aggro dr1ft": {
       "type": "project",
@@ -196,7 +220,8 @@
       "isNotable": true,
       "isViral": false,
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-24T06:04:45.973Z"
     },
     "project::baby invasion": {
       "type": "project",
@@ -205,40 +230,46 @@
       "isNotable": false,
       "isViral": false,
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-24T06:04:45.973Z"
     },
     "agency::dolsten & co": {
       "type": "agency",
       "name": "Dolsten & Co",
       "isLandmark": true,
-      "connections": 4
+      "connections": 4,
+      "addedAt": "2026-02-25T16:35:26.863Z"
     },
     "agency::secret level": {
       "type": "agency",
       "name": "Secret Level",
-      "source": "agent",
-      "connections": 5
+      "source": "user",
+      "connections": 5,
+      "addedAt": "2026-02-24T06:21:41.232Z"
     },
     "agency::curious refuge": {
       "type": "agency",
       "name": "Curious Refuge",
-      "source": "agent",
-      "connections": 2
+      "source": "user",
+      "connections": 2,
+      "addedAt": "2026-02-24T06:21:41.232Z"
     },
     "agency::pika labs (creative)": {
       "type": "agency",
       "name": "Pika Labs (Creative)",
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-24T06:21:41.232Z"
     },
     "project::toys \"r\" us origin story": {
       "type": "project",
       "name": "Toys \"R\" Us Origin Story (Sora)",
-      "url": "https://www.tomsguide.com/ai/ai-image-video/i-watched-the-toys-r-us-ad-made-with-openais-sora-and-it-changes-everything",
+      "url": "https://www.youtube.com/watch?v=aO_bkunj9ME",
       "isNotable": true,
       "isViral": true,
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-24T06:39:04.968Z"
     },
     "project::tcl \"next stop paris\"": {
       "type": "project",
@@ -247,7 +278,8 @@
       "isNotable": false,
       "isViral": false,
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-24T06:39:04.968Z"
     },
     "project::the beach bum": {
       "type": "project",
@@ -256,7 +288,8 @@
       "isNotable": false,
       "isViral": false,
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:44:35.145Z"
     },
     "project::gummo": {
       "type": "project",
@@ -265,16 +298,18 @@
       "isNotable": true,
       "isViral": false,
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:44:35.145Z"
     },
     "project::postmates \"don't recipe\"": {
       "type": "project",
       "name": "Postmates \"Don't Recipe\"",
-      "url": "https://motherla.com/work/postmates",
+      "url": "https://www.motherla.com/work/postmates",
       "isNotable": true,
       "isViral": true,
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-24T06:44:13.250Z"
     },
     "project::coinbase superbowl ad": {
       "type": "project",
@@ -283,46 +318,52 @@
       "isNotable": true,
       "isViral": true,
       "source": "agent",
-      "connections": 2
+      "connections": 2,
+      "addedAt": "2026-02-24T06:44:13.250Z"
     },
     "project::target target run": {
       "type": "project",
       "name": "Target Target Run",
-      "url": "https://motherla.com/work/target",
+      "url": "https://www.motherla.com/work/target",
       "isNotable": true,
       "isViral": false,
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-24T06:44:13.250Z"
     },
     "project::sonic \"drive-in\"": {
       "type": "project",
       "name": "Sonic \"Drive-In\"",
-      "url": "https://motherla.com/work/sonic",
+      "url": "https://www.motherla.com/work/sonic",
       "isNotable": false,
       "isViral": false,
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-24T06:44:13.250Z"
     },
     "agency::wieden+kennedy portland": {
       "type": "agency",
       "name": "Wieden+Kennedy Portland",
       "mapStatus": "unmapped",
-      "source": "agent",
-      "connections": 1
+      "source": "user",
+      "connections": 1,
+      "addedAt": "2026-02-24T06:45:02.846Z"
     },
     "agency::droga5": {
       "type": "agency",
       "name": "Droga5",
-      "source": "agent",
+      "source": "user",
       "connections": 7,
-      "bio": "Award-winning creative agency founded by David Droga in 2006. Part of Accenture Song since 2019. Known for IHOP \"IHOb\", NYT \"The Truth Is Worth It\", Coinbase QR Super Bowl ad, and UNICEF Tap Project."
+      "bio": "Award-winning creative agency founded by David Droga in 2006. Part of Accenture Song since 2019. Known for IHOP \"IHOb\", NYT \"The Truth Is Worth It\", Coinbase QR Super Bowl ad, and UNICEF Tap Project.",
+      "addedAt": "2026-02-24T06:45:02.846Z"
     },
     "agency::tbwa\\media arts lab": {
       "type": "agency",
       "name": "TBWA\\Media Arts Lab",
-      "mapStatus": "unmapped",
-      "source": "agent",
-      "connections": 1
+      "source": "user",
+      "bio": "Apple's dedicated external ad agency. Created and runs all \"Shot on iPhone\" campaigns since 2014. Part of TBWA Worldwide / Omnicom. Notable: Michel Gondry's \"Detour\" (2017), Dua Lipa tour campaign (2025).",
+      "connections": 3,
+      "addedAt": "2026-02-24T06:45:02.846Z"
     },
     "person::simon dolsten": {
       "type": "person",
@@ -331,28 +372,32 @@
       "linkedIn": "https://www.linkedin.com/in/simondolsten/",
       "twitter": "",
       "bio": "Founder of Dolsten & Co. Multi-EMMY-winning creative director. World's most-awarded creative director by The One Show & ADC. Previously at FCB New York, Johannes Leonardo, Publicis. 37 Cannes Lions, 73 One Show Pencils.",
-      "connections": 4
+      "connections": 4,
+      "addedAt": "2026-02-25T16:35:26.863Z"
     },
     "traditional::fcb new york": {
       "type": "traditional",
       "name": "FCB New York",
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:35:26.864Z"
     },
     "traditional::johannes leonardo": {
       "type": "traditional",
       "name": "Johannes Leonardo",
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:35:26.864Z"
     },
     "project::accelerator \"cart worthy\"": {
       "type": "project",
       "name": "Accelerator \"Cart Worthy\"",
       "source": "agent",
-      "url": "https://dolsten.com",
+      "url": "https://www.dolsten.com",
       "isNotable": true,
       "isViral": true,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:35:26.864Z"
     },
     "project::accelerator \"crashman\" ai superhero": {
       "type": "project",
@@ -361,7 +406,8 @@
       "url": "https://dolsten.com",
       "isNotable": true,
       "isViral": false,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:35:26.864Z"
     },
     "project::viome \"arthur the alien\"": {
       "type": "project",
@@ -370,16 +416,18 @@
       "url": "https://dolsten.com",
       "isNotable": false,
       "isViral": false,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:35:26.864Z"
     },
     "project::mcenroe vs mcenroe": {
       "type": "project",
       "name": "McEnroe vs McEnroe",
       "source": "agent",
-      "url": "https://simondolsten.com",
+      "url": "https://www.simondolsten.com",
       "isNotable": true,
       "isViral": false,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:35:26.864Z"
     },
     "person::jason zada": {
       "type": "person",
@@ -388,7 +436,8 @@
       "linkedIn": "https://www.linkedin.com/in/jasonzada/",
       "twitter": "https://x.com/jasonzada",
       "bio": "Founder & CCO of Secret Level. Creator of \"Take This Lollipop\" (viral interactive horror). Director of \"The Forest\" (2016). Co-founded Evolution Bureau (EVB), acquired by Omnicom. Creator of \"Elf Yourself\" for OfficeMax.",
-      "connections": 4
+      "connections": 4,
+      "addedAt": "2026-02-25T16:35:26.864Z"
     },
     "person::eric shamlin": {
       "type": "person",
@@ -397,25 +446,29 @@
       "linkedIn": "https://www.linkedin.com/in/ericshamlin/",
       "twitter": "",
       "bio": "CEO of Secret Level. Multiple Emmy, Peabody & Cannes Lion winner. Previously at Apple (Program Director), Omnicom, Entertainment One, Media.Monks (SVP Head of Growth). Chairs Emmy AI Task Force. Innovation Chair, Producers Guild.",
-      "connections": 3
+      "connections": 3,
+      "addedAt": "2026-02-25T16:35:26.864Z"
     },
     "traditional::evolution bureau (evb)": {
       "type": "traditional",
       "name": "Evolution Bureau (EVB)",
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:35:26.864Z"
     },
     "traditional::apple": {
       "type": "traditional",
       "name": "Apple",
       "source": "agent",
-      "connections": 2
+      "connections": 2,
+      "addedAt": "2026-02-25T16:35:26.864Z"
     },
     "traditional::media.monks": {
       "type": "traditional",
       "name": "Media.Monks",
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:35:26.864Z"
     },
     "project::coca-cola \"holidays are coming\" ai": {
       "type": "project",
@@ -424,7 +477,8 @@
       "url": "https://www.youtube.com/watch?v=KMnKpCvRKpE",
       "isNotable": true,
       "isViral": true,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:35:26.864Z"
     },
     "project::take this lollipop": {
       "type": "project",
@@ -433,7 +487,8 @@
       "url": "https://en.wikipedia.org/wiki/Take_This_Lollipop",
       "isNotable": true,
       "isViral": true,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:35:26.864Z"
     },
     "project::elf yourself (officemax)": {
       "type": "project",
@@ -442,16 +497,18 @@
       "url": "https://www.elfyourself.com/",
       "isNotable": true,
       "isViral": true,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:35:26.864Z"
     },
     "project::black eyed peas ai partnership": {
       "type": "project",
       "name": "Black Eyed Peas AI Partnership",
       "source": "agent",
-      "url": "https://secretlevel.com",
+      "url": "https://www.secretlevel.com",
       "isNotable": true,
       "isViral": false,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:35:26.864Z"
     },
     "person::caleb ward": {
       "type": "person",
@@ -460,7 +517,8 @@
       "linkedIn": "https://www.linkedin.com/in/calebward/",
       "twitter": "https://x.com/caaboringday",
       "bio": "Co-Founder & CEO of Curious Refuge, the world's first online home for AI storytellers. Creator of viral \"Star Wars by Wes Anderson\" and \"Lord of the Rings by Wes Anderson\" AI films. Students in 109+ countries.",
-      "connections": 2
+      "connections": 2,
+      "addedAt": "2026-02-25T16:35:26.864Z"
     },
     "project::star wars by wes anderson (ai)": {
       "type": "project",
@@ -469,7 +527,8 @@
       "url": "https://www.youtube.com/watch?v=d-8DT5Q8Uag",
       "isNotable": true,
       "isViral": true,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:35:26.864Z"
     },
     "project::body team 12": {
       "type": "project",
@@ -478,7 +537,8 @@
       "url": "https://www.imdb.com/title/tt5278498/",
       "isNotable": true,
       "isViral": false,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:44:35.144Z"
     },
     "project::the fabric of reality": {
       "type": "project",
@@ -487,7 +547,8 @@
       "url": "https://www.verizon.com/about/news/ryot-5g-studio",
       "isNotable": false,
       "isViral": false,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:44:35.145Z"
     },
     "person::david droga": {
       "type": "person",
@@ -496,19 +557,22 @@
       "linkedIn": "https://www.linkedin.com/in/david-droga-80ab2b1/",
       "twitter": "",
       "bio": "Founder of Droga5. Youngest-ever ECD at Saatchi & Saatchi (age 27). Named Global Chairman of Accenture Song. Named Cannes Lions Creative Person of the Decade (2020). Born in Australia.",
-      "connections": 2
+      "connections": 2,
+      "addedAt": "2026-02-25T16:44:35.146Z"
     },
     "traditional::accenture song": {
       "type": "traditional",
       "name": "Accenture Song",
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:44:35.146Z"
     },
     "traditional::saatchi & saatchi": {
       "type": "traditional",
       "name": "Saatchi & Saatchi",
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:44:35.146Z"
     },
     "project::nyt \"the truth is worth it\"": {
       "type": "project",
@@ -517,7 +581,8 @@
       "url": "https://www.youtube.com/watch?v=gY0Fdz350GE",
       "isNotable": true,
       "isViral": true,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:44:35.146Z"
     },
     "project::ihop \"ihob\" rebrand": {
       "type": "project",
@@ -526,16 +591,18 @@
       "url": "https://www.youtube.com/watch?v=K1BnJPmFGYQ",
       "isNotable": true,
       "isViral": true,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:44:35.146Z"
     },
     "project::unicef tap project": {
       "type": "project",
       "name": "UNICEF Tap Project",
       "source": "agent",
-      "url": "https://www.commarts.com/project/16116/unicef-tap-project",
+      "url": "https://www.youtube.com/watch?v=3nR-0IXOGZE",
       "isNotable": true,
       "isViral": false,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:44:35.146Z"
     },
     "person::garson yu": {
       "type": "person",
@@ -544,13 +611,15 @@
       "linkedIn": "",
       "twitter": "",
       "bio": "Founder & Creative Director of yU+co. Previously at R/GA and co-creative director at Imaginary Forces with Kyle Cooper. Title sequences for Spielberg, Ang Lee, Ridley Scott. Emmy Award winner.",
-      "connections": 2
+      "connections": 2,
+      "addedAt": "2026-02-25T16:56:08.184Z"
     },
     "traditional::imaginary forces": {
       "type": "traditional",
       "name": "Imaginary Forces",
       "source": "agent",
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:56:08.184Z"
     },
     "project::dexter main titles": {
       "type": "project",
@@ -559,7 +628,8 @@
       "url": "https://www.youtube.com/watch?v=ej8-Rqo-VT4",
       "isNotable": true,
       "isViral": true,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:56:08.184Z"
     },
     "project::six feet under main titles": {
       "type": "project",
@@ -568,7 +638,8 @@
       "url": "https://www.youtube.com/watch?v=oPCsmw4FYwk",
       "isNotable": true,
       "isViral": false,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:56:08.184Z"
     },
     "project::gucci mane \"voices/psycho\" ai mv": {
       "type": "project",
@@ -577,7 +648,8 @@
       "url": "https://www.youtube.com/watch?v=QO7q1lK4fWU",
       "isNotable": true,
       "isViral": true,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:56:08.184Z"
     },
     "project::yeat \"loose leaf\" mv": {
       "type": "project",
@@ -586,7 +658,8 @@
       "url": "https://www.youtube.com/watch?v=yBhe0SmbqCA",
       "isNotable": false,
       "isViral": false,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:56:08.184Z"
     },
     "project::the weeknd ai shorts": {
       "type": "project",
@@ -595,7 +668,8 @@
       "url": "https://edglrd.com",
       "isNotable": true,
       "isViral": false,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:56:08.184Z"
     },
     "project::ascension (oscar-nom)": {
       "type": "project",
@@ -604,14 +678,8 @@
       "url": "https://www.imdb.com/title/tt14301902/",
       "isNotable": true,
       "isViral": false,
-      "connections": 1
-    },
-    "traditional::tbwa\\\\chiat\\\\day": {
-      "type": "traditional",
-      "name": "TBWA\\Chiat\\Day",
-      "source": "agent",
-      "bio": "Iconic ad agency. Created Apple \"1984\" Super Bowl commercial (directed by Ridley Scott) and \"Think Different\" campaign. Nissan agency of record for 37 years. Part of Omnicom Group.",
-      "connections": 3
+      "connections": 1,
+      "addedAt": "2026-02-25T16:56:08.185Z"
     },
     "project::apple \"1984\" super bowl": {
       "type": "project",
@@ -620,7 +688,8 @@
       "url": "https://www.youtube.com/watch?v=VtvjbmoDx-I",
       "isNotable": true,
       "isViral": true,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:56:08.185Z"
     },
     "project::apple \"think different\"": {
       "type": "project",
@@ -629,14 +698,8 @@
       "url": "https://www.youtube.com/watch?v=tjgtLSHhTPg",
       "isNotable": true,
       "isViral": true,
-      "connections": 1
-    },
-    "agency::tbwa\\\\media arts lab": {
-      "type": "agency",
-      "name": "TBWA\\Media Arts Lab",
-      "source": "agent",
-      "bio": "Apple's dedicated external ad agency. Created and runs all \"Shot on iPhone\" campaigns since 2014. Part of TBWA Worldwide / Omnicom. Notable: Michel Gondry's \"Detour\" (2017), Dua Lipa tour campaign (2025).",
-      "connections": 2
+      "connections": 1,
+      "addedAt": "2026-02-25T16:56:08.185Z"
     },
     "project::\"shot on iphone\" campaigns": {
       "type": "project",
@@ -645,7 +708,366 @@
       "url": "https://www.youtube.com/results?search_query=shot+on+iphone+apple",
       "isNotable": true,
       "isViral": true,
-      "connections": 1
+      "connections": 1,
+      "addedAt": "2026-02-25T16:56:08.185Z"
+    },
+    "agency::arc creative": {
+      "bio": "Creative studio specialized in VFX, production, gaming, design, and color. Blends traditional high-end production with innovative digital craft. Clients include Apple Watch, YouTube TV, Harry Styles, Dove.",
+      "name": "Arc Creative",
+      "source": "user",
+      "type": "agency",
+      "connections": 12,
+      "addedAt": "2026-02-26T05:19:39.630Z"
+    },
+    "person::magdalena luna": {
+      "name": "Magdalena Luna",
+      "source": "agent",
+      "twitter": "",
+      "linkedIn": "",
+      "type": "person",
+      "bio": "Creative Director at Arc Creative.",
+      "connections": 2,
+      "addedAt": "2026-02-26T05:19:39.630Z"
+    },
+    "person::anastasia von rahl": {
+      "name": "Anastasia Von Rahl",
+      "source": "agent",
+      "twitter": "",
+      "linkedIn": "",
+      "type": "person",
+      "bio": "Managing Director, LA at Arc Creative.",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:19:39.630Z"
+    },
+    "project::youtube tv \"don't settle for meh\"": {
+      "name": "YouTube TV \"Don't Settle for Meh\"",
+      "source": "agent",
+      "isNotable": true,
+      "isViral": false,
+      "type": "project",
+      "url": "https://arc-creative.us/",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:19:39.630Z"
+    },
+    "project::harry styles \"aperture\"": {
+      "name": "Harry Styles \"Aperture\"",
+      "source": "agent",
+      "isNotable": true,
+      "isViral": false,
+      "type": "project",
+      "url": "https://arc-creative.us/",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:19:39.630Z"
+    },
+    "agency::private island": {
+      "bio": "Studio paradise focused on disruptive advertising, animation, and AI-generated filmmaking. Known for hallucinogenic AI visuals. Clients include Nike, Lego, Ikea, EA Sports, Adobe, Pokemon.",
+      "name": "Private Island",
+      "source": "user",
+      "type": "agency",
+      "connections": 4,
+      "addedAt": "2026-02-26T05:19:39.630Z"
+    },
+    "person::chris boyle": {
+      "name": "Chris Boyle",
+      "source": "agent",
+      "twitter": "",
+      "linkedIn": "",
+      "type": "person",
+      "bio": "Co-founder and Director at Private Island. Pioneer in AI-generated commercial filmmaking.",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:19:39.630Z"
+    },
+    "person::helen power": {
+      "name": "Helen Power",
+      "source": "agent",
+      "twitter": "",
+      "linkedIn": "",
+      "type": "person",
+      "bio": "Co-founder and Executive Producer at Private Island.",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:19:39.630Z"
+    },
+    "project::mcdonald's ai commercial": {
+      "name": "McDonald's AI Commercial",
+      "source": "agent",
+      "isNotable": true,
+      "isViral": true,
+      "type": "project",
+      "url": "https://www.privateisland.tv/aiatpi",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:19:39.630Z"
+    },
+    "agency::promise ai": {
+      "bio": "GenAI-first entertainment studio creating films, series, and storytelling powered by AI tools. Founded by ex-YouTube/Fullscreen execs. Google-backed but limited output after a year.",
+      "name": "Promise AI",
+      "source": "agent",
+      "type": "agency",
+      "connections": 3,
+      "addedAt": "2026-02-26T05:19:39.630Z"
+    },
+    "person::george strompolos": {
+      "name": "George Strompolos",
+      "source": "agent",
+      "twitter": "",
+      "linkedIn": "",
+      "type": "person",
+      "bio": "Founder of Promise AI. Previously founded Fullscreen (YouTube MCN).",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:19:39.630Z"
+    },
+    "person::jamie byrne": {
+      "name": "Jamie Byrne",
+      "source": "agent",
+      "twitter": "",
+      "linkedIn": "",
+      "type": "person",
+      "bio": "Founder of Promise AI. Former YouTube executive.",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:19:39.630Z"
+    },
+    "agency::bottom line ai": {
+      "bio": "Paris-based studio focused on AI filmmaking. Provides concept art, animatics, previsualization, and full production using generative models. Notable for spec ads including Volvo.",
+      "name": "Bottom Line AI",
+      "source": "agent",
+      "type": "agency",
+      "connections": 2,
+      "addedAt": "2026-02-26T05:19:39.630Z"
+    },
+    "project::volvo \"choose differently\" (spec)": {
+      "name": "Volvo \"Choose Differently\" (Spec)",
+      "source": "agent",
+      "isNotable": false,
+      "isViral": false,
+      "type": "project",
+      "url": "https://bottomlineai.fr/",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:19:39.630Z"
+    },
+    "agency::metaphysic.ai": {
+      "bio": "Famous for hyperrealistic deepfakes and digital identities. Created DeepTomCruise viral TikToks and AGT Elvis deepfake. Provided de-aging tech for Tom Hanks in 'Here'. Domain now inactive - founder Tom Graham pivoting to Brahma AI.",
+      "name": "Metaphysic.ai",
+      "source": "user",
+      "type": "agency",
+      "connections": 6,
+      "addedAt": "2026-02-26T05:19:39.630Z"
+    },
+    "person::tom graham": {
+      "name": "Tom Graham",
+      "source": "agent",
+      "twitter": "",
+      "linkedIn": "",
+      "type": "person",
+      "bio": "CEO and Founder of Metaphysic.ai. TIME100 Most Influential Companies 2023. Pivoting to Brahma AI.",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:19:39.630Z"
+    },
+    "person::chris ume": {
+      "name": "Chris Ume",
+      "source": "agent",
+      "twitter": "",
+      "linkedIn": "",
+      "type": "person",
+      "bio": "Co-founder of Metaphysic.ai. Renowned deepfake artist behind DeepTomCruise.",
+      "connections": 2,
+      "addedAt": "2026-02-26T05:19:39.630Z"
+    },
+    "project::deeptomcruise (tiktok)": {
+      "name": "DeepTomCruise (TikTok)",
+      "source": "agent",
+      "isNotable": true,
+      "isViral": true,
+      "type": "project",
+      "url": "https://www.tiktok.com/@deeptomcruise",
+      "connections": 2,
+      "addedAt": "2026-02-26T05:19:39.630Z"
+    },
+    "project::agt elvis deepfake": {
+      "name": "AGT Elvis Deepfake",
+      "source": "agent",
+      "isNotable": true,
+      "isViral": true,
+      "type": "project",
+      "url": "https://www.youtube.com/watch?v=V3T1dHFnBCY",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:19:39.630Z"
+    },
+    "project::\"here\" de-aging (film)": {
+      "name": "\"Here\" De-aging (Film)",
+      "source": "agent",
+      "isNotable": true,
+      "isViral": false,
+      "type": "project",
+      "url": "https://www.imdb.com/title/tt0099487/",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:19:39.630Z"
+    },
+    "person::neil ghaznavi": {
+      "bio": "Co-Founder and VFX/VP Supervisor at Arc Creative. Previously at The Mill.",
+      "name": "Neil Ghaznavi",
+      "source": "agent",
+      "type": "person",
+      "connections": 2,
+      "addedAt": "2026-02-26T05:40:32.536Z"
+    },
+    "person::tim crean": {
+      "bio": "Founding Member and Creative Leader at Arc Creative, New York office. Previously at The Mill.",
+      "name": "Tim Crean",
+      "source": "agent",
+      "type": "person",
+      "connections": 2,
+      "addedAt": "2026-02-26T05:40:32.536Z"
+    },
+    "person::becky porter": {
+      "bio": "Creative Director at Arc Creative.",
+      "name": "Becky Porter",
+      "source": "agent",
+      "type": "person",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:40:32.536Z"
+    },
+    "traditional::the mill": {
+      "bio": "Legendary VFX and creative technology studio. Multiple Arc Creative founders are alumni.",
+      "name": "The Mill",
+      "source": "agent",
+      "type": "traditional",
+      "connections": 3,
+      "addedAt": "2026-02-26T05:40:32.536Z"
+    },
+    "project::apple watch \"new year\"": {
+      "name": "Apple Watch \"New Year\"",
+      "source": "agent",
+      "isNotable": true,
+      "isViral": false,
+      "type": "project",
+      "url": "https://arc-creative.us/",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:40:32.536Z"
+    },
+    "project::netflix \"the beast in me\"": {
+      "name": "Netflix \"The Beast in Me\"",
+      "source": "agent",
+      "isNotable": false,
+      "isViral": false,
+      "type": "project",
+      "url": "https://arc-creative.us/",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:40:32.536Z"
+    },
+    "project::the game awards 2025 graphics": {
+      "name": "The Game Awards 2025 Graphics",
+      "source": "agent",
+      "isNotable": true,
+      "isViral": false,
+      "type": "project",
+      "url": "https://arc-creative.us/",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:40:32.536Z"
+    },
+    "project::coreweave \"ready for anything\"": {
+      "name": "CoreWeave \"Ready for Anything\"",
+      "source": "agent",
+      "isNotable": true,
+      "isViral": false,
+      "type": "project",
+      "url": "https://arc-creative.us/",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:40:32.536Z"
+    },
+    "agency::voriq": {
+      "bio": "Boutique studio specializing in high-end AI content for advertising, music videos, and short films. Delivers TVC-quality AI ads for major global brands.",
+      "name": "VORIQ",
+      "source": "agent",
+      "type": "agency",
+      "connections": 2,
+      "addedAt": "2026-02-26T05:40:32.536Z"
+    },
+    "person::raghu naik": {
+      "bio": "Founder and Director of VORIQ.",
+      "name": "Raghu Naik",
+      "source": "agent",
+      "type": "person",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:40:32.536Z"
+    },
+    "agency::genre.ai": {
+      "bio": "AI-native creative agency focused on viral, shareable generative AI campaigns for social media and performance marketing. 275M+ views on AI content.",
+      "name": "Genre.ai",
+      "source": "agent",
+      "type": "agency",
+      "connections": 2,
+      "addedAt": "2026-02-26T05:40:32.536Z"
+    },
+    "person::pj accetturo": {
+      "bio": "CEO of Genre.ai. Prominent figure in AI creative space, known for viral AI work for Google, Popeyes, Qatar Airways.",
+      "name": "PJ Accetturo",
+      "source": "agent",
+      "type": "person",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:40:32.536Z"
+    },
+    "agency::351 studio": {
+      "bio": "Specialized AI video production agency focused on cinematic generative AI. Premium, high-production-value commercials and branded films.",
+      "name": "351 Studio",
+      "source": "agent",
+      "type": "agency",
+      "connections": 2,
+      "addedAt": "2026-02-26T05:40:32.536Z"
+    },
+    "person::ilija todorovski": {
+      "bio": "Founder of 351 Studio.",
+      "name": "Ilija Todorovski",
+      "source": "agent",
+      "type": "person",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:40:32.536Z"
+    },
+    "agency::the gardening club": {
+      "bio": "AI-exclusive production collective and sister company to The Sweetshop. Experimenting with Sora, Runway, Kling. Behind McDonald's Netherlands AI Christmas ad.",
+      "name": "The Gardening Club",
+      "source": "agent",
+      "type": "agency",
+      "connections": 2,
+      "addedAt": "2026-02-26T05:40:32.536Z"
+    },
+    "traditional::the sweetshop": {
+      "bio": "Major production house. Parent company of The Gardening Club.",
+      "name": "The Sweetshop",
+      "source": "agent",
+      "type": "traditional",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:40:32.536Z"
+    },
+    "agency::gennie studio": {
+      "bio": "Entertainment-focused AI studio specializing in AI reenactments and unscripted storytelling. Pushing AI into TV shows and character-driven entertainment.",
+      "name": "Gennie Studio",
+      "source": "agent",
+      "type": "agency",
+      "connections": 2,
+      "addedAt": "2026-02-26T05:40:32.536Z"
+    },
+    "person::max einhorn": {
+      "bio": "Founder of Gennie Studio. Former Head of Content at Crypt TV.",
+      "name": "Max Einhorn",
+      "source": "agent",
+      "type": "person",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:40:32.536Z"
+    },
+    "agency::lava media": {
+      "bio": "Boutique creative shop using AI-driven video production for Fortune 500 clients (Reebok, Vivo). Delivers high-quality VFX and commercials with lean teams.",
+      "name": "LAVA Media",
+      "source": "agent",
+      "type": "agency",
+      "connections": 2,
+      "addedAt": "2026-02-26T05:40:32.536Z"
+    },
+    "person::sergey rodin": {
+      "bio": "Founder of LAVA Media.",
+      "name": "Sergey Rodin",
+      "source": "agent",
+      "type": "person",
+      "connections": 1,
+      "addedAt": "2026-02-26T05:40:32.536Z"
     }
   },
   "edges": [
@@ -817,7 +1239,7 @@
       "axis": "competitor",
       "weight": 0.5,
       "meta": {
-        "description": "Agent Discovered"
+        "description": "Both AI-native production studios making brand content with generative tools"
       },
       "createdAt": "2026-02-24T06:21:41.232Z"
     },
@@ -827,7 +1249,7 @@
       "axis": "competitor",
       "weight": 0.5,
       "meta": {
-        "description": "Agent Discovered"
+        "description": "AI filmmaking / education — Curious Refuge trains AI storytellers"
       },
       "createdAt": "2026-02-24T06:21:41.232Z"
     },
@@ -837,7 +1259,7 @@
       "axis": "competitor",
       "weight": 0.5,
       "meta": {
-        "description": "Agent Discovered"
+        "description": "AI video generation tool used by production studios in this space"
       },
       "createdAt": "2026-02-24T06:21:41.232Z"
     },
@@ -895,7 +1317,7 @@
       "axis": "competitor",
       "weight": 0.5,
       "meta": {
-        "description": "Agent Discovered"
+        "description": "Top-tier indie creative agencies — Joe Staples is W+K alumni"
       },
       "createdAt": "2026-02-24T06:45:02.846Z"
     },
@@ -905,7 +1327,7 @@
       "axis": "competitor",
       "weight": 0.5,
       "meta": {
-        "description": "Agent Discovered"
+        "description": "Premier creative agencies — both compete for top-tier brand briefs"
       },
       "createdAt": "2026-02-24T06:45:02.846Z"
     },
@@ -915,7 +1337,7 @@
       "axis": "competitor",
       "weight": 0.5,
       "meta": {
-        "description": "Agent Discovered"
+        "description": "Both handle major brand campaigns — TBWA MAL is Apple's dedicated shop"
       },
       "createdAt": "2026-02-24T06:45:02.846Z"
     },
@@ -1272,7 +1694,7 @@
       "createdAt": "2026-02-25T16:56:08.185Z"
     },
     {
-      "from": "traditional::tbwa\\\\chiat\\\\day",
+      "from": "traditional::tbwa\\chiat\\day",
       "to": "project::apple \"1984\" super bowl",
       "axis": "partner",
       "weight": 1,
@@ -1282,7 +1704,7 @@
       "createdAt": "2026-02-25T16:56:08.185Z"
     },
     {
-      "from": "traditional::tbwa\\\\chiat\\\\day",
+      "from": "traditional::tbwa\\chiat\\day",
       "to": "project::apple \"think different\"",
       "axis": "partner",
       "weight": 1,
@@ -1290,7 +1712,7 @@
       "createdAt": "2026-02-25T16:56:08.185Z"
     },
     {
-      "from": "agency::tbwa\\\\media arts lab",
+      "from": "agency::tbwa\\media arts lab",
       "to": "project::\"shot on iphone\" campaigns",
       "axis": "partner",
       "weight": 1,
@@ -1298,14 +1720,392 @@
       "createdAt": "2026-02-25T16:56:08.185Z"
     },
     {
-      "from": "agency::tbwa\\\\media arts lab",
-      "to": "traditional::tbwa\\\\chiat\\\\day",
+      "from": "agency::tbwa\\media arts lab",
+      "to": "traditional::tbwa\\chiat\\day",
       "axis": "partner",
       "weight": 0.8,
       "meta": {
         "description": "Apple-dedicated subsidiary of TBWA\\Chiat\\Day"
       },
       "createdAt": "2026-02-25T16:56:08.185Z"
+    },
+    {
+      "from": "person::magdalena luna",
+      "to": "agency::arc creative",
+      "axis": "founder",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-26T05:19:39.630Z"
+    },
+    {
+      "from": "person::anastasia von rahl",
+      "to": "agency::arc creative",
+      "axis": "founder",
+      "weight": 0.9,
+      "meta": {},
+      "createdAt": "2026-02-26T05:19:39.630Z"
+    },
+    {
+      "from": "agency::arc creative",
+      "to": "project::youtube tv \"don't settle for meh\"",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-26T05:19:39.630Z"
+    },
+    {
+      "from": "agency::arc creative",
+      "to": "project::harry styles \"aperture\"",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-26T05:19:39.630Z"
+    },
+    {
+      "from": "person::chris boyle",
+      "to": "agency::private island",
+      "axis": "founder",
+      "weight": 1.2,
+      "meta": {},
+      "createdAt": "2026-02-26T05:19:39.630Z"
+    },
+    {
+      "from": "person::helen power",
+      "to": "agency::private island",
+      "axis": "founder",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-26T05:19:39.630Z"
+    },
+    {
+      "from": "agency::private island",
+      "to": "project::mcdonald's ai commercial",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-26T05:19:39.630Z"
+    },
+    {
+      "from": "person::george strompolos",
+      "to": "agency::promise ai",
+      "axis": "founder",
+      "weight": 1.2,
+      "meta": {},
+      "createdAt": "2026-02-26T05:19:39.630Z"
+    },
+    {
+      "from": "person::jamie byrne",
+      "to": "agency::promise ai",
+      "axis": "founder",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-26T05:19:39.630Z"
+    },
+    {
+      "from": "agency::bottom line ai",
+      "to": "project::volvo \"choose differently\" (spec)",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-26T05:19:39.630Z"
+    },
+    {
+      "from": "person::tom graham",
+      "to": "agency::metaphysic.ai",
+      "axis": "founder",
+      "weight": 1.2,
+      "meta": {},
+      "createdAt": "2026-02-26T05:19:39.630Z"
+    },
+    {
+      "from": "person::chris ume",
+      "to": "agency::metaphysic.ai",
+      "axis": "founder",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-26T05:19:39.630Z"
+    },
+    {
+      "from": "agency::metaphysic.ai",
+      "to": "project::deeptomcruise (tiktok)",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-26T05:19:39.630Z"
+    },
+    {
+      "from": "agency::metaphysic.ai",
+      "to": "project::agt elvis deepfake",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-26T05:19:39.630Z"
+    },
+    {
+      "from": "agency::metaphysic.ai",
+      "to": "project::\"here\" de-aging (film)",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-26T05:19:39.630Z"
+    },
+    {
+      "from": "person::chris ume",
+      "to": "project::deeptomcruise (tiktok)",
+      "axis": "collaborator",
+      "weight": 1,
+      "meta": {
+        "description": "Created the viral TikTok series"
+      },
+      "createdAt": "2026-02-26T05:19:39.630Z"
+    },
+    {
+      "from": "agency::native foreign",
+      "to": "agency::private island",
+      "axis": "competitor",
+      "weight": 0.5,
+      "meta": {
+        "description": "Both make AI-generated commercials for major brands (Nike, McDonald's)"
+      },
+      "createdAt": "2026-02-26T05:20:01.585Z"
+    },
+    {
+      "from": "agency::native foreign",
+      "to": "agency::arc creative",
+      "axis": "competitor",
+      "weight": 0.5,
+      "meta": {
+        "description": "Both VFX-forward production studios blending traditional craft with AI"
+      },
+      "createdAt": "2026-02-26T05:20:01.585Z"
+    },
+    {
+      "from": "agency::native foreign",
+      "to": "agency::promise ai",
+      "axis": "competitor",
+      "weight": 0.5,
+      "meta": {
+        "description": "GenAI-first entertainment studio — Google-backed, limited output so far"
+      },
+      "createdAt": "2026-02-26T05:20:01.585Z"
+    },
+    {
+      "from": "agency::native foreign",
+      "to": "agency::bottom line ai",
+      "axis": "competitor",
+      "weight": 0.5,
+      "meta": {
+        "description": "Paris-based AI filmmaking shop — spec ads overlap with production space"
+      },
+      "createdAt": "2026-02-26T05:20:01.585Z"
+    },
+    {
+      "from": "agency::native foreign",
+      "to": "agency::metaphysic.ai",
+      "axis": "competitor",
+      "weight": 0.5,
+      "meta": {
+        "description": "AI-powered visual effects (deepfakes, de-aging) — domain now inactive"
+      },
+      "createdAt": "2026-02-26T05:20:01.585Z"
+    },
+    {
+      "from": "person::neil ghaznavi",
+      "to": "agency::arc creative",
+      "axis": "founder",
+      "weight": 1.2,
+      "meta": {},
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "person::tim crean",
+      "to": "agency::arc creative",
+      "axis": "founder",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "person::becky porter",
+      "to": "agency::arc creative",
+      "axis": "collaborator",
+      "weight": 0.8,
+      "meta": {
+        "description": "Creative Director"
+      },
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "person::magdalena luna",
+      "to": "traditional::the mill",
+      "axis": "alumni",
+      "weight": 0.8,
+      "meta": {
+        "description": "Ex-employee"
+      },
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "person::neil ghaznavi",
+      "to": "traditional::the mill",
+      "axis": "alumni",
+      "weight": 0.8,
+      "meta": {
+        "description": "Ex-employee"
+      },
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "person::tim crean",
+      "to": "traditional::the mill",
+      "axis": "alumni",
+      "weight": 0.8,
+      "meta": {
+        "description": "Ex-employee"
+      },
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "agency::arc creative",
+      "to": "project::apple watch \"new year\"",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "agency::arc creative",
+      "to": "project::netflix \"the beast in me\"",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "agency::arc creative",
+      "to": "project::the game awards 2025 graphics",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "agency::arc creative",
+      "to": "project::coreweave \"ready for anything\"",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "person::raghu naik",
+      "to": "agency::voriq",
+      "axis": "founder",
+      "weight": 1.2,
+      "meta": {},
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "person::pj accetturo",
+      "to": "agency::genre.ai",
+      "axis": "founder",
+      "weight": 1.2,
+      "meta": {},
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "person::ilija todorovski",
+      "to": "agency::351 studio",
+      "axis": "founder",
+      "weight": 1.2,
+      "meta": {},
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "agency::the gardening club",
+      "to": "traditional::the sweetshop",
+      "axis": "partner",
+      "weight": 0.8,
+      "meta": {
+        "description": "Sister company / AI arm"
+      },
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "person::max einhorn",
+      "to": "agency::gennie studio",
+      "axis": "founder",
+      "weight": 1.2,
+      "meta": {},
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "person::sergey rodin",
+      "to": "agency::lava media",
+      "axis": "founder",
+      "weight": 1.2,
+      "meta": {},
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "agency::native foreign",
+      "to": "agency::voriq",
+      "axis": "competitor",
+      "weight": 0.5,
+      "meta": {
+        "description": "Both boutique AI studios producing TVC-quality ads for global brands"
+      },
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "agency::native foreign",
+      "to": "agency::genre.ai",
+      "axis": "competitor",
+      "weight": 0.5,
+      "meta": {
+        "description": "AI-native agency making viral generative content for brands (275M+ views)"
+      },
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "agency::native foreign",
+      "to": "agency::351 studio",
+      "axis": "competitor",
+      "weight": 0.5,
+      "meta": {
+        "description": "Premium cinematic AI video for commercials and branded films"
+      },
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "agency::native foreign",
+      "to": "agency::the gardening club",
+      "axis": "competitor",
+      "weight": 0.5,
+      "meta": {
+        "description": "AI collective under The Sweetshop - McDonald's NL AI Christmas ad"
+      },
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "agency::native foreign",
+      "to": "agency::gennie studio",
+      "axis": "competitor",
+      "weight": 0.5,
+      "meta": {
+        "description": "Entertainment-focused AI studio doing AI reenactments and unscripted TV"
+      },
+      "createdAt": "2026-02-26T05:40:32.536Z"
+    },
+    {
+      "from": "agency::native foreign",
+      "to": "agency::lava media",
+      "axis": "competitor",
+      "weight": 0.5,
+      "meta": {
+        "description": "Lean AI production shop for Fortune 500 (Reebok, Vivo)"
+      },
+      "createdAt": "2026-02-26T05:40:32.536Z"
     }
   ]
 }

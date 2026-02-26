@@ -51,6 +51,27 @@
 - **Projects Default**: Projects filter now enabled by default so project nodes are visible on load.
 - **Graph State**: 78 nodes, 73 edges, 6 landmarks.
 
+## [2026-02-25] Phase 9: Hierarchy List View, Competitor Clarity & New Discoveries
+- **List View Redesign**: Replaced flat card grid with a hierarchy-based display — agencies at top, nested People → Projects → Pedigree → Related sections underneath.
+- **Competitor Link Clarity**: Updated all 11 competitor edge descriptions from generic "Agent Discovered" to specific reasons (e.g., "Both AI-native production studios making brand content with generative tools").
+- **Related Agencies Section**: Added orange-styled "RELATED" sub-section to each agency block showing competitor connections with descriptive reasons.
+- **TBWA Duplicate Fix**: Merged 2 double-escaped TBWA nodes (Chiat\Day + Media Arts Lab) — fixed 5 edge references.
+- **Arc Creative Expansion**: Added 3 more founders (Neil Ghaznavi, Tim Crean, Becky Porter — all ex-The Mill) and 4 new projects (Apple Watch, Netflix, Game Awards 2025, CoreWeave).
+- **6 New Agencies Discovered**:
+  - **VORIQ** (Raghu Naik) — TVC-quality AI ads for global brands
+  - **Genre.ai** (PJ Accetturo) — 275M+ views on viral AI content
+  - **351 Studio** (Ilija Todorovski) — Premium cinematic AI video
+  - **The Gardening Club** — AI collective under The Sweetshop, McDonald's NL AI ad
+  - **Gennie Studio** (Max Einhorn, ex-Crypt TV) — AI reenactments & unscripted TV
+  - **LAVA Media** (Sergey Rodin) — Lean AI shop for Fortune 500
+- **Timestamps**: All nodes now stamped with `addedAt`. List view shows relative timestamps ("8m ago", "2d ago") and sorts newest-first.
+- **What's New Banner**: Session-aware banner at top of list view using localStorage. Splits into "Added" (user-requested, green) and "🤖 Discovered by Agent" (orange).
+- **Default List View**: Page now loads directly into 📋 List instead of Graph.
+- **Source Attribution**: Fixed `source` field on 8 agencies to correctly distinguish user-mentioned vs agent-discovered.
+- **OG Meta Tags**: Added Open Graph and Twitter Card tags with preview image for link sharing.
+- **Auto-Timestamping**: `addNode()` now automatically stamps new nodes with `addedAt`.
+- **Graph State**: 116 nodes, 116 edges, 6 landmarks.
+
 ---
 
 # Current Roadmap (TODOs)
@@ -58,9 +79,9 @@
 ## High Priority
 - [ ] **Bio Modals**: Expand the tooltip to a full glassmorphism modal on click to show the full biography.
 - [ ] **Physics Tuning**: Adjust D3 force parameters for Project nodes so they cluster tightly around parents.
-- [ ] **More Landmarks**: Map additional agencies (e.g., Wieden+Kennedy Portland, Curious Refuge as landmarks).
 
 ## Mid Term
 - [ ] **Search/Filter in List View**: Add a search bar to the list view for quick lookup.
 - [ ] **Edge Labels on Hover**: Show axis type label when hovering over edges in graph view.
 - [ ] **Export**: Add CSV/JSON export from the list view.
+- [ ] **Grow All Agencies**: Deep-dive remaining thin agency profiles (VORIQ, Genre.ai, 351 Studio, etc.) with full project/people data.

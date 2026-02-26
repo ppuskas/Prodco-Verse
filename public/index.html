@@ -7,6 +7,22 @@
     <title>Prodco-Verse — Boutique AI Production Map</title>
     <meta name="description"
         content="An interactive constellation map of boutique AI production agencies, their founders, alumni pedigree, and notable projects.">
+
+    <!-- Open Graph / Link Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Prodco-Verse — Boutique AI Production Map">
+    <meta property="og:description"
+        content="🆕 New discoveries this session — an interactive map of boutique AI production agencies, founders, pedigree, and notable projects.">
+    <meta property="og:image" content="/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Prodco-Verse — Boutique AI Production Map">
+    <meta name="twitter:description"
+        content="🆕 New discoveries this session — mapping the AI creative production landscape.">
+    <meta name="twitter:image" content="/og-image.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
     <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -64,106 +80,326 @@
             right: 0;
             bottom: 0;
             overflow-y: auto;
-            padding: 20px 30px;
+            padding: 40px 48px 80px;
             background: #0a0a0f;
             z-index: 50;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(110, 231, 183, 0.2) transparent;
         }
 
-        .list-section {
+        #list-view::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        #list-view::-webkit-scrollbar-thumb {
+            background: rgba(110, 231, 183, 0.15);
+            border-radius: 3px;
+        }
+
+        /* ─ Agency Block ─ */
+        /* ─ What's New Banner ─ */
+        .whats-new {
+            background: rgba(110, 231, 183, 0.06);
+            border: 1px solid rgba(110, 231, 183, 0.15);
+            border-radius: 8px;
+            padding: 14px 20px;
             margin-bottom: 32px;
         }
 
-        .list-section h2 {
-            font-size: 14px;
-            font-weight: 800;
+        .whats-new-title {
+            font-size: 11px;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .list-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 13px;
-        }
-
-        .list-table th {
-            text-align: left;
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #666;
-            padding: 6px 12px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .list-table td {
-            padding: 8px 12px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-            vertical-align: top;
-        }
-
-        .list-table tr:hover td {
-            background: rgba(255, 255, 255, 0.03);
-        }
-
-        .list-table .name-cell {
-            font-weight: 600;
-            color: #fff;
-        }
-
-        .list-table .bio-cell {
-            color: #888;
-            max-width: 500px;
-            font-size: 12px;
-            line-height: 1.4;
-        }
-
-        .list-table .link-cell a {
             color: #6ee7b7;
-            text-decoration: none;
-            font-size: 12px;
+            margin-bottom: 8px;
         }
 
-        .list-table .link-cell a:hover {
-            text-decoration: underline;
+        .whats-new-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 14px;
         }
 
-        .type-pill {
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 10px;
+        .whats-new-item {
+            font-size: 13px;
+            font-weight: 600;
+            color: #d1d5db;
+        }
+
+        .whats-new-item::before {
+            content: '+ ';
+            color: #6ee7b7;
+        }
+
+        .whats-new-sub {
             font-size: 10px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .type-pill.agency {
-            background: rgba(110, 231, 183, 0.15);
+            letter-spacing: 1px;
             color: #6ee7b7;
+            margin-top: 8px;
+            margin-bottom: 4px;
         }
 
-        .type-pill.project {
-            background: rgba(59, 130, 246, 0.15);
-            color: #3b82f6;
+        .whats-new-sub.discovered {
+            color: #f59e0b;
         }
 
-        .type-pill.traditional {
-            background: rgba(167, 139, 250, 0.15);
-            color: #a78bfa;
+        .whats-new-item.discovered {
+            color: #fbbf24;
         }
 
-        .type-pill.person {
-            background: rgba(251, 113, 133, 0.15);
+        .whats-new-item.discovered::before {
+            color: #f59e0b;
+        }
+
+        .agency-block {
+            margin-bottom: 48px;
+        }
+
+        .agency-header {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 16px;
+        }
+
+        .agency-name {
+            font-size: 20px;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .agency-name.landmark {
+            color: #f59e0b;
+        }
+
+        .agency-tag {
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #f59e0b;
+            background: rgba(245, 158, 11, 0.12);
+            padding: 2px 7px;
+            border-radius: 3px;
+        }
+
+        .agency-date {
+            font-size: 10px;
+            font-weight: 500;
+            color: #444;
+            margin-left: auto;
+        }
+
+        .agency-bio {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #888;
+            margin-bottom: 16px;
+            max-width: 700px;
+        }
+
+        /* ─ Sub-sections ─ */
+        .sub-section {
+            margin-bottom: 14px;
+            margin-left: 2px;
+        }
+
+        .sub-label {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        .sub-label.people {
             color: #fb7185;
         }
 
-        .type-pill.landmark {
-            background: rgba(245, 158, 11, 0.2);
+        .sub-label.projects {
+            color: #3b82f6;
+        }
+
+        .sub-label.pedigree {
+            color: #a78bfa;
+        }
+
+        /* ─ Person Row ─ */
+        .person-row {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            padding: 5px 0;
+            flex-wrap: wrap;
+        }
+
+        .person-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .person-role {
+            font-size: 11px;
+            color: #6ee7b7;
+            font-weight: 600;
+        }
+
+        .person-bio {
+            font-size: 12px;
+            color: #666;
+            flex-basis: 100%;
+            margin-top: 2px;
+            line-height: 1.5;
+        }
+
+        .person-links {
+            display: inline-flex;
+            gap: 6px;
+        }
+
+        .person-links a {
+            font-size: 11px;
+            color: #555;
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .person-links a:hover {
+            color: #fff;
+        }
+
+        /* ─ Project Row ─ */
+        .project-row {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            padding: 3px 0;
+        }
+
+        .project-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #3b82f6;
+            flex-shrink: 0;
+            margin-top: 6px;
+        }
+
+        .project-dot.notable {
+            background: #f59e0b;
+        }
+
+        .project-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: #ccc;
+        }
+
+        .project-name a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: border-color 0.15s;
+        }
+
+        .project-name a:hover {
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .project-flag {
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 1px 5px;
+            border-radius: 3px;
+        }
+
+        .project-flag.notable {
+            background: rgba(245, 158, 11, 0.12);
             color: #f59e0b;
+        }
+
+        .project-flag.viral {
+            background: rgba(236, 72, 153, 0.10);
+            color: #f472b6;
+        }
+
+        /* ─ Pedigree Row ─ */
+        .pedigree-row {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 3px 0;
+            margin-right: 16px;
+        }
+
+        .pedigree-name {
+            font-size: 12px;
+            color: #a78bfa;
+            font-weight: 600;
+        }
+
+        .pedigree-via {
+            font-size: 10px;
+            color: #555;
+        }
+
+        /* ─ Related Agencies ─ */
+        .related-row {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            padding: 3px 0;
+        }
+
+        .related-arrow {
+            color: #f59e0b;
+            font-size: 11px;
+        }
+
+        .related-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: #f59e0b;
+        }
+
+        .related-reason {
+            font-size: 11px;
+            color: #555;
+        }
+
+        /* ─ Others footer ─ */
+        .others-section {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .others-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        .others-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 16px;
+        }
+
+        .others-item {
+            font-size: 12px;
+            color: #666;
         }
 
         /* ─── Header ─── */
@@ -585,48 +821,220 @@
         function buildListView() {
             if (!graphData) return;
             const container = document.getElementById('list-view');
-            const nodeEntries = Object.entries(graphData.nodes);
+            const nodes = graphData.nodes;
+            const edges = graphData.edges;
 
-            const sections = [
-                { title: '🏢 Agencies', type: 'agency', color: '#6ee7b7' },
-                { title: '🎬 Projects', type: 'project', color: '#3b82f6' },
-                { title: '👤 People', type: 'person', color: '#fb7185' },
-                { title: '🏛️ Traditional Companies', type: 'traditional', color: '#a78bfa' },
-            ];
+            // ── Build adjacency from edges ──
+            // For each agency, collect: people (founders/alumni), projects, traditionals (pedigree)
+            const agencyKeys = Object.keys(nodes).filter(k => nodes[k].type === 'agency');
+            const claimed = new Set(); // track nodes already shown under an agency
+
+            // Sort: purely by addedAt (newest first)
+            agencyKeys.sort((a, b) => {
+                const tA = nodes[a].addedAt || '';
+                const tB = nodes[b].addedAt || '';
+                return tB.localeCompare(tA);
+            });
+
+            function getNeighbors(nodeKey) {
+                const result = [];
+                edges.forEach(e => {
+                    if (e.from === nodeKey) result.push({ key: e.to, axis: e.axis, meta: e.meta });
+                    if (e.to === nodeKey) result.push({ key: e.from, axis: e.axis, meta: e.meta });
+                });
+                return result;
+            }
+
+            function relativeTime(iso) {
+                if (!iso) return '';
+                const diff = Date.now() - new Date(iso).getTime();
+                const mins = Math.floor(diff / 60000);
+                if (mins < 1) return 'just now';
+                if (mins < 60) return `${mins}m ago`;
+                const hrs = Math.floor(mins / 60);
+                if (hrs < 24) return `${hrs}h ago`;
+                const days = Math.floor(hrs / 24);
+                if (days < 7) return `${days}d ago`;
+                return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            }
 
             let html = '';
-            for (const sec of sections) {
-                const items = nodeEntries
-                    .filter(([k, n]) => n.type === sec.type)
-                    .sort((a, b) => (b[1].connections || 0) - (a[1].connections || 0));
 
-                html += `<div class="list-section">`;
-                html += `<h2 style="color:${sec.color}">${sec.title} (${items.length})</h2>`;
-                html += `<table class="list-table"><thead><tr>`;
-                html += `<th>Name</th><th>Links</th><th>Details</th><th>URL</th>`;
-                html += `</tr></thead><tbody>`;
+            // ── What's New banner ──
+            const lastSession = localStorage.getItem('pv_lastSession');
+            const newAgencies = agencyKeys.filter(k => {
+                const ts = nodes[k].addedAt;
+                return ts && (!lastSession || ts > lastSession);
+            });
 
-                for (const [key, node] of items) {
-                    const pills = [];
-                    if (node.isLandmark) pills.push('<span class="type-pill landmark">★ Landmark</span>');
-                    if (node.isNotable) pills.push('<span class="type-pill project">Notable</span>');
-                    if (node.isViral) pills.push('<span class="type-pill agency">Viral</span>');
+            if (newAgencies.length > 0 && newAgencies.length < agencyKeys.length) {
+                // Split into user-added vs agent-discovered
+                const added = newAgencies.filter(k => nodes[k].isLandmark || nodes[k].source !== 'agent');
+                const discovered = newAgencies.filter(k => !nodes[k].isLandmark && nodes[k].source === 'agent');
 
-                    const bio = node.bio || '';
-                    const url = node.url ? `<a href="${node.url}" target="_blank">View ↗</a>` : '';
-                    const social = [];
-                    if (node.linkedIn) social.push(`<a href="${node.linkedIn}" target="_blank">LinkedIn</a>`);
-                    if (node.twitter) social.push(`<a href="${node.twitter}" target="_blank">𝕏</a>`);
+                html += `<div class="whats-new">`;
+                html += `<div class="whats-new-title">🆕 New since last session</div>`;
 
-                    html += `<tr>`;
-                    html += `<td class="name-cell">${node.name || key} ${pills.join(' ')}</td>`;
-                    html += `<td style="color:#6ee7b7;text-align:center;">${node.connections || 0}</td>`;
-                    html += `<td class="bio-cell">${bio}</td>`;
-                    html += `<td class="link-cell">${url} ${social.join(' ')}</td>`;
-                    html += `</tr>`;
+                if (added.length) {
+                    html += `<div class="whats-new-sub">Added</div>`;
+                    html += `<div class="whats-new-list">`;
+                    for (const k of added) html += `<span class="whats-new-item">${nodes[k].name}</span>`;
+                    html += `</div>`;
                 }
 
-                html += `</tbody></table></div>`;
+                if (discovered.length) {
+                    html += `<div class="whats-new-sub discovered">🤖 Discovered by Agent</div>`;
+                    html += `<div class="whats-new-list">`;
+                    for (const k of discovered) html += `<span class="whats-new-item discovered">${nodes[k].name}</span>`;
+                    html += `</div>`;
+                }
+
+                html += `</div>`;
+            }
+
+            // Update session timestamp for next visit
+            localStorage.setItem('pv_lastSession', new Date().toISOString());
+
+            for (const agKey of agencyKeys) {
+                const ag = nodes[agKey];
+                claimed.add(agKey);
+
+                // Gather direct neighbors
+                const neighbors = getNeighbors(agKey);
+                const people = [];
+                const projects = [];
+                const traditionals = [];
+                const competitors = [];
+
+                neighbors.forEach(n => {
+                    const nd = nodes[n.key];
+                    if (!nd) return;
+                    if (nd.type === 'person') people.push({ ...nd, _key: n.key, _axis: n.axis, _meta: n.meta });
+                    else if (nd.type === 'project') projects.push({ ...nd, _key: n.key, _axis: n.axis, _meta: n.meta });
+                    else if (nd.type === 'traditional') traditionals.push({ ...nd, _key: n.key, _axis: n.axis, _meta: n.meta });
+                    else if (nd.type === 'agency') competitors.push({ ...nd, _key: n.key, _axis: n.axis, _meta: n.meta });
+                });
+
+                // Also look one hop deeper: people → their pedigree (traditionals)
+                const pedigree = [];
+                people.forEach(p => {
+                    const pNeighbors = getNeighbors(p._key);
+                    pNeighbors.forEach(pn => {
+                        const pnd = nodes[pn.key];
+                        if (pnd && pnd.type === 'traditional') {
+                            pedigree.push({ ...pnd, _key: pn.key, _via: p.name, _meta: pn.meta });
+                        }
+                        // Also grab personal projects
+                        if (pnd && pnd.type === 'project' && !projects.find(x => x._key === pn.key)) {
+                            projects.push({ ...pnd, _key: pn.key, _axis: pn.axis, _meta: pn.meta, _via: p.name });
+                        }
+                    });
+                });
+
+                // Mark all as claimed
+                people.forEach(p => claimed.add(p._key));
+                projects.forEach(p => claimed.add(p._key));
+                traditionals.forEach(t => claimed.add(t._key));
+                pedigree.forEach(t => claimed.add(t._key));
+
+                // ── Render agency block ──
+                html += `<div class="agency-block">`;
+                html += `<div class="agency-header">`;
+                html += `<span class="agency-name${ag.isLandmark ? ' landmark' : ''}">${ag.name}</span>`;
+                if (ag.isLandmark) html += `<span class="agency-tag">Landmark</span>`;
+                html += `<span class="agency-date">${relativeTime(ag.addedAt)}</span>`;
+                html += `</div>`;
+                if (ag.bio) html += `<div class="agency-bio">${ag.bio}</div>`;
+
+                // People
+                if (people.length) {
+                    html += `<div class="sub-section">`;
+                    html += `<div class="sub-label people">People</div>`;
+                    for (const p of people) {
+                        const role = p._axis === 'founder' ? 'Founder' : (p._meta?.description || 'Member');
+                        let links = '';
+                        if (p.linkedIn) links += `<a href="${p.linkedIn}" target="_blank">in</a>`;
+                        if (p.twitter) links += `<a href="${p.twitter}" target="_blank">𝕏</a>`;
+
+                        html += `<div class="person-row">`;
+                        html += `<span class="person-name">${p.name}</span>`;
+                        html += `<span class="person-role">${role}</span>`;
+                        if (links) html += `<span class="person-links">${links}</span>`;
+                        if (p.bio) html += `<div class="person-bio">${p.bio}</div>`;
+                        html += `</div>`;
+                    }
+                    html += `</div>`;
+                }
+
+                // Projects
+                if (projects.length) {
+                    // Sort: notable/viral first
+                    projects.sort((a, b) => ((b.isNotable ? 1 : 0) + (b.isViral ? 1 : 0)) - ((a.isNotable ? 1 : 0) + (a.isViral ? 1 : 0)));
+                    html += `<div class="sub-section">`;
+                    html += `<div class="sub-label projects">Projects</div>`;
+                    for (const p of projects) {
+                        const nameHtml = p.url
+                            ? `<a href="${p.url}" target="_blank">${p.name}</a>`
+                            : p.name;
+                        html += `<div class="project-row">`;
+                        html += `<span class="project-dot${p.isNotable || p.isViral ? ' notable' : ''}"></span>`;
+                        html += `<span class="project-name">${nameHtml}</span>`;
+                        if (p.isViral) html += `<span class="project-flag viral">viral</span>`;
+                        else if (p.isNotable) html += `<span class="project-flag notable">notable</span>`;
+                        html += `</div>`;
+                    }
+                    html += `</div>`;
+                }
+
+                // Pedigree
+                const uniquePedigree = [...new Map(pedigree.map(t => [t._key, t])).values()];
+                if (uniquePedigree.length || traditionals.length) {
+                    const allTrad = [...new Map([...traditionals, ...uniquePedigree].map(t => [t._key, t])).values()];
+                    html += `<div class="sub-section">`;
+                    html += `<div class="sub-label pedigree">Pedigree</div>`;
+                    html += `<div>`;
+                    for (const t of allTrad) {
+                        const via = t._via ? ` via ${t._via}` : (t._meta?.description || '');
+                        html += `<span class="pedigree-row">`;
+                        html += `<span class="pedigree-name">${t.name}</span>`;
+                        if (via) html += `<span class="pedigree-via">${via}</span>`;
+                        html += `</span>`;
+                    }
+                    html += `</div></div>`;
+                }
+
+                // Related agencies (competitors)
+                if (competitors.length) {
+                    html += `<div class="sub-section">`;
+                    html += `<div class="sub-label" style="color:#f59e0b">Related</div>`;
+                    for (const c of competitors) {
+                        const reason = c._meta?.description || '';
+                        html += `<div class="related-row">`;
+                        html += `<span class="related-arrow">→</span>`;
+                        html += `<span class="related-name">${c.name}</span>`;
+                        if (reason) html += `<span class="related-reason">— ${reason}</span>`;
+                        html += `</div>`;
+                    }
+                    html += `</div>`;
+                }
+
+                html += `</div>`; // end agency-block
+            }
+
+            // ── Unclaimed traditionals ──
+            const unclaimedTrad = Object.entries(nodes)
+                .filter(([k, n]) => n.type === 'traditional' && !claimed.has(k));
+            const unclaimedOther = Object.entries(nodes)
+                .filter(([k, n]) => !claimed.has(k) && n.type !== 'traditional');
+
+            if (unclaimedTrad.length || unclaimedOther.length) {
+                html += `<div class="others-section">`;
+                html += `<div class="others-title">Other Entities</div>`;
+                html += `<div class="others-list">`;
+                for (const [k, n] of [...unclaimedTrad, ...unclaimedOther]) {
+                    html += `<span class="others-item">${n.name || k}</span>`;
+                }
+                html += `</div></div>`;
             }
 
             container.innerHTML = html;
@@ -951,7 +1359,7 @@
             } catch (e) { /* ignore */ }
         }
 
-        init();
+        init().then(() => switchView('list'));
     </script>
 </body>
 

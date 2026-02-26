@@ -26,7 +26,7 @@ function nodeKey(type, name) {
 
 function addNode(graph, key, data) {
     if (!graph.nodes[key]) {
-        graph.nodes[key] = { ...data, connections: 0 };
+        graph.nodes[key] = { ...data, connections: 0, addedAt: data.addedAt || new Date().toISOString() };
     } else {
         Object.assign(graph.nodes[key], data);
     }

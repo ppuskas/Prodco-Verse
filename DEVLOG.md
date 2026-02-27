@@ -72,16 +72,28 @@
 - **Auto-Timestamping**: `addNode()` now automatically stamps new nodes with `addedAt`.
 - **Graph State**: 116 nodes, 116 edges, 6 landmarks.
 
+## [2026-02-27] Phase 10: Landscape Center Node & PJ Accetturo Expansion
+- **Hub-and-Spoke Fix**: All 17 competitor edges (9 from NF, 3 from Mother LA, 5 others) radiated from landmark agencies, making the graph look like NF was the "parent" of the industry. Replaced with an invisible **"AI Production Landscape"** center node that all 23 agencies connect to equally via `landscape` axis edges.
+- **Invisible Anchor**: The center node has zero radius, zero opacity, no tooltip, no pointer events — it's purely gravitational. Force sim uses distance: 250, strength: 0.05, zero charge.
+- **Stats/Filters**: Landscape node and edges are excluded from stats bar, filter counts, and list view rendering.
+- **PJ Accetturo Expansion**: Expanded Genre.ai from 2 connections to 10. Added 8 new project nodes (Kalshi Viral AI Ad, Popeyes (W)rap Battle, Qatar Airways x Google In-Flight AI Ad, Pupperamin spoof, NBA Finals AI Commercial, Google AI Film Festival Short, VoiceoverPete YouTube, Ghosts of Ruin). Updated PJ bio with full career arc (NatGeo at 18, 15yr commercial director, VoiceoverPete 1M subs). Added socials: @PJaccetturo (X), @pjacefilms (IG).
+- **Graph State**: 124 nodes, 107 edges (visible), 6 landmarks.
+
+## [2026-02-27] Phase 11: Changelog Banner & Bottom Line AI
+- **Changelog Banner**: Replaced localStorage-based "What's New" with a data-driven changelog stored in `industry_graph.json`. Latest entry always visible, older entries behind a collapsible "Show History" toggle. Green `ADDITION` / blue `UPDATE` type badges. Works on Vercel read-only mode.
+- **Bottom Line AI Expansion**: Deep-dive on Paris-based AI filmmaking studio. Added founders Henri Bassil (Director) & Claudia Lalau (AI Lead/Producer). Added 6 projects: ChatGPT Spec Ad, The Last Shield AI Trailer, Volvo EX30, REVIN, Milka, BEEAH Hybrid. Enriched bio with tools (Kling, Runway, MiniMax, ElevenLabs, Freepik).
+- **Graph State**: 132 nodes, 114 edges (visible), 6 landmarks.
+
 ---
 
 # Current Roadmap (TODOs)
 
 ## High Priority
 - [ ] **Bio Modals**: Expand the tooltip to a full glassmorphism modal on click to show the full biography.
-- [ ] **Physics Tuning**: Adjust D3 force parameters for Project nodes so they cluster tightly around parents.
+- [x] **Physics Tuning**: Replaced competitor hub-and-spoke with gravitational landscape center node.
 
 ## Mid Term
 - [ ] **Search/Filter in List View**: Add a search bar to the list view for quick lookup.
 - [ ] **Edge Labels on Hover**: Show axis type label when hovering over edges in graph view.
 - [ ] **Export**: Add CSV/JSON export from the list view.
-- [ ] **Grow All Agencies**: Deep-dive remaining thin agency profiles (VORIQ, Genre.ai, 351 Studio, etc.) with full project/people data.
+- [ ] **Grow All Agencies**: Deep-dive remaining thin agency profiles (VORIQ, ~~Genre.ai~~, 351 Studio, etc.) with full project/people data.

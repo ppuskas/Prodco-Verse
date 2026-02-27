@@ -97,61 +97,120 @@
         }
 
         /* ─ Agency Block ─ */
-        /* ─ What's New Banner ─ */
-        .whats-new {
-            background: rgba(110, 231, 183, 0.06);
-            border: 1px solid rgba(110, 231, 183, 0.15);
-            border-radius: 8px;
-            padding: 14px 20px;
+        /* ─ Changelog Banner ─ */
+        .changelog-banner {
+            background: rgba(110, 231, 183, 0.04);
+            border: 1px solid rgba(110, 231, 183, 0.12);
+            border-radius: 10px;
+            padding: 16px 20px;
             margin-bottom: 32px;
         }
 
-        .whats-new-title {
+        .changelog-title {
             font-size: 11px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             color: #6ee7b7;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .whats-new-list {
+        .changelog-entry {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .changelog-entry:last-child {
+            border-bottom: none;
+        }
+
+        .changelog-entry-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 4px;
+        }
+
+        .changelog-entry-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .changelog-date {
+            font-size: 10px;
+            color: #555;
+            margin-left: auto;
+        }
+
+        .changelog-type {
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 1px 6px;
+            border-radius: 3px;
+        }
+
+        .changelog-type.addition {
+            color: #6ee7b7;
+            background: rgba(110, 231, 183, 0.12);
+        }
+
+        .changelog-type.update {
+            color: #3b82f6;
+            background: rgba(59, 130, 246, 0.12);
+        }
+
+        .changelog-desc {
+            font-size: 12px;
+            color: #888;
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+
+        .changelog-items {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px 14px;
+            gap: 4px 10px;
         }
 
-        .whats-new-item {
-            font-size: 13px;
+        .changelog-item {
+            font-size: 12px;
             font-weight: 600;
             color: #d1d5db;
         }
 
-        .whats-new-item::before {
+        .changelog-item::before {
             content: '+ ';
             color: #6ee7b7;
         }
 
-        .whats-new-sub {
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .changelog-toggle {
+            font-size: 11px;
+            font-weight: 600;
             color: #6ee7b7;
-            margin-top: 8px;
-            margin-bottom: 4px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            padding: 8px 0 0;
+            opacity: 0.7;
+            transition: opacity 0.2s;
         }
 
-        .whats-new-sub.discovered {
-            color: #f59e0b;
+        .changelog-toggle:hover {
+            opacity: 1;
         }
 
-        .whats-new-item.discovered {
-            color: #fbbf24;
+        .changelog-history {
+            display: none;
         }
 
-        .whats-new-item.discovered::before {
-            color: #f59e0b;
+        .changelog-history.open {
+            display: block;
         }
 
         .agency-block {
@@ -788,7 +847,8 @@
             agency: '#6ee7b7',
             project: '#3b82f6',
             traditional: '#a78bfa',
-            person: '#fb7185'
+            person: '#fb7185',
+            landscape: 'transparent'
         };
 
         const EDGE_COLORS = {
@@ -797,14 +857,16 @@
             partner: '#a78bfa',
             collaborator: '#f59e0b',
             notable: '#fb7185',
-            competitor: '#f97316'
+            competitor: '#f97316',
+            landscape: 'rgba(255,255,255,0.02)'
         };
 
         const NODE_RADIUS = {
             agency: 8,
             project: 3,
             traditional: 5,
-            person: 7
+            person: 7,
+            landscape: 0
         };
 
         // ─── View Switching ───
@@ -826,7 +888,7 @@
 
             // ── Build adjacency from edges ──
             // For each agency, collect: people (founders/alumni), projects, traditionals (pedigree)
-            const agencyKeys = Object.keys(nodes).filter(k => nodes[k].type === 'agency');
+            const agencyKeys = Object.keys(nodes).filter(k => nodes[k].type === 'agency' && k !== 'landscape::center');
             const claimed = new Set(); // track nodes already shown under an agency
 
             // Sort: purely by addedAt (newest first)
@@ -860,40 +922,45 @@
 
             let html = '';
 
-            // ── What's New banner ──
-            const lastSession = localStorage.getItem('pv_lastSession');
-            const newAgencies = agencyKeys.filter(k => {
-                const ts = nodes[k].addedAt;
-                return ts && (!lastSession || ts > lastSession);
-            });
+            // ── Changelog Banner (data-driven, works on Vercel) ──
+            const changelog = graphData.changelog || [];
+            if (changelog.length > 0) {
+                html += `<div class="changelog-banner">`;
+                html += `<div class="changelog-title">📡 Changelog</div>`;
 
-            if (newAgencies.length > 0 && newAgencies.length < agencyKeys.length) {
-                // Split into user-added vs agent-discovered
-                const added = newAgencies.filter(k => nodes[k].isLandmark || nodes[k].source !== 'agent');
-                const discovered = newAgencies.filter(k => !nodes[k].isLandmark && nodes[k].source === 'agent');
+                // Latest entry always visible
+                const latest = changelog[0];
+                html += renderChangelogEntry(latest);
 
-                html += `<div class="whats-new">`;
-                html += `<div class="whats-new-title">🆕 New since last session</div>`;
-
-                if (added.length) {
-                    html += `<div class="whats-new-sub">Added</div>`;
-                    html += `<div class="whats-new-list">`;
-                    for (const k of added) html += `<span class="whats-new-item">${nodes[k].name}</span>`;
-                    html += `</div>`;
-                }
-
-                if (discovered.length) {
-                    html += `<div class="whats-new-sub discovered">🤖 Discovered by Agent</div>`;
-                    html += `<div class="whats-new-list">`;
-                    for (const k of discovered) html += `<span class="whats-new-item discovered">${nodes[k].name}</span>`;
+                // Older entries in collapsible
+                if (changelog.length > 1) {
+                    html += `<button class="changelog-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? '▲ Hide History' : '▼ Show History (${changelog.length - 1} more)';">▼ Show History (${changelog.length - 1} more)</button>`;
+                    html += `<div class="changelog-history">`;
+                    for (let i = 1; i < changelog.length; i++) {
+                        html += renderChangelogEntry(changelog[i]);
+                    }
                     html += `</div>`;
                 }
 
                 html += `</div>`;
             }
 
-            // Update session timestamp for next visit
-            localStorage.setItem('pv_lastSession', new Date().toISOString());
+            function renderChangelogEntry(entry) {
+                let h = `<div class="changelog-entry">`;
+                h += `<div class="changelog-entry-header">`;
+                h += `<span class="changelog-entry-title">${entry.title}</span>`;
+                h += `<span class="changelog-type ${entry.type}">${entry.type}</span>`;
+                h += `<span class="changelog-date">${entry.date}</span>`;
+                h += `</div>`;
+                if (entry.description) h += `<div class="changelog-desc">${entry.description}</div>`;
+                if (entry.items && entry.items.length) {
+                    h += `<div class="changelog-items">`;
+                    for (const item of entry.items) h += `<span class="changelog-item">${item}</span>`;
+                    h += `</div>`;
+                }
+                h += `</div>`;
+                return h;
+            }
 
             for (const agKey of agencyKeys) {
                 const ag = nodes[agKey];
@@ -1059,10 +1126,12 @@
 
             // ─── Stats ───
             const statsBar = document.getElementById('stats-bar');
+            const visibleNodeCount = Object.values(graph.nodes).filter(n => n.type !== 'landscape').length;
+            const visibleEdgeCount = graph.edges.filter(e => e.axis !== 'landscape').length;
             statsBar.innerHTML = `
                 <span><span class="num">${graph.landmarks.length}</span> landmarks</span>
-                <span><span class="num">${Object.keys(graph.nodes).length}</span> nodes</span>
-                <span><span class="num">${graph.edges.length}</span> edges</span>
+                <span><span class="num">${visibleNodeCount}</span> nodes</span>
+                <span><span class="num">${visibleEdgeCount}</span> edges</span>
             `;
 
             // ─── Landmark Dropdown ───
@@ -1091,7 +1160,8 @@
 
             for (const [key, data] of Object.entries(graph.nodes)) {
                 const node = { id: key, ...data };
-                node.radius = data.isLandmark ? 16 : (NODE_RADIUS[data.type] || 4);
+                node.isLandscapeCenter = (data.type === 'landscape');
+                node.radius = node.isLandscapeCenter ? 0 : (data.isLandmark ? 16 : (NODE_RADIUS[data.type] || 4));
 
                 if (data.type === 'project' && (data.isViral || data.isNotable)) {
                     node.radius += 3;
@@ -1130,11 +1200,12 @@
             // ─── Forces ───
             const simulation = d3.forceSimulation(nodes)
                 .force('link', d3.forceLink(links).id(d => d.id).distance(d => {
+                    if (d.axis === 'landscape') return 250;
                     if (d.axis === 'partner') return 30;
                     if (d.axis === 'founder') return 80;
                     return 60;
-                }).strength(d => d.weight * 0.3))
-                .force('charge', d3.forceManyBody().strength(d => d.isLandmark ? -400 : -20))
+                }).strength(d => d.axis === 'landscape' ? 0.05 : d.weight * 0.3))
+                .force('charge', d3.forceManyBody().strength(d => d.isLandscapeCenter ? 0 : (d.isLandmark ? -400 : -20)))
                 .force('center', d3.forceCenter(0, 0))
                 .force('collision', d3.forceCollide().radius(d => d.radius + 2))
                 .alphaDecay(0.02);
@@ -1142,21 +1213,22 @@
             // ─── Draw ───
             let link = g.append('g').selectAll('line').data(links).join('line')
                 .attr('stroke', d => d.color)
-                .attr('stroke-opacity', 0.15)
-                .attr('stroke-width', d => Math.max(0.3, d.weight));
+                .attr('stroke-opacity', d => d.axis === 'landscape' ? 0 : 0.15)
+                .attr('stroke-width', d => d.axis === 'landscape' ? 0 : Math.max(0.3, d.weight));
 
             let node = g.append('g').selectAll('circle').data(nodes).join('circle')
                 .attr('r', d => d.radius)
-                .attr('fill', d => d.isUnmapped ? 'transparent' : d.color)
-                .attr('stroke', d => d.isLandmark ? '#f59e0b' : d.isUnmapped ? '#fb7185' : 'none')
-                .attr('stroke-width', d => d.isLandmark ? 3 : d.isUnmapped ? 2 : 0)
+                .attr('fill', d => d.isLandscapeCenter ? 'transparent' : (d.isUnmapped ? 'transparent' : d.color))
+                .attr('stroke', d => d.isLandscapeCenter ? 'none' : (d.isLandmark ? '#f59e0b' : d.isUnmapped ? '#fb7185' : 'none'))
+                .attr('stroke-width', d => d.isLandscapeCenter ? 0 : (d.isLandmark ? 3 : d.isUnmapped ? 2 : 0))
                 .attr('stroke-dasharray', d => d.isUnmapped ? '3,2' : 'none')
-                .attr('opacity', d => visibleTypes.has(d.type) || d.isLandmark ? 1 : 0.05)
-                .style('cursor', 'pointer')
+                .attr('opacity', d => d.isLandscapeCenter ? 0 : (visibleTypes.has(d.type) || d.isLandmark ? 1 : 0.05))
+                .style('cursor', d => d.isLandscapeCenter ? 'default' : 'pointer')
+                .style('pointer-events', d => d.isLandscapeCenter ? 'none' : 'auto')
                 .call(d3.drag()
-                    .on('start', (e, d) => { if (!e.active) simulation.alphaTarget(0.1).restart(); d.fx = d.x; d.fy = d.y; })
-                    .on('drag', (e, d) => { d.fx = e.x; d.fy = e.y; })
-                    .on('end', (e, d) => { if (!e.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; })
+                    .on('start', (e, d) => { if (d.isLandscapeCenter) return; if (!e.active) simulation.alphaTarget(0.1).restart(); d.fx = d.x; d.fy = d.y; })
+                    .on('drag', (e, d) => { if (d.isLandscapeCenter) return; d.fx = e.x; d.fy = e.y; })
+                    .on('end', (e, d) => { if (d.isLandscapeCenter) return; if (!e.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; })
                 );
 
             // Glow

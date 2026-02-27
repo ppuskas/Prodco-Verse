@@ -826,11 +826,11 @@
       "addedAt": "2026-02-26T05:19:39.630Z"
     },
     "agency::bottom line ai": {
-      "bio": "Paris-based studio focused on AI filmmaking. Provides concept art, animatics, previsualization, and full production using generative models. Notable for spec ads including Volvo.",
+      "bio": "Paris-based AI filmmaking studio. Concept art, animatics, previsualization, hybrid ads (AI + live action), AI kids series. Tools: Kling, Runway, MiniMax, Seedance, ElevenLabs, Freepik. Spec ads for Volvo, ChatGPT, Milka. Official work for BEEAH Group, REVIN.",
       "name": "Bottom Line AI",
       "source": "agent",
       "type": "agency",
-      "connections": 2,
+      "connections": 9,
       "addedAt": "2026-02-26T05:19:39.630Z"
     },
     "project::volvo \"choose differently\" (spec)": {
@@ -990,19 +990,22 @@
       "addedAt": "2026-02-26T05:40:32.536Z"
     },
     "agency::genre.ai": {
-      "bio": "AI-native creative agency focused on viral, shareable generative AI campaigns for social media and performance marketing. 275M+ views on AI content.",
+      "bio": "AI-native creative ad studio specializing in photorealistic, viral AI-generated video campaigns. 300M+ views across brands. Production workflow mirrors traditional agency (writer → director → AI cinematographer → animator → editor) using Veo 3, Gemini, Midjourney. Clients include Google, Popeyes, Qatar Airways, Kalshi. First AI ad broadcast during NBA Finals.",
       "name": "Genre.ai",
       "source": "agent",
       "type": "agency",
-      "connections": 2,
+      "connections": 8,
       "addedAt": "2026-02-26T05:40:32.536Z"
     },
     "person::pj accetturo": {
-      "bio": "CEO of Genre.ai. Prominent figure in AI creative space, known for viral AI work for Google, Popeyes, Qatar Airways.",
+      "bio": "CEO & Co-founder of Genre.ai. 15-year commercial director (Red Bull, Toyota, Atlanta Braves). Published in National Geographic at 18. Co-created VoiceoverPete YouTube channel (0→1M subs in 6 months, 22M+ views). Writer & EP on 'Ghosts of Ruin' animated series (Oscar-nom director, Hans Zimmer music team). Former GM of Threshold 360 (VR). Pioneer in AI filmmaking — Kalshi ad hit 18M impressions in 48hrs via Veo 3.",
       "name": "PJ Accetturo",
       "source": "agent",
+      "twitter": "https://x.com/PJaccetturo",
+      "linkedIn": "",
+      "instagram": "https://instagram.com/pjacefilms",
       "type": "person",
-      "connections": 1,
+      "connections": 3,
       "addedAt": "2026-02-26T05:40:32.536Z"
     },
     "agency::351 studio": {
@@ -1068,6 +1071,174 @@
       "type": "person",
       "connections": 1,
       "addedAt": "2026-02-26T05:40:32.536Z"
+    },
+    "project::kalshi viral ai ad": {
+      "type": "project",
+      "name": "Kalshi Viral AI Ad",
+      "source": "agent",
+      "url": "https://genre.ai",
+      "isNotable": true,
+      "isViral": true,
+      "connections": 1,
+      "addedAt": "2026-02-27T16:32:47.777Z"
+    },
+    "project::popeyes \"(w)rap battle\"": {
+      "type": "project",
+      "name": "Popeyes \"(W)rap Battle\"",
+      "source": "agent",
+      "url": "https://genre.ai",
+      "isNotable": true,
+      "isViral": false,
+      "connections": 1,
+      "addedAt": "2026-02-27T16:32:47.777Z"
+    },
+    "project::qatar airways x google in-flight ai ad": {
+      "type": "project",
+      "name": "Qatar Airways x Google In-Flight AI Ad",
+      "source": "agent",
+      "url": "https://genre.ai",
+      "isNotable": true,
+      "isViral": true,
+      "connections": 1,
+      "addedAt": "2026-02-27T16:32:47.777Z"
+    },
+    "project::\"pupperamin\" spoof pharma ad": {
+      "type": "project",
+      "name": "\"Pupperamin\" Spoof Pharma Ad",
+      "source": "agent",
+      "url": "https://genre.ai",
+      "isNotable": false,
+      "isViral": true,
+      "connections": 1,
+      "addedAt": "2026-02-27T16:32:47.777Z"
+    },
+    "project::nba finals ai commercial": {
+      "type": "project",
+      "name": "NBA Finals AI Commercial",
+      "source": "agent",
+      "url": "https://genre.ai",
+      "isNotable": true,
+      "isViral": true,
+      "connections": 1,
+      "addedAt": "2026-02-27T16:32:47.777Z"
+    },
+    "project::google ai film festival short": {
+      "type": "project",
+      "name": "Google AI Film Festival Short",
+      "source": "agent",
+      "url": "https://genre.ai",
+      "isNotable": false,
+      "isViral": false,
+      "connections": 1,
+      "addedAt": "2026-02-27T16:32:47.777Z"
+    },
+    "project::voiceoverpete youtube channel": {
+      "type": "project",
+      "name": "VoiceoverPete YouTube Channel",
+      "source": "agent",
+      "url": "https://youtube.com/@voiceoverpete",
+      "isNotable": true,
+      "isViral": true,
+      "connections": 1,
+      "addedAt": "2026-02-27T16:32:47.777Z"
+    },
+    "project::\"ghosts of ruin\" animated series": {
+      "type": "project",
+      "name": "\"Ghosts of Ruin\" Animated Series",
+      "source": "agent",
+      "url": "",
+      "isNotable": true,
+      "isViral": false,
+      "connections": 1,
+      "addedAt": "2026-02-27T16:32:47.777Z"
+    },
+    "landscape::center": {
+      "type": "landscape",
+      "name": "AI Production Landscape",
+      "source": "system",
+      "bio": "",
+      "connections": 23,
+      "addedAt": "2026-02-27T16:46:14.639Z"
+    },
+    "person::henri bassil": {
+      "type": "person",
+      "name": "Henri Bassil",
+      "source": "agent",
+      "bio": "Writer & Director at Bottomline AI. Leads creative direction for spec ads and AI short films.",
+      "twitter": "",
+      "linkedIn": "",
+      "connections": 1,
+      "addedAt": "2026-02-27T16:59:19.876Z"
+    },
+    "person::claudia lalau": {
+      "type": "person",
+      "name": "Claudia Lalau",
+      "source": "agent",
+      "bio": "AI Lead & Producer at Bottomline AI. Manages AI pipeline and production workflow.",
+      "twitter": "",
+      "linkedIn": "",
+      "connections": 1,
+      "addedAt": "2026-02-27T16:59:19.876Z"
+    },
+    "project::volvo ex30 \"choose differently\" (spec)": {
+      "type": "project",
+      "name": "Volvo EX30 \"Choose Differently\" (Spec)",
+      "source": "agent",
+      "url": "https://bottomlineai.fr/",
+      "isNotable": true,
+      "isViral": false,
+      "connections": 0,
+      "addedAt": "2026-02-27T16:59:19.876Z"
+    },
+    "project::chatgpt awareness spec ad": {
+      "type": "project",
+      "name": "ChatGPT Awareness Spec Ad",
+      "source": "agent",
+      "url": "https://bottomlineai.fr/",
+      "isNotable": true,
+      "isViral": false,
+      "connections": 1,
+      "addedAt": "2026-02-27T16:59:19.876Z"
+    },
+    "project::revin energy drink ai commercial": {
+      "type": "project",
+      "name": "REVIN Energy Drink AI Commercial",
+      "source": "agent",
+      "url": "https://bottomlineai.fr/",
+      "isNotable": false,
+      "isViral": false,
+      "connections": 1,
+      "addedAt": "2026-02-27T16:59:19.876Z"
+    },
+    "project::milka \"ballet of bliss\" (spec)": {
+      "type": "project",
+      "name": "Milka \"Ballet of Bliss\" (Spec)",
+      "source": "agent",
+      "url": "https://bottomlineai.fr/",
+      "isNotable": false,
+      "isViral": false,
+      "connections": 1,
+      "addedAt": "2026-02-27T16:59:19.876Z"
+    },
+    "project::\"the last shield\" ai trailer": {
+      "type": "project",
+      "name": "\"The Last Shield\" AI Trailer",
+      "source": "agent",
+      "url": "https://bottomlineai.fr/",
+      "isNotable": true,
+      "isViral": false,
+      "connections": 1,
+      "addedAt": "2026-02-27T16:59:19.876Z"
+    },
+    "project::beeah group hybrid ai/live ad": {
+      "type": "project",
+      "name": "BEEAH Group Hybrid AI/Live Ad",
+      "source": "agent",
+      "url": "https://bottomlineai.fr/",
+      "isNotable": false,
+      "isViral": false,
+      "connections": 1,
+      "addedAt": "2026-02-27T16:59:19.876Z"
     }
   },
   "edges": [
@@ -1235,36 +1406,6 @@
     },
     {
       "from": "agency::native foreign",
-      "to": "agency::secret level",
-      "axis": "competitor",
-      "weight": 0.5,
-      "meta": {
-        "description": "Both AI-native production studios making brand content with generative tools"
-      },
-      "createdAt": "2026-02-24T06:21:41.232Z"
-    },
-    {
-      "from": "agency::native foreign",
-      "to": "agency::curious refuge",
-      "axis": "competitor",
-      "weight": 0.5,
-      "meta": {
-        "description": "AI filmmaking / education — Curious Refuge trains AI storytellers"
-      },
-      "createdAt": "2026-02-24T06:21:41.232Z"
-    },
-    {
-      "from": "agency::native foreign",
-      "to": "agency::pika labs (creative)",
-      "axis": "competitor",
-      "weight": 0.5,
-      "meta": {
-        "description": "AI video generation tool used by production studios in this space"
-      },
-      "createdAt": "2026-02-24T06:21:41.232Z"
-    },
-    {
-      "from": "agency::native foreign",
       "to": "project::toys \"r\" us origin story",
       "axis": "partner",
       "weight": 1,
@@ -1310,36 +1451,6 @@
       "weight": 1,
       "meta": {},
       "createdAt": "2026-02-24T06:44:13.250Z"
-    },
-    {
-      "from": "agency::mother la",
-      "to": "agency::wieden+kennedy portland",
-      "axis": "competitor",
-      "weight": 0.5,
-      "meta": {
-        "description": "Top-tier indie creative agencies — Joe Staples is W+K alumni"
-      },
-      "createdAt": "2026-02-24T06:45:02.846Z"
-    },
-    {
-      "from": "agency::mother la",
-      "to": "agency::droga5",
-      "axis": "competitor",
-      "weight": 0.5,
-      "meta": {
-        "description": "Premier creative agencies — both compete for top-tier brand briefs"
-      },
-      "createdAt": "2026-02-24T06:45:02.846Z"
-    },
-    {
-      "from": "agency::mother la",
-      "to": "agency::tbwa\\media arts lab",
-      "axis": "competitor",
-      "weight": 0.5,
-      "meta": {
-        "description": "Both handle major brand campaigns — TBWA MAL is Apple's dedicated shop"
-      },
-      "createdAt": "2026-02-24T06:45:02.846Z"
     },
     {
       "from": "person::simon dolsten",
@@ -1860,56 +1971,6 @@
       "createdAt": "2026-02-26T05:19:39.630Z"
     },
     {
-      "from": "agency::native foreign",
-      "to": "agency::private island",
-      "axis": "competitor",
-      "weight": 0.5,
-      "meta": {
-        "description": "Both make AI-generated commercials for major brands (Nike, McDonald's)"
-      },
-      "createdAt": "2026-02-26T05:20:01.585Z"
-    },
-    {
-      "from": "agency::native foreign",
-      "to": "agency::arc creative",
-      "axis": "competitor",
-      "weight": 0.5,
-      "meta": {
-        "description": "Both VFX-forward production studios blending traditional craft with AI"
-      },
-      "createdAt": "2026-02-26T05:20:01.585Z"
-    },
-    {
-      "from": "agency::native foreign",
-      "to": "agency::promise ai",
-      "axis": "competitor",
-      "weight": 0.5,
-      "meta": {
-        "description": "GenAI-first entertainment studio — Google-backed, limited output so far"
-      },
-      "createdAt": "2026-02-26T05:20:01.585Z"
-    },
-    {
-      "from": "agency::native foreign",
-      "to": "agency::bottom line ai",
-      "axis": "competitor",
-      "weight": 0.5,
-      "meta": {
-        "description": "Paris-based AI filmmaking shop — spec ads overlap with production space"
-      },
-      "createdAt": "2026-02-26T05:20:01.585Z"
-    },
-    {
-      "from": "agency::native foreign",
-      "to": "agency::metaphysic.ai",
-      "axis": "competitor",
-      "weight": 0.5,
-      "meta": {
-        "description": "AI-powered visual effects (deepfakes, de-aging) — domain now inactive"
-      },
-      "createdAt": "2026-02-26T05:20:01.585Z"
-    },
-    {
       "from": "person::neil ghaznavi",
       "to": "agency::arc creative",
       "axis": "founder",
@@ -2048,64 +2109,385 @@
       "createdAt": "2026-02-26T05:40:32.536Z"
     },
     {
-      "from": "agency::native foreign",
-      "to": "agency::voriq",
-      "axis": "competitor",
-      "weight": 0.5,
+      "from": "agency::genre.ai",
+      "to": "project::kalshi viral ai ad",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-27T16:32:47.777Z"
+    },
+    {
+      "from": "agency::genre.ai",
+      "to": "project::popeyes \"(w)rap battle\"",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-27T16:32:47.777Z"
+    },
+    {
+      "from": "agency::genre.ai",
+      "to": "project::qatar airways x google in-flight ai ad",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-27T16:32:47.777Z"
+    },
+    {
+      "from": "agency::genre.ai",
+      "to": "project::\"pupperamin\" spoof pharma ad",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-27T16:32:47.777Z"
+    },
+    {
+      "from": "agency::genre.ai",
+      "to": "project::nba finals ai commercial",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-27T16:32:47.777Z"
+    },
+    {
+      "from": "agency::genre.ai",
+      "to": "project::google ai film festival short",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-27T16:32:47.777Z"
+    },
+    {
+      "from": "person::pj accetturo",
+      "to": "project::voiceoverpete youtube channel",
+      "axis": "collaborator",
+      "weight": 1,
       "meta": {
-        "description": "Both boutique AI studios producing TVC-quality ads for global brands"
+        "description": "Co-created with his father — 0 to 1M subs in 6 months, 22M+ views"
       },
-      "createdAt": "2026-02-26T05:40:32.536Z"
+      "createdAt": "2026-02-27T16:32:47.777Z"
+    },
+    {
+      "from": "person::pj accetturo",
+      "to": "project::\"ghosts of ruin\" animated series",
+      "axis": "collaborator",
+      "weight": 1,
+      "meta": {
+        "description": "Writer & EP — Oscar-nom director, Emmy-winning showrunner, Hans Zimmer music team"
+      },
+      "createdAt": "2026-02-27T16:32:47.777Z"
     },
     {
       "from": "agency::native foreign",
-      "to": "agency::genre.ai",
-      "axis": "competitor",
-      "weight": 0.5,
-      "meta": {
-        "description": "AI-native agency making viral generative content for brands (275M+ views)"
-      },
-      "createdAt": "2026-02-26T05:40:32.536Z"
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
     },
     {
-      "from": "agency::native foreign",
-      "to": "agency::351 studio",
-      "axis": "competitor",
-      "weight": 0.5,
-      "meta": {
-        "description": "Premium cinematic AI video for commercials and branded films"
-      },
-      "createdAt": "2026-02-26T05:40:32.536Z"
+      "from": "agency::edglrd",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
     },
     {
-      "from": "agency::native foreign",
-      "to": "agency::the gardening club",
-      "axis": "competitor",
-      "weight": 0.5,
-      "meta": {
-        "description": "AI collective under The Sweetshop - McDonald's NL AI Christmas ad"
-      },
-      "createdAt": "2026-02-26T05:40:32.536Z"
+      "from": "agency::pomp & clout",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
     },
     {
-      "from": "agency::native foreign",
-      "to": "agency::gennie studio",
-      "axis": "competitor",
-      "weight": 0.5,
-      "meta": {
-        "description": "Entertainment-focused AI studio doing AI reenactments and unscripted TV"
-      },
-      "createdAt": "2026-02-26T05:40:32.536Z"
+      "from": "agency::mother la",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
     },
     {
-      "from": "agency::native foreign",
-      "to": "agency::lava media",
-      "axis": "competitor",
-      "weight": 0.5,
-      "meta": {
-        "description": "Lean AI production shop for Fortune 500 (Reebok, Vivo)"
-      },
-      "createdAt": "2026-02-26T05:40:32.536Z"
+      "from": "agency::asteria",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
+    },
+    {
+      "from": "agency::dolsten & co",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
+    },
+    {
+      "from": "agency::secret level",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
+    },
+    {
+      "from": "agency::curious refuge",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
+    },
+    {
+      "from": "agency::pika labs (creative)",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
+    },
+    {
+      "from": "agency::wieden+kennedy portland",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
+    },
+    {
+      "from": "agency::droga5",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
+    },
+    {
+      "from": "agency::tbwa\\media arts lab",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
+    },
+    {
+      "from": "agency::arc creative",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
+    },
+    {
+      "from": "agency::private island",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
+    },
+    {
+      "from": "agency::promise ai",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
+    },
+    {
+      "from": "agency::bottom line ai",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
+    },
+    {
+      "from": "agency::metaphysic.ai",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
+    },
+    {
+      "from": "agency::voriq",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
+    },
+    {
+      "from": "agency::genre.ai",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
+    },
+    {
+      "from": "agency::351 studio",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
+    },
+    {
+      "from": "agency::the gardening club",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
+    },
+    {
+      "from": "agency::gennie studio",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
+    },
+    {
+      "from": "agency::lava media",
+      "to": "landscape::center",
+      "axis": "landscape",
+      "weight": 0.3,
+      "meta": {},
+      "createdAt": "2026-02-27T16:46:14.642Z"
+    },
+    {
+      "from": "person::henri bassil",
+      "to": "agency::bottom line ai",
+      "axis": "founder",
+      "weight": 1.2,
+      "meta": {},
+      "createdAt": "2026-02-27T16:59:19.876Z"
+    },
+    {
+      "from": "person::claudia lalau",
+      "to": "agency::bottom line ai",
+      "axis": "founder",
+      "weight": 1.2,
+      "meta": {},
+      "createdAt": "2026-02-27T16:59:19.876Z"
+    },
+    {
+      "from": "agency::bottom line ai",
+      "to": "project::chatgpt awareness spec ad",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-27T16:59:19.876Z"
+    },
+    {
+      "from": "agency::bottom line ai",
+      "to": "project::revin energy drink ai commercial",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-27T16:59:19.876Z"
+    },
+    {
+      "from": "agency::bottom line ai",
+      "to": "project::milka \"ballet of bliss\" (spec)",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-27T16:59:19.876Z"
+    },
+    {
+      "from": "agency::bottom line ai",
+      "to": "project::\"the last shield\" ai trailer",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-27T16:59:19.876Z"
+    },
+    {
+      "from": "agency::bottom line ai",
+      "to": "project::beeah group hybrid ai/live ad",
+      "axis": "partner",
+      "weight": 1,
+      "meta": {},
+      "createdAt": "2026-02-27T16:59:19.876Z"
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-02-27",
+      "title": "🔍 Bottom Line AI Expanded",
+      "type": "addition",
+      "description": "Deep-dive on Paris-based AI studio. Added founders Henri Bassil & Claudia Lalau, 6 projects.",
+      "items": [
+        "ChatGPT Spec Ad",
+        "The Last Shield",
+        "Volvo EX30",
+        "REVIN",
+        "Milka",
+        "BEEAH Hybrid"
+      ]
+    },
+    {
+      "date": "2026-02-27",
+      "title": "🌐 Graph Restructured",
+      "type": "update",
+      "description": "Replaced hub-and-spoke competitor layout with an even gravitational center. Agencies now orbit equally.",
+      "items": []
+    },
+    {
+      "date": "2026-02-27",
+      "title": "🔍 PJ Accetturo Expanded",
+      "type": "addition",
+      "description": "Deep-dive on Genre.ai founder. Added 8 projects, full career bio, social handles.",
+      "items": [
+        "Kalshi Viral AI Ad",
+        "NBA Finals AI Commercial",
+        "Qatar Airways x Google",
+        "Popeyes (W)rap Battle",
+        "Pupperamin Spoof",
+        "VoiceoverPete YouTube",
+        "Ghosts of Ruin"
+      ]
+    },
+    {
+      "date": "2026-02-26",
+      "title": "🤖 6 New Agencies Discovered",
+      "type": "addition",
+      "description": "Agent discovered 6 competitor studios and expanded Arc Creative with 3 new founders and 4 projects.",
+      "items": [
+        "VORIQ",
+        "Genre.ai",
+        "351 Studio",
+        "The Gardening Club",
+        "Gennie Studio",
+        "LAVA Media"
+      ]
+    },
+    {
+      "date": "2026-02-25",
+      "title": "📋 List View + Data Audit",
+      "type": "update",
+      "description": "Added List View tab, purged 17 dummy nodes, completed 3 research rounds (Dolsten, Secret Level, Curious Refuge, yU+co, Digital Kitchen, EDGLRD, TBWA, Droga5).",
+      "items": []
+    },
+    {
+      "date": "2026-02-24",
+      "title": "🚀 Launch + First Agencies",
+      "type": "addition",
+      "description": "Project extracted from MusicMapper. Mapped first 6 landmark agencies with full people, projects, and pedigree data.",
+      "items": [
+        "Native Foreign",
+        "EDGLRD",
+        "Asteria",
+        "Mother LA",
+        "Pomp & Clout",
+        "Dolsten & Co"
+      ]
     }
   ]
 }
